@@ -1,0 +1,67 @@
+Full sample: entity+year FE with region trends (clustered)
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:                  lnNTL   R-squared:                        0.4405
+Estimator:                   PanelOLS   R-squared (Between):              0.0103
+No. Observations:                 429   R-squared (Within):               0.4405
+Date:                Tue, Mar 17 2026   R-squared (Overall):              0.0319
+Time:                        17:42:41   Log-likelihood                   -758.73
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      162.97
+Entities:                          13   P-value                           0.0000
+Avg Obs:                       33.000   Distribution:                   F(2,414)
+Min Obs:                       33.000                                           
+Max Obs:                       33.000   F-statistic (robust):             83.360
+                                        P-value                           0.0000
+Time periods:                      33   Distribution:                   F(2,414)
+Avg Obs:                       13.000                                           
+Min Obs:                       13.000                                           
+Max Obs:                       13.000                                           
+                                                                                
+                               Parameter Estimates                               
+=================================================================================
+               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------
+Leader_region     0.3571     0.1859     1.9206     0.0555     -0.0084      0.7227
+trend             0.1308     0.0102     12.881     0.0000      0.1108      0.1508
+=================================================================================
+
+F-test for Poolability: 21.696
+P-value: 0.0000
+Distribution: F(12,414)
+
+Included effects: Entity
+
+Excluding Addis/Dire/Harari
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:                  lnNTL   R-squared:                        0.5050
+Estimator:                   PanelOLS   R-squared (Between):              0.0094
+No. Observations:                 330   R-squared (Within):               0.5050
+Date:                Tue, Mar 17 2026   R-squared (Overall):              0.0411
+Time:                        17:42:41   Log-likelihood                   -604.74
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      162.21
+Entities:                          10   P-value                           0.0000
+Avg Obs:                       33.000   Distribution:                   F(2,318)
+Min Obs:                       33.000                                           
+Max Obs:                       33.000   F-statistic (robust):             82.676
+                                        P-value                           0.0000
+Time periods:                      33   Distribution:                   F(2,318)
+Avg Obs:                      10.0000                                           
+Min Obs:                      10.0000                                           
+Max Obs:                      10.0000                                           
+                                                                                
+                               Parameter Estimates                               
+=================================================================================
+               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------
+Leader_region     0.2497     0.2018     1.2370     0.2170     -0.1474      0.6468
+trend             0.1593     0.0124     12.824     0.0000      0.1348      0.1837
+=================================================================================
+
+F-test for Poolability: 18.354
+P-value: 0.0000
+Distribution: F(9,318)
+
+Included effects: Entity

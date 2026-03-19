@@ -1,0 +1,30 @@
+Correlation between Mean_NTL and log(GDP): 0.914
+Elasticity (log-log regression slope): 1.887
+Interpretation: A 1% increase in GDP per capita is associated with a 1.89% change in NTL.
+
+--- OLS Regression Results ---
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                log_NTL   R-squared:                       0.933
+Model:                            OLS   Adj. R-squared:                  0.931
+Method:                 Least Squares   F-statistic:                     404.5
+Date:                Tue, 17 Mar 2026   Prob (F-statistic):           1.41e-18
+Time:                        02:21:53   Log-Likelihood:                 1.2396
+No. Observations:                  31   AIC:                             1.521
+Df Residuals:                      29   BIC:                             4.389
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        -20.3003      0.853    -23.795      0.000     -22.045     -18.555
+log_GDP        1.8871      0.094     20.113      0.000       1.695       2.079
+==============================================================================
+Omnibus:                        3.761   Durbin-Watson:                   0.713
+Prob(Omnibus):                  0.153   Jarque-Bera (JB):                1.575
+Skew:                          -0.090   Prob(JB):                        0.455
+Kurtosis:                       1.911   Cond. No.                         182.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

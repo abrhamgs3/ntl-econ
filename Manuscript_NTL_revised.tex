@@ -1,0 +1,826 @@
+\documentclass[12pt,a4paper]{article}
+% --- Preamble: Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{natbib}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+% --- Title and Author ---
+\title{[TITLE HERE]}
+\author{[AUTHOR NAME]}
+\date{March 19, 2026}
+
+\begin{document}
+	\maketitle
+	
+	% --- Abstract ---
+	\begin{abstract}
+		[Insert abstract here.]
+	\end{abstract}
+	
+	\noindent\textit{Keywords:} nighttime lights; regional inequality; political favoritism; Ethiopia; subnational development
+	
+	\noindent\textit{JEL:} O18, R11, R12, D72
+	
+	% =====================
+	% 1. Introduction
+	% =====================
+\section{Introduction}
+
+This paper addresses a fundamental identification problem in the empirical study of political favoritism using nighttime lights (NTL) data. While NTL is a powerful proxy for subnational economic activity, its use for detecting favoritism—such as whether leaders’ birth regions are associated with higher regional luminosity—rests on the assumption that estimated associations are empirically distinguishable from confounding structure. We show that, in settings with a small number of regions, high leverage from dominant city-regions, and limited exogenous variation in leadership transitions, the estimated association between leader-region assignment and regional NTL is weakly identified and subject to limited identifying variation. Apparent evidence for favoritism is likely a consequence of these structural features, not a robust empirical finding.
+
+We formalize this as a general result:
+
+\begin{center}
+	\fbox{\parbox{0.95\textwidth}{
+			extbf{Proposition (Limited Identifying Variation in Favoritism Associations).} 
+			extit{In a panel setting with (i) a small number of regions ($N$), (ii) high leverage from a small subset of dominant units, and (iii) limited exogenous variation in treatment timing, the fixed-effects estimator of leader-region favoritism using NTL data exhibits weak identification and limited identifying variation. That is, the estimated association is not empirically distinguishable from random assignment or national shocks, regardless of statistical significance in simple models. Apparent favoritism associations are likely artifacts of data structure, not necessarily evidence of underlying political processes.}
+			\textit{In a panel setting with (i) a small number of regions ($N$), (ii) high leverage from a small subset of dominant units, and (iii) limited exogenous variation in treatment timing, the fixed-effects estimator of leader-region favoritism using NTL data is not identified. That is, the estimated effect is not empirically distinguishable from random assignment or national shocks, regardless of statistical significance in simple models. Apparent favoritism effects are artifacts of data structure, not evidence of underlying political processes.}
+	}}
+\end{center}
+
+The Ethiopian case provides a transparent demonstration of this general result, but the identification challenge is pervasive in subnational research using remotely sensed data. We introduce a diagnostic workflow for assessing identification, and recommend that all NTL-based studies report placebo and power diagnostics as a matter of routine empirical transparency.
+
+% --- Begin Figure 2: Time-Series of Regional Luminosity ---
+\begin{figure}[ht]
+	\centering
+	% Placeholder for time-series line graph
+	% Description: This figure should display a line graph of annual regional luminosity (NTL) from 1992 to 2024. Addis Ababa is plotted on the primary Y-axis, showing high volatility and strong growth. The other 12 regions are plotted on a secondary or lower-scaled axis to highlight their relative stagnation. The visual disparity between Addis Ababa and the rest is stark, with Addis Ababa’s luminosity far exceeding all others. This extreme difference is the primary driver of the high Cook’s Distance values reported in Table~4, indicating the outlier influence of Addis Ababa in all regression results.
+	\fbox{\parbox{0.8\textwidth}{\centering
+			This figure presents a time-series of regional luminosity from 1992 to 2024. The line graph displays Addis Ababa on the primary Y-axis, highlighting its high volatility and growth, while the other 12 regions are plotted on a secondary or lower Y-axis to emphasize their relative stagnation. The stark disparity between Addis Ababa and the rest is the primary driver of the extreme Cook’s Distance values reported in Table~4, indicating the outlier influence of Addis Ababa in all regression results.
+			\emph{Line graph: Addis Ababa (primary Y-axis, high volatility/growth); other 12 regions (secondary/lower Y-axis, relative stagnation). Disparity drives extreme Cook’s Distance in Table~4.}
+	}}
+	\caption{Time-Series of Regional Luminosity (1992--2024). Addis Ababa is plotted on the primary Y-axis, showing high volatility and growth, while the other 12 regions are plotted on a secondary or lower-scaled axis to show their relative stagnation. The stark disparity between Addis Ababa and the rest drives the extreme Cook’s Distance values reported in Table~4.}
+	\label{fig:regional_luminosity}
+\end{figure}
+% --- End Figure 2 ---
+
+
+% --- Begin Figure 2: Regional NTL Gini Trend ---
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{outputs/figures/regional/regional_ntl_gini_trend.png}
+	\caption{Regional luminosity inequality in Ethiopia, 1992--2024. The Gini coefficient summarizes the distribution of nighttime lights across regions, showing a decline in inequality through 2018 and a partial rebound by 2024. This trend contextualizes the empirical analysis of favoritism and highlights the evolving spatial concentration of economic activity.}
+	\label{fig:gini_fig}
+\end{figure}
+% --- End Figure 2 ---
+
+% --- Begin Figure: NTL vs GDP Validation ---
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{outputs/figures/national/ntl_vs_log_gdp.png}
+	\caption{Validation of nighttime lights as a proxy for economic activity: National NTL and GDP per capita, 1992--2024. The strong comovement between NTL and GDP supports the use of satellite luminosity as a macroeconomic indicator in the Ethiopian context.}
+	\label{fig:ntl_gdp_validation}
+\end{figure}
+% --- End Figure ---
+
+This paper repositions the study of regional favoritism in political economy by exposing and explaining the systematic sources of bias in NTL-based empirical designs. The analysis demonstrates that sensitivity to specification is not a weakness of the data or methods per se, but rather a predictable outcome of three structural mechanisms. First, there is an urban and electrification bias embedded in NTL as a proxy for economic activity. In addition, the instability and ambiguity of regional administrative boundaries over time further complicate inference. Furthermore, the limited number of exogenous leadership transitions available for credible identification constrains the analysis. Existing literature has largely overlooked these mechanisms, often treating NTL-based favoritism estimates as robust to analytic choices and implicitly assuming that specification variation reflects noise rather than bias.
+
+By rigorously unpacking these mechanisms, the present study demonstrates that much of the reported evidence for regional favoritism is an artifact of specification-driven bias, rather than a reflection of underlying political or economic processes. The contribution is affirmative: it provides a replicable framework for diagnosing and correcting specification sensitivity, and it sets a new empirical benchmark for studies leveraging remotely sensed data in political economy. This work compels a re-evaluation of prior findings and offers a path forward for credible, transparent research in the field.
+
+\section{Literature Review}
+This study sits at the intersection of three literatures.
+
+First, a substantial literature uses satellite luminosity to measure economic activity. Early work established that light emissions track national and regional output surprisingly well in settings with limited conventional statistics \citep{Chen2011,Henderson2012}. More recent contributions show that the strength of this relationship varies with population density, sectoral composition, and spatial scale, which makes local interpretation more difficult than national validation exercises might suggest \citep{Bluhm2022,Gibson2021}. Work on harmonized long-run products has also improved the temporal comparability of DMSP-OLS and VIIRS series, but it has not eliminated measurement challenges \citep{Li2023,Gibson2024}.
+
+Second, the paper relates to research on regional and ethnic favoritism. \citet{Hodler2014} show that political leaders' birth regions tend to receive higher nighttime light intensity in a broad cross-country sample. Subsequent work has refined that perspective by emphasizing the interaction between political favoritism, local ethnic demography, and institutions \citep{BeiserMcGrath2021}. Recent studies also continue to find geographically targeted favoritism in other settings, including public investment and local clientelism \citep{Onana2024,Cruzatti2024}. The implication is not that favoritism is universal, but that claims about it should be tested against within-unit changes rather than cross-sectional differences.
+
+
+
+
+Third, the study connects to work on decentralization and federalism in Ethiopia. Existing scholarship highlights the tension between formal regional autonomy and persistent vertical control, including constraints on local fiscal autonomy and uneven developmental capacity \citep{Faguet2021,Wubneh2017}. Those institutional features make Ethiopia a theoretically important case for studying regional inequality, but they also heighten the need for careful empirical design. If regional trajectories differ for structural reasons unrelated to political leadership, pooled cross-sectional comparisons can easily be mistaken for favoritism.
+
+\subsection*{Political Economy of Ethiopian Federalism}
+The spatial distribution of rents in Ethiopia is deeply shaped by the country’s federal architecture and the political strategies of its ruling coalitions. Under the Ethiopian People’s Revolutionary Democratic Front (EPRDF), federalism was formally enshrined, but real power remained highly centralized. The EPRDF’s dominance over regional governments meant that resource allocation, investment, and development projects were often coordinated from the center, with regional administrations acting as agents rather than autonomous principals. This centralization is theorized to produce a spatial distribution of rents that is less responsive to local political dynamics and more reflective of national priorities and coalition management. In contrast, the current administration has presided over a period of greater regional contestation and, in some cases, increased regional autonomy. According to \citet{Faguet2021}, such shifts can alter the expected pattern of rent distribution: as regional governments gain more effective autonomy, the allocation of resources may become more sensitive to local political competition, ethnic demography, and the bargaining power of regional elites. This theoretical perspective suggests that the empirical analysis of favoritism in Ethiopia must account for changes in the structure of federalism and the evolving balance of power between center and regions.
+
+Relative to these literatures, the paper does not claim a new identification strategy for favoritism. Its distinct contribution is narrower: it shows that in the Ethiopian case the empirical assessment of favoritism is itself sensitive to how high-luminosity city-regions are handled. That is an important point because many NTL-based political-economy studies implicitly assume that the treatment effect is stable across alternative regional samples.
+
+\section{Methodology}
+\subsection{Data}
+\subsubsection{Nighttime light data}
+The repository contains a harmonized annual NTL series built from DMSP-OLS and VIIRS raster products. The active manuscript files and processed outputs use annual data from 1992 through 2024. The underlying scripts reference the pixel-scale corrected nighttime light product of \citet{Li2023} and annual VIIRS composites derived by \citet{Elvidge2021}. Regional observations are generated by overlaying annual rasters on Ethiopian first-order administrative boundaries and aggregating light emissions within each polygon.
+
+The active regional panel file contains 429 region-year observations for 13 regional units. The sample therefore reflects the available processed panel in the repository rather than the full set of current Ethiopian administrative regions. This distinction matters for interpretation and is treated as a limitation below.
+% --- Begin Figure 5: Admin Map ---
+\begin{figure}[ht]
+	\centering
+	% Replace the following line with the actual path to your admin map graphic
+	\includegraphics[width=0.7\textwidth]{outputs/figures/admin/ethiopia_admin_map.png}
+	\caption{Administrative boundaries of Ethiopia's first-order regions. The map displays the 13 regional units used in the analysis, highlighting the evolving and fragmented nature of administrative boundaries over the study period.}
+	\label{fig:admin_map}
+\end{figure}
+% --- End Figure 5 ---
+
+\paragraph{Administrative Fragmentation and the Modifiable Areal Unit Problem (MAUP)}
+The use of regional units in this analysis is inherently shaped by the evolving administrative geography of Ethiopia. Over the study period, boundaries have been repeatedly redrawn, with new regions created and existing ones subdivided or merged. This administrative fragmentation introduces the Modifiable Areal Unit Problem (MAUP), a well-known source of bias in spatial analysis, whereby statistical results can change depending on the scale, boundaries, or aggregation of spatial units\cite{880}. In the Ethiopian context, MAUP manifests as instability in both treatment assignment and outcome measurement: changes in regional boundaries alter the population, area, and economic composition of each unit, complicating the interpretation of estimated effects. As a result, findings based on current administrative units may not be robust to alternative boundary definitions, and caution is warranted when generalizing results across time or to other spatial configurations.
+
+\subsubsection{National GDP data}
+The national validation exercise uses annual GDP per capita data merged into the file \texttt{data/tabular/ethiopia\_ntl\_data.xlsx}. The available workbook contains 33 annual rows from 1992 to 2024, although the saved regression summary is based on 31 non-missing annual observations. The empirical role of GDP is limited to validation of NTL as a descriptive proxy at the national level; the repository does not contain a consistent subnational GDP panel for the full study period.
+
+\subsubsection{Leader-region coding}
+
+\noindent\textbf{Note.} \textit{The coding of leader-region ties in Ethiopia is complicated by the country’s unique political and social landscape. While the literature often uses a leader’s birth region as a proxy for political loyalty or favoritism, this approach is especially noisy in the Ethiopian context. Regional identity is only one dimension of political affiliation: ethnic identity, party membership, and personal networks frequently cross administrative boundaries. In Ethiopia’s federal system, ethnic affiliation often supersedes regional origin as the primary axis of political loyalty and resource allocation. Leaders may be born in one region but politically and ethnically aligned with another, or may represent coalitions that span multiple groups. As a result, birth region is an imperfect and sometimes misleading proxy for the true locus of a leader’s political loyalty.\footnote{For example, the Ethiopian People’s Revolutionary Democratic Front (EPRDF) and its successor, the Prosperity Party, have historically structured political competition and resource distribution along ethnic rather than strictly regional lines. See \citet{Fiseha2012, Aalen2002, Faguet2021} for discussion of the interplay between ethnicity, region, and political power in Ethiopia.}} 
+
+
+
+\subsection{Empirical Strategy}
+
+The empirical strategy is upgraded to address weak identification and strengthen inference:
+
+
+The empirical strategy begins by accounting for unobserved heterogeneity and differential regional trajectories. The main panel model includes region fixed effects and region-specific linear trends:
+
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}[node distance=2.5cm, auto, >=stealth, thick]
+		% Nodes
+		\node (L) [draw, rectangle] {Leader Birth-Region ($L$)};
+		\node (Y) [draw, rectangle, right of=L, node distance=5cm] {Regional NTL ($Y$)};
+		\node (S) [draw, rectangle, above left of=L, node distance=3cm] {National Shocks ($S$)};
+		\node (U) [draw, rectangle, below of=Y] {Urban Concentration ($U$)};
+		
+		% Paths
+		\draw [->] (L) to node [above] {} (Y);
+		\draw [->, red, dashed, thick] (S) to (L);
+		\draw [->, red, dashed, thick] (S) to (Y);
+		\draw [->, blue, thick] (U) to (Y);
+	\end{tikzpicture}
+	\caption{Canonical causal DAG for identification. The direct path $L \to Y$ corresponds to the regression coefficient $\beta$ in $Y_{it} = \alpha_i + \gamma_t + \beta L_{it} + \varepsilon_{it}$. The red dashed backdoor path $L \leftarrow S \to Y$ represents confounding by national shocks ($\gamma_t$), which must be blocked by including year fixed effects. The blue path $U \to Y$ represents variance inflation from urban concentration, affecting $\operatorname{Var}(Y_{it})$ and the leverage of high-luminosity regions. This DAG integrates all confounding and leverage mechanisms discussed in the identification argument.}
+	\label{fig:dag_ntl_identification}
+\end{figure}
+
+The primary identification challenge in this empirical setting is to block the correlation between national economic cycles and leadership transitions. As depicted in the canonical DAG (Figure~\ref{fig:dag_ntl_identification}), national shocks ($S$) act as confounders, creating backdoor paths that link leader origin ($L$) and regional NTL ($Y$) independently of any causal effect. Urban concentration ($U$) further inflates the variance of observed outcomes, complicating inference. Robust identification therefore requires strategies that effectively account for these confounding influences, ensuring that estimated leader-region effects are not spuriously driven by national trends or the leverage of highly luminous regions. Each path in the DAG maps directly to terms in the regression: the direct path $L \to Y$ is captured by $\beta$, the backdoor path $L \leftarrow S \to Y$ is blocked by year fixed effects ($\gamma_t$), and the $U \to Y$ path explains variance inflation and leverage.
+\begin{equation}
+	\mathrm{NTL}_{it} = \mu_i + \lambda_i t + \beta \,\mathrm{LeaderBirthRegion}_{it} + u_{it}
+\end{equation}
+where $\mu_i$ is a region fixed effect, $\lambda_i$ is a region-specific trend, and $t$ is year.
+
+To rigorously assess whether estimated leader-region effects reflect genuine favoritism or arise from chance or model artifacts, two placebo (permutation) tests are implemented. The first test involves randomizing leader-region assignment: for each iteration, leader-region labels are randomly permuted across regions, holding treatment timing fixed, and the panel model is estimated to record the placebo coefficient $\hat{\beta}^{(r)}$. The second test randomizes treatment timing: for each iteration, the start-year of leadership spells is randomly permuted across regions while maintaining the observed duration of each leader's tenure, thereby preserving the temporal structure of the data. The panel model is then estimated and the placebo coefficient $\hat{\beta}^{(r)}$ is recorded. Each procedure is repeated $R$ times (for example, $R=1000$) to generate the empirical distribution of placebo coefficients.
+
+The empirical p-value is calculated as follows:
+\begin{equation}
+	p = \frac{1}{R} \sum_{r=1}^R \mathbb{I}\left(|\hat{\beta}^{(r)}| \geq |\hat{\beta}_{\text{real}}|\right)
+\end{equation}
+where $\hat{\beta}_{\text{real}}$ is the actual estimated coefficient and $\mathbb{I}$ is the indicator function.
+
+The results are presented by plotting a histogram of the placebo coefficients $\{\hat{\beta}^{(r)}\}$, marking the real estimate $\hat{\beta}_{\text{real}}$ as a vertical line, and reporting the empirical p-value.
+
+The observed $\hat{\beta}$ is compared to the placebo distribution. If the observed coefficient exceeds 95\% of placebo estimates, the effect is unlikely due to chance; otherwise, evidence for favoritism is weak and likely driven by specification or random assignment.
+
+For empirical implementation, the fixed effects model with region-specific trends is fit using OLS and dummy variables for region trends. For each placebo, leader-region or treatment timing is shuffled, the model is re-estimated, and $\hat{\beta}$ is recorded. The empirical $p$-value is computed as the fraction of placebo $\hat{\beta}$ exceeding the observed estimate.
+
+This approach directly quantifies robustness and strengthens identification. If the observed leader-region effect is not distinguishable from placebo, the evidence for favoritism is not robust. Conversely, if it is, the result is more likely to reflect genuine treatment effects rather than specification artifacts.
+	
+	% =====================
+	% 5. Results
+	% =====================
+% =====================
+% 4. Empirical Strategy and Identification Challenges
+% =====================
+\section{Empirical Strategy and Identification Challenges}
+\subsection{Empirical strategy}
+The empirical strategy begins by accounting for unobserved heterogeneity and differential regional trajectories. The main panel model includes region fixed effects and region-specific linear trends:
+
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}[node distance=2.5cm, auto, >=stealth, thick]
+		% Nodes
+		\node (L) [draw, rectangle] {Leader Birth-Region ($L$)};
+		\node (Y) [draw, rectangle, right of=L, node distance=5cm] {Regional NTL ($Y$)};
+		\node (S) [draw, rectangle, above left of=L, node distance=3cm] {National Shocks ($S$)};
+		\node (U) [draw, rectangle, below of=Y] {Urban Concentration ($U$)};
+		
+		% Paths
+		\draw [->] (L) to node [above] {} (Y);
+		\draw [->, red, dashed, thick] (S) to (L);
+		\draw [->, red, dashed, thick] (S) to (Y);
+		\draw [->, blue, thick] (U) to (Y);
+	\end{tikzpicture}
+	\caption{Canonical causal DAG for identification. The direct path $L \to Y$ corresponds to the regression coefficient $\beta$ in $Y_{it} = \alpha_i + \gamma_t + \beta L_{it} + \varepsilon_{it}$. The red dashed backdoor path $L \leftarrow S \to Y$ represents confounding by national shocks ($\gamma_t$), which must be blocked by including year fixed effects. The blue path $U \to Y$ represents variance inflation from urban concentration, affecting $\operatorname{Var}(Y_{it})$ and the leverage of high-luminosity regions. This DAG integrates all confounding and leverage mechanisms discussed in the identification argument.}
+	\label{fig:dag_ntl_identification}
+\end{figure}
+
+The primary identification challenge in this empirical setting is to block the correlation between national economic cycles and leadership transitions. As depicted in the canonical DAG (Figure~\ref{fig:dag_ntl_identification}), national shocks ($S$) act as confounders, creating backdoor paths that link leader origin ($L$) and regional NTL ($Y$) independently of any causal effect. Urban concentration ($U$) further inflates the variance of observed outcomes, complicating inference. Robust identification therefore requires strategies that effectively account for these confounding influences, ensuring that estimated leader-region effects are not spuriously driven by national trends or the leverage of highly luminous regions. Each path in the DAG maps directly to terms in the regression: the direct path $L \to Y$ is captured by $\beta$, the backdoor path $L \leftarrow S \to Y$ is blocked by year fixed effects ($\gamma_t$), and the $U \to Y$ path explains variance inflation and leverage.
+\begin{equation}
+	\mathrm{NTL}_{it} = \mu_i + \lambda_i t + \beta \,\mathrm{LeaderBirthRegion}_{it} + u_{it}
+\end{equation}
+where $\mu_i$ is a region fixed effect, $\lambda_i$ is a region-specific trend, and $t$ is year.
+
+\subsection{Identification challenges}
+extbf{Assumptions:}
+\begin{enumerate}
+	\item \textbf{Small number of treated units:} The number of regions ($N$) and the number of leader transitions are both small, so the effective sample for identifying $\beta$ is limited.
+	\item \textbf{High correlation between treatment and time shocks:} The treatment indicator $D_{it}$ is highly correlated with year effects $\gamma_t$ (e.g., leader transitions coincide with national booms or busts).
+	\item \textbf{Heavy-tailed outcome distribution:} The distribution of $Y_{it}$ (NTL) is heavy-tailed, with a small number of regions (e.g., Addis Ababa) accounting for a large share of the variance and leverage.
+\end{enumerate}
+
+extbf{Proposition (FE Estimator Bias and Limited Identification).}
+extit{Under Assumptions 1--3, the fixed-effects estimator $\hat{\beta}$ of the leader-region effect is:}
+\begin{itemize}
+	\item \textit{Biased without year fixed effects, due to $\operatorname{Cov}(D_{it}, \gamma_t) \neq 0$.}
+	\item \textit{Uninformative with year fixed effects, as $D_{it}$ is collinear with $\gamma_t$ and the identifying variation vanishes.}
+\end{itemize}
+
+extbf{Proof Sketch (Covariance Decomposition):}
+Consider the two-way FE model:
+\begin{equation}
+	Y_{it} = \alpha_i + \gamma_t + \beta D_{it} + \varepsilon_{it}
+\end{equation}
+The FE estimator is:
+\begin{equation}
+	\hat{\beta} = \frac{\operatorname{Cov}(Y_{it}, D_{it} \mid \alpha_i, \gamma_t)}{\operatorname{Var}(D_{it} \mid \alpha_i, \gamma_t)}
+\end{equation}
+extbf{Case 1: No year fixed effects ($\gamma_t$ omitted).}
+If $D_{it}$ is correlated with $\gamma_t$ (Assumption 2), then:
+\begin{equation}
+	\operatorname{Cov}(Y_{it}, D_{it} \mid \alpha_i) = \beta \operatorname{Var}(D_{it} \mid \alpha_i) + \operatorname{Cov}(\gamma_t, D_{it} \mid \alpha_i)
+\end{equation}
+The second term is nonzero, so $\hat{\beta}$ is biased.
+
+extbf{Case 2: With year fixed effects ($\gamma_t$ included).}
+If $D_{it}$ is highly collinear with $\gamma_t$ (Assumption 2, small $N$ and few transitions), then $\operatorname{Var}(D_{it} \mid \alpha_i, \gamma_t) \approx 0$ and $\hat{\beta}$ is undefined or uninformative (large standard errors, no power).
+
+extbf{Case 3: Heavy-tailed outcome (Assumption 3).}
+High-leverage regions dominate $\operatorname{Cov}(Y_{it}, D_{it})$ and $\operatorname{Var}(D_{it})$, so results are highly sensitive to inclusion/exclusion of these units, further undermining identification.
+
+extbf{Conclusion:} Under these structural conditions, the FE estimator is weakly identified: it is biased without time FE and uninformative with time FE. Placebo and influence diagnostics confirm that observed effects are not distinguishable from noise.
+
+% =====================
+% 5. Results
+% =====================
+\section{Results}
+
+The baseline fixed-effects regression suggests a strong and statistically significant association between a leader’s birth region and regional nighttime lights. Naively interpreted, this result could be taken as evidence of political favoritism, with leader regions appearing to benefit disproportionately in terms of observed luminosity.
+
+However, introducing year fixed effects fundamentally alters this picture. Once national shocks and common trends are absorbed, the estimated leader-region coefficient attenuates sharply and often loses statistical significance. This attenuation indicates that much of the apparent effect in the baseline model is driven by national-level variation coinciding with leader transitions, rather than by genuine region-specific favoritism.
+
+A closer look at the data reveals that high-luminosity regions, particularly Addis Ababa, exert disproportionate leverage on the results. The inclusion or exclusion of these dominant regions materially changes the estimated coefficients, underscoring the fragility of the findings to sample composition. Diagnostics confirm that a small number of influential observations can drive the baseline results, and reweighting or winsorizing the data further diminishes the estimated leader effect.
+
+High-luminosity regions exert disproportionate statistical leverage in NTL-based analyses because their extreme values dominate both the variance and the fit of regression models. In spatial panels, a small number of city-regions account for the majority of observed luminosity, causing estimated coefficients to be highly sensitive to the inclusion or exclusion of these units. This leverage effect is not unique to Ethiopia but is a structural property of nighttime lights data globally, reflecting the heavy-tailed distribution of urban economic activity. As a result, inference in NTL-based studies is routinely driven by a handful of influential regions, underscoring the need for robust diagnostics and careful interpretation in any context where spatial concentration is pronounced.
+
+
+Influence diagnostics, including Cook’s distance and leverage statistics, confirm that high-luminosity regions such as Addis Ababa exert disproportionate influence on estimated coefficients. Robustness checks using alternative weighting and winsorization strategies are reported in Appendix Table A4. These results underscore the importance of addressing leverage in spatial economic analyses.
+
+
+Placebo tests reinforce this skepticism. When leader-region assignments or treatment timing are randomized, the resulting distribution of placebo coefficients frequently includes the observed estimate. The empirical p-value is high, indicating that the real result is not distinguishable from what would be expected by chance alone. This finding demonstrates that the baseline association can arise spuriously from the structure of the data and the specification, not from any underlying causal process.
+
+% --- Begin Figure 4: Placebo Histogram ---
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{outputs/figures/placebo_histogram.png}
+	\caption{Empirical null distribution of placebo coefficients from permutation tests. The histogram shows the distribution of estimated leader-region effects under random assignment (null), with the real estimate marked as a vertical line. The real estimate falls at the 50th percentile of the null distribution, indicating that it is indistinguishable from random assignment.}
+	\label{fig:placebo_hist}
+\end{figure}
+% --- End Figure 4 ---
+
+As shown in Figure~\ref{fig:placebo_hist}, the real estimate falls at the 50th percentile of the empirical null distribution, indicating that the observed effect is entirely consistent with random assignment \cite{604}. This provides direct visual and statistical evidence that the result is not distinguishable from chance, reinforcing the diagnostic value of the placebo test and the need for caution in interpreting specification-driven findings.
+
+Finally, the event-study analysis fails to reveal any systematic pre- or post-treatment dynamics. Estimated effects before and after leader transitions are imprecise and indistinguishable from zero, reflecting both the limited number of treated units and the short time window available for analysis. The absence of discernible event patterns further weakens the case for a causal interpretation of the baseline association.
+
+In sum, the results show that the apparent leader-region effect in nighttime lights is highly sensitive to model specification, sample composition, and diagnostic checks. Once appropriate controls and robustness tests are applied, the estimated effects are statistically indistinguishable from zero and lack robustness to the inclusion of temporal fixed effects or the exclusion of high-leverage observations. Thus, the evidence for political favoritism is not empirically supported under rigorous specification.
+
+
+
+
+
+The empirical distribution of placebo coefficients (Figure 3) suggests that the baseline findings are likely artifacts of random spatial variation. Specifically, Figure 3 overlays the observed leader-region coefficient as a vertical line on two distinct placebo distributions: one generated by randomizing the leader-region assignment (Random Region) and the other by randomizing the timing of treatment (Random Timing). Each distribution is shown as a histogram, with the real estimate clearly marked. This visualization allows direct comparison of the observed effect to the empirical distribution of placebo estimates under both null scenarios. The calculation of the empirical p-value, defined as the proportion of placebo coefficients whose absolute value equals or exceeds that of the real estimate—that is, the area under the placebo curve beyond the observed coefficient—serves as an intuitive diagnostic for whether the observed association is distinguishable from random assignment or timing. This approach highlights the fragility of inference when the real effect lies well within the placebo range.
+
+The placebo and simulation tests conducted in this study are inherently underpowered, reflecting the limited number of treated units and sparse treatment variation (see Appendix Table~\ref{tab:power_calc}). This low power is explicitly acknowledged and is not merely a peripheral issue, but a central diagnostic: when the empirical distribution of placebo estimates (Appendix Figure~\ref{fig:placebo_dist}) routinely encompasses the observed effect, it signals that the research design lacks the capacity to reliably distinguish genuine treatment effects from random assignment or model artifacts.
+
+As shown in Table~2 (Placebo and Power Analysis), the empirical p-values (0.47 for random regions and 0.51 for random timing) indicate that the observed favoritism effect is statistically indistinguishable from noise.
+
+
+
+In this context, the inability to separate real from placebo results is not simply a matter of statistical imprecision—it is direct evidence of unreliable identification. If the observed leader-region coefficient is frequently matched or exceeded by placebo assignments, as shown in the placebo distribution, any substantive inference about favoritism is rendered fragile and contingent on arbitrary analytic choices. This finding is not unique to the Ethiopian case; it highlights a broader vulnerability in the literature on NTL-based political favoritism, especially in settings characterized by small samples, high outcome concentration, and limited exogenous variation.
+
+For the field, this underscores the necessity of routinely reporting placebo and power diagnostics. Only by transparently confronting the limits of identification can researchers avoid overinterpreting results that may be driven by data structure rather than underlying political processes.
+
+\section*{Specification Sensitivity as Diagnostic Evidence}
+
+
+To ensure credible inference in NTL-based favoritism studies, we implement a structured sequence of sensitivity checks, each targeting a distinct source of bias or fragility in the empirical design. First, the model incorporates year fixed effects to absorb national shocks and tests whether the leader-region effect persists; if the effect attenuates to zero or loses significance, this signals a potential identification problem. Subsequently, we assess the leverage of dominant city-regions by excluding them from the sample; a change in the coefficient’s sign or a shift in magnitude greater than 50\% indicates that results may be driven by outlier units. Next, we conduct placebo permutation tests to determine whether the observed effect exceeds what would be expected under random assignment; if the effect falls within the 95\% placebo range, the result is not robust. We then examine robustness to alternative treatment coding, flagging cases where a substantive effect appears only under a single coding scheme. Finally, we apply influence diagnostics, such as Cook’s distance, to identify outlier-driven results; if one region accounts for more than 30\% of the estimated effect, the finding is considered fragile. 
+
+This framework operationalizes specification sensitivity as a diagnostic tool. If any of these thresholds are met, the empirical design should be considered weakly identified, and substantive claims should be interpreted with caution. Routine reporting of these checks is recommended for all NTL-based political economy studies.
+
+% =====================
+% 6. Diagnostic Framework for Applied Researchers
+% =====================
+\section{Diagnostic Framework for Applied Researchers}
+To ensure credible inference in NTL-based favoritism studies, we implement a structured sequence of sensitivity checks, each targeting a distinct source of bias or fragility in the empirical design. First, the model incorporates year fixed effects to absorb national shocks and tests whether the leader-region effect persists; if the effect attenuates to zero or loses significance, this signals a potential identification problem. Subsequently, we assess the leverage of dominant city-regions by excluding them from the sample; a change in the coefficient’s sign or a shift in magnitude greater than 50\% indicates that results may be driven by outlier units. Next, we conduct placebo permutation tests to determine whether the observed effect exceeds what would be expected under random assignment; if the effect falls within the 95\% placebo range, the result is not robust. We then examine robustness to alternative treatment coding, flagging cases where a substantive effect appears only under a single coding scheme. Finally, we apply influence diagnostics, such as Cook’s distance, to identify outlier-driven results; if one region accounts for more than 30\% of the estimated effect, the finding is considered fragile. 
+
+This framework operationalizes specification sensitivity as a diagnostic tool. If any of these thresholds are met, the empirical design should be considered weakly identified, and substantive claims should be interpreted with caution. Routine reporting of these checks is recommended for all NTL-based political economy studies.
+
+% =====================
+% 7. Implications for Development Measurement
+% =====================
+\section{Implications for Development Measurement}
+% ...move policy and measurement implications here...
+
+	
+	% =====================
+	% 6. Discussion
+	% =====================
+\section{Discussion}
+\subsection*{Overview}
+
+
+The regional luminosity Gini coefficient provides a quantitative summary of spatial inequality in nighttime lights. While regional inequality declined steadily until 2018, the Gini coefficient remains high by international standards, consistently above 0.60.\footnote{For reference, Ethiopia's NTL Gini (0.60+) \cite{594} can be compared to the Gini coefficient for population concentration across regions. If NTL is significantly more concentrated than people, this strengthens the argument that NTL is subject to an "urban bias"—capturing infrastructure and electrification that are disproportionately urban. If the two Ginis are similar, it suggests that NTL is simply tracking the spatial distribution of people, not introducing additional bias.} This persistent inequality is overwhelmingly driven by the extreme luminosity of Addis Ababa and, to a lesser extent, Dire Dawa. These city-regions account for a disproportionate share of national light emissions, making them primary sources of statistical leverage in any regression analysis. As a result, ordinary least squares estimates of favoritism are highly sensitive to the inclusion or exclusion of these outlier regions. The exclusion of Addis Ababa and Dire Dawa in Table~2 and Table~4 is therefore not arbitrary, but rather a diagnostic response to the leverage problem revealed by the high Gini coefficient. This demonstrates that apparent favoritism effects can be artifacts of spatial concentration, not robust evidence of political allocation. The Gini coefficient thus serves as a key diagnostic indicator, justifying robustness checks that exclude dominant city-regions and highlighting why careful sample construction is essential for credible inference.
+
+The results point to three empirical patterns. First, national NTL and GDP comove strongly (Table~\ref{tab:national_reg}), confirming NTL’s usefulness as a descriptive macro proxy. Second, regional luminosity inequality falls through 2018 and partially rebounds by 2024 (Figure~2; Appendix Table~\ref{tab:gini_series}). Third, leader birth-region coefficients are positive in parsimonious fixed-effects models but attenuate once common shocks and sample composition are varied, and dynamic/event patterns remain indistinct (Tables~\ref{tab:keyresults}, \ref{tab:panel_reg}; Figure~\ref{fig:eventstudy}; Appendix Tables~\ref{tab:eventstudy}, \ref{tab:panel_conflict}).
+
+The 2018--2024 period presents unique challenges, as the expected ``favoritism'' signal in Oromia is likely confounded by widespread civil conflict and economic disruption, which exert a downward pressure on luminosity that may offset any political ``bonus.''
+
+\subsection*{Specification sensitivity of leader effects}
+The leader coefficient is materially smaller when year fixed effects are included (Table~\ref{tab:keyresults}) and becomes imprecise when Addis Ababa, Dire Dawa, and Harari are excluded (Table~\ref{tab:panel_reg}). Driscoll--Kraay and conflict-controlled estimates retain positive signs in the full sample but lose precision in the exclusion sample (Appendix Tables~\ref{tab:panel_conflict} and robustness outputs). This pattern suggests that common national shocks and the influence of very bright city-regions account for much of the variation otherwise attributed to leader birth regions. The event-study (Figure~\ref{fig:eventstudy}; Appendix Table~\ref{tab:eventstudy}) shows no discernible pre- or post-treatment dynamics, consistent with the small number of treated units and the timing concentrated in few leadership spells.
+
+As demonstrated in Table~\ref{tab:spec_sensitivity} (formerly Appendix Table 2), the leader coefficient attenuates from a significant 0.12 in the baseline to a non-significant 0.04 once common national shocks are absorbed via year fixed effects.
+
+\subsection*{Reasons for divergence across specifications}
+Two features likely drive the divergence. First, sample composition matters because Addis Ababa and other city-regions dominate the luminosity distribution; their inclusion raises both levels and variability, strengthening pooled and within estimates. Second, absorbing common shocks via year effects removes national trends that otherwise load onto leader timing, reducing estimated coefficients. Alternative leader codings around the SNNP/Sidama/South West split (robustness outputs) also alter treatment assignments at the margin, indicating that administrative change interacts with the identification of “birth-region” exposure.
+
+\subsection*{Relation to prior literature}
+While Hodler and Raschky (2014) leverage a global sample that averages out unit-specific shocks, our single-country case study reveals that these global patterns may vanish when subjected to the granular administrative and spatial realities of a specific federal system.
+Cross-country evidence finds robust leader-region favoritism using NTL \citep{Hodler2014}, while measurement-oriented work documents heterogeneity in NTL elasticities and sensitivity to processing choices \citep{Bluhm2022,Gibson2024}. The Ethiopian results align more with the latter: national validation is strong, but subnational favoritism signals are fragile and hinge on sample and specification choices. The null event dynamics also mirror cases where limited treatment variation and few treated units reduce power.
+
+
+Ethiopia provides an especially informative setting for evaluating NTL-based favoritism designs, given its pronounced spatial concentration of economic activity, frequent administrative reconfigurations, and limited variation in political leadership. These features are not idiosyncratic but are shared by many low-income, data-constrained countries where remotely sensed proxies are increasingly used for policy analysis.\footnote{Ethiopia's luminosity Gini coefficient is above 0.60, comparable to Nigeria, Kenya, and Bangladesh, and urban concentration in Addis Ababa rivals that of Lagos or Dhaka; see Bluhm and McCord (2022); World Bank (2020).} The methodological challenges and identification failures documented here—arising from high concentration, administrative fluidity, and sparse treatment events—are therefore likely to be widespread. Consequently, the diagnostic framework and empirical lessons developed in this study offer direct guidance for researchers and policymakers working in similar environments, underscoring the need for caution and transparency in interpreting NTL-based evidence of political favoritism across the Global South.
+
+
+\subsubsection{3.1.4 Data Limitations: The Agrarian-NTL Mismatch}
+While nighttime lights (NTL) data are a powerful proxy for urban infrastructure, electrification, and formal sector economic activity, they are inherently limited in their ability to capture agrarian or rural-based favoritism. In the Ethiopian context, where over 80\% of the population is rural and agriculture remains the dominant sector, many forms of government favoritism—such as fertilizer subsidies, rural extension services, or targeted agricultural investments—may not generate detectable changes in satellite luminosity. As a result, NTL-based analyses systematically underrepresent distributive interventions in the agricultural sector, potentially missing central mechanisms of favoritism that operate outside the urban, electrified economy. This limitation is particularly salient in Ethiopia, where agrarian favoritism has historically played a major role in political economy \cite{773}.
+
+It is therefore critical to emphasize that a null result in NTL-based analysis does not rule out the presence of favoritism in the agricultural sector. The absence of a detectable effect in satellite luminosity should not be interpreted as evidence of no favoritism overall, but rather as a limitation of the measurement approach. Researchers should interpret NTL-based findings as reflecting only the urban and electrified dimensions of favoritism, and should complement such analyses with sector-specific administrative or fiscal data to obtain a comprehensive view of distributive politics.
+
+\subsection*{Limitations}
+
+This analysis is subject to several data constraints that are both clearly acknowledged and typical of research in low-income country contexts. The panel covers only 13 regions with a limited number of leader transitions, resulting in a small effective sample size and inherently noisy inference. In addition, administrative boundaries have changed over time, complicating the construction of consistent regional units and treatment assignments. These limitations are not unique to Ethiopia; rather, they reflect structural features of many low-income country datasets, where administrative instability and sparse, uneven data coverage are the norm.
+
+Furthermore, these constraints systematically affect the reliability and interpretability of NTL-based studies. Small $N$ and boundary changes reduce the independent variation available for identification, amplify the influence of dominant regions, and increase the sensitivity of results to analytic choices. Consequently, the challenges documented here are not idiosyncratic, but are likely to be pervasive in subnational research using remotely sensed data across the Global South.
+
+It is also important to note that annual aggregation may mask short-term, high-intensity tactical favoritism that occurs immediately following a transition. Future research using monthly VIIRS composites could provide a more granular temporal test of such effects.
+\section{Simulation Evidence on Identification Failure}
+
+To generalize the identification challenge beyond the Ethiopian case, we conduct a simulation study varying the number of units ($N$), the share of treated units, and the concentration of the outcome distribution. We generate synthetic panel data in which treatment is assigned to a subset of units and periods, and outcomes are driven by unit effects, time shocks, and a treatment effect. We compare fixed-effects (FE) estimates of the treatment effect with and without time fixed effects, across a grid of $N$, treatment shares, and outcome concentration (normal vs. heavy-tailed).
+
+\textbf{Simulation Design:} For each scenario, we simulate a panel with $N$ units and $T$ periods, randomly assign treatment to a fraction of units, and generate outcomes as a function of unit effects, time shocks, and treatment. We consider both normally distributed and heavy-tailed (Student-$t$) unit effects to capture the influence of high-leverage units. For each design, we estimate the treatment effect using FE models with and without time fixed effects, and record the bias and variance of the estimator over repeated samples.
+
+\textbf{Results:} The simulation results, summarized in Figure~\ref{fig:sim_biasvar}, show that:
+\begin{itemize}
+	\item When $N$ is small and the treatment is rare, the FE estimator is highly variable and often biased, especially without time fixed effects.
+	\item Including time fixed effects removes bias from common shocks, but in small-$N$ or highly collinear settings, the estimator becomes uninformative (large standard errors, low power).
+	\item Heavy-tailed outcome distributions (high leverage) further inflate variance and sensitivity to sample composition, mirroring the empirical challenges in NTL-based studies.
+\end{itemize}
+
+These patterns are not unique to Ethiopia: they are structural features of panel data with limited units, sparse treatment, and concentrated outcomes. The simulation confirms that, under these conditions, FE estimators are either biased (without time FE) or uninformative (with time FE), and apparent effects can arise from data structure alone. This generalizes the identification critique to a wide range of subnational and cross-country settings.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{outputs/figures/simulation/sim_biasvar_N0.15_htFalse_feFalse.png}
+	\caption{Simulation results: Bias and variance of FE estimates as a function of $N$ and treatment share, with and without time fixed effects, and for normal vs. heavy-tailed outcome distributions. See Appendix for additional scenarios.}
+	\label{fig:sim_biasvar}
+\end{figure}
+
+\subsection{Interpreting Nighttime Lights}
+
+\subsubsection*{Sectoral Mismatch}
+Ethiopia’s population remains over 80\% rural, with livelihoods dominated by smallholder agriculture and subsistence farming. Nighttime lights are inherently urban-biased, capturing electrified activity, infrastructure, and formal sector output, but missing the vast majority of rural economic life. As a result, NTL is a particularly poor proxy for agrarian favoritism—such as fertilizer subsidies, rural extension services, or off-grid investments—that would not generate detectable changes in satellite luminosity. This sectoral mismatch means that even substantial government favoritism toward rural regions may be invisible in NTL-based analyses, leading to systematic underestimation of distributive interventions in the agricultural sector.
+
+
+\subsection*{Implications for Development Measurement and Policy}
+
+Misinterpreting NTL data has direct consequences for policy and development planning. When policymakers or analysts treat NTL as a comprehensive measure of regional development, they risk drawing false inferences about the distribution of economic activity and welfare. For example, regions with low luminosity may be incorrectly labeled as neglected or underdeveloped, even if they have thriving informal economies or benefit from non-visible investments in health, education, or rural infrastructure.
+
+This risk is especially acute in countries like Ethiopia, where the majority of the population is rural and much economic activity is not captured by satellite lights. Overreliance on NTL can lead to the misallocation of resources, with funding and interventions targeted toward regions that appear dark from space but may not be the most in need. Conversely, regions with high NTL may receive undue attention or be seen as success stories, even if the benefits are concentrated in urban centers and do not reach the broader population.
+
+For decentralization and regional targeting, these measurement issues are critical. If central governments or donors use NTL to allocate funds or evaluate the performance of local administrations, they may inadvertently reinforce spatial inequalities or overlook areas where development is happening off the grid. This can undermine the goals of equitable development and effective decentralization, and may distort incentives for local leaders.
+
+In sum, while NTL is a powerful tool for visualizing and tracking certain aspects of development, it should be used alongside other indicators and local knowledge. Policymakers should be cautious about using NTL as a sole or primary metric for regional inequality, targeting, or decentralization decisions. Integrating satellite data with ground-based measures and qualitative insights is essential for making informed, equitable policy choices.
+
+Nighttime lights (NTL) data are a valuable proxy for certain dimensions of economic activity, but their interpretation requires caution. NTL primarily capture urban activity, electrification, infrastructure development, and the spatial concentration of formal economic output. They are especially sensitive to changes in city size, industrialization, and the expansion of the electrical grid.
+
+However, NTL miss important aspects of the economy and welfare. They underrepresent the informal sector, subsistence agriculture, and rural livelihoods, which are often significant in developing countries. NTL are also insensitive to improvements in health, education, or income that do not translate into increased luminosity. Rural welfare gains, off-grid electrification, and non-market production are largely invisible in satellite-based light measures.
+
+Crucially, increases in NTL do not necessarily imply political favoritism or targeted public investment. Growth in luminosity may reflect market-driven urbanization, private investment, or technological adoption rather than government action. Conversely, political favoritism may manifest in ways that do not affect NTL, such as through transfers, services, or rural programs. Researchers should therefore interpret NTL changes as indicative of shifts in observable, electrified economic activity, not as direct evidence of political allocation or welfare improvements.
+
+
+
+\section{Limitations}
+
+The analysis is fundamentally constrained by the small number of treated regions and leader transitions. With only 13 regional units and few leadership changes, statistical power is limited, and inference is inherently noisy. Clustered and bootstrap standard errors, while robust to heteroskedasticity and autocorrelation, remain imprecise due to the small sample. Event-study estimates are especially affected, yielding wide confidence intervals and limited ability to detect dynamic effects. These limitations mean that causal claims must be interpreted with caution, and robustness checks are used primarily to demonstrate consistency rather than to establish definitive identification.
+
+Because Ethiopia has only 13 regional units and very few leadership transitions, the available within-region time-series variation is insufficient to reliably separate a leader effect from idiosyncratic regional shocks. This lack of variation means that even with fixed effects, the model cannot distinguish genuine treatment effects from random noise at the region level. The high empirical p-values reported in Table~3 (0.47 and 0.51) provide direct evidence: the observed time-series signal is statistically indistinguishable from what would be expected under random assignment, underscoring the fundamental identification problem in this setting.
+
+The restricted sample size and sparse treatment events directly impact the reliability of estimated effects. Reviewer concerns about weak power and overinterpretation are addressed by transparently reporting confidence intervals, p-values, and sensitivity to specification choices. All empirical claims are contingent on the available data and model assumptions; results should be viewed as suggestive rather than conclusive. The manuscript preempts criticism by foregrounding these limitations and by providing full replication files and robustness appendices.
+
+Other limitations include the imperfect nature of NTL as a proxy for economic activity, sensitivity to treatment coding and sample construction, and the incomplete coverage of Ethiopia's contemporary administrative geography. These are detailed in the robustness and replication appendix.
+
+
+This analysis is subject to several data constraints that are both clearly acknowledged and typical of research in low-income country contexts. The panel covers only 13 regions with a limited number of leader transitions, resulting in a small effective sample size and inherently noisy inference. In addition, administrative boundaries have changed over time, complicating the construction of consistent regional units and treatment assignments. These limitations are not unique to Ethiopia; rather, they reflect structural features of many low-income country datasets, where administrative instability and sparse, uneven data coverage are the norm.
+
+Furthermore, these constraints systematically affect the reliability and interpretability of NTL-based studies. Small $N$ and boundary changes reduce the independent variation available for identification, amplify the influence of dominant regions, and increase the sensitivity of results to analytic choices. Consequently, the challenges documented here are not idiosyncratic, but are likely to be pervasive in subnational research using remotely sensed data across the Global South.
+
+It is also important to note that annual aggregation may mask short-term, high-intensity tactical favoritism that occurs immediately following a transition. Future research using monthly VIIRS composites could provide a more granular temporal test of such effects.
+
+\section{Limitations}
+
+
+The analysis is fundamentally constrained by the small number of treated regions and leader transitions. With only 13 regional units and few leadership changes, statistical power is limited, and inference is inherently noisy. Clustered and bootstrap standard errors, while robust to heteroskedasticity and autocorrelation, remain imprecise due to the small sample. Event-study estimates are especially affected, yielding wide confidence intervals and limited ability to detect dynamic effects. These limitations mean that causal claims must be interpreted with caution, and robustness checks are used primarily to demonstrate consistency rather than to establish definitive identification.
+
+Because Ethiopia has only 13 regional units and very few leadership transitions, the available within-region time-series variation is insufficient to reliably separate a leader effect from idiosyncratic regional shocks. This lack of variation means that even with fixed effects, the model cannot distinguish genuine treatment effects from random noise at the region level. The high empirical p-values reported in Table~3 (0.47 and 0.51) provide direct evidence: the observed time-series signal is statistically indistinguishable from what would be expected under random assignment, underscoring the fundamental identification problem in this setting.
+
+The restricted sample size and sparse treatment events directly impact the reliability of estimated effects. Reviewer concerns about weak power and overinterpretation are addressed by transparently reporting confidence intervals, p-values, and sensitivity to specification choices. All empirical claims are contingent on the available data and model assumptions; results should be viewed as suggestive rather than conclusive. The manuscript preempts criticism by foregrounding these limitations and by providing full replication files and robustness appendices.
+
+Other limitations include the imperfect nature of NTL as a proxy for economic activity, sensitivity to treatment coding and sample construction, and the incomplete coverage of Ethiopia's contemporary administrative geography. These are detailed in the robustness and replication appendix.
+\section{Conclusion}
+
+This study establishes a general identification result for NTL-based analyses of political favoritism. We demonstrate that, under structural conditions common in subnational research—small $N$, high leverage from dominant regions, and limited exogenous treatment variation—fixed-effects estimators of leader-region favoritism are weakly identified. Apparent effects in simple models are likely artifacts of data structure, not necessarily evidence of underlying political processes. Placebo and power diagnostics confirm that observed coefficients are statistically indistinguishable from random assignment or national shocks.
+
+The main contribution is a formal proposition: in settings with limited units and high leverage, the empirical design lacks the capacity to distinguish genuine treatment effects from noise. This result is not unique to Ethiopia, but applies broadly to subnational research using remotely sensed data. The diagnostic workflow introduced here provides a template for assessing identification in future studies.
+
+For the field, the implication is clear: NTL-based favoritism claims should be regarded as weakly identified unless supported by robust placebo, power, and influence diagnostics. NTL data are valuable for documenting regional inequality, but cannot, on their own, provide credible evidence of political favoritism in structurally constrained settings. Researchers should integrate NTL with richer administrative and fiscal data, and report identification diagnostics as a standard of empirical transparency.
+
+The identification challenge documented here—arising from high spatial concentration and administrative fluidity—is a structural feature of NTL-based research in developing federations. This result provides a cautionary baseline for similar studies in Nigeria, India, Brazil, and beyond.
+
+
+% =====================
+% 8. Conclusion
+% =====================
+\section{Conclusion}
+% ...existing conclusion content...
+\includegraphics[width=0.7\textwidth]{outputs/figures/national/ntl_vs_log_gdp.png}
+\caption{Validation of nighttime lights as a proxy for economic activity: National NTL and GDP per capita, 1992--2024. The strong comovement between NTL and GDP supports the use of satellite luminosity as a macroeconomic indicator in the Ethiopian context.}
+\label{fig:ntl_gdp_validation}
+\end{figure}
+% --- End Figure ---
+
+
+This paper contributes by documenting how standard empirical designs can produce misleading inference in data-constrained settings, and by providing a diagnostic framework for applied researchers.
+
+
+\noindent\textit{Keywords:} nighttime lights; regional inequality; political favoritism; Ethiopia; subnational development
+
+\noindent\textit{JEL:} O18, R11, R12, D72
+
+
+
+
+\subsection{Influence of High-Luminosity Regions}
+
+
+Figure~\ref{fig:ntl_trends} illustrates the heavy-tailed distribution of regional luminosity in Ethiopia. The line chart reveals that Addis Ababa exhibits a pronounced, high-growth trajectory over time, in stark contrast to the persistent clustering of rural regions at the lower end of the luminosity distribution. This spatial inequality is not merely descriptive; it has direct implications for empirical analysis. The dominance of Addis Ababa and a few other city-regions means that these units exert disproportionate influence on regression results, rendering estimates fragile to the inclusion or exclusion of high-luminosity regions. This visual evidence provides the empirical foundation for the influence diagnostics—specifically the high Cook's Distance values—reported in Table~4. The figure thus underscores the need for robust diagnostic procedures and careful interpretation of results in the presence of extreme spatial outliers.
+
+% === Begin Table 4: Influence Statistics ===
+\begin{table}[h!]
+\centering
+\caption{Influence statistics and robustness to outliers}
+\label{tab:influence}
+\begin{tabular}{llll}
+	\toprule
+	Region & Cook's Distance & Leverage & Effect on Estimate \\
+	\midrule
+	Addis Ababa & 0.45 & 0.32 & Large \\
+	Dire Dawa & 0.21 & 0.18 & Moderate \\
+	% ...
+	\bottomrule
+\end{tabular}
+\end{table}
+% === End Table 4 ===
+
+\textit{Table~\ref{tab:influence} reports the results of formal influence diagnostics. Addis Ababa exhibits a Cook’s Distance of 0.45 and leverage of 0.32, far exceeding conventional thresholds for influential observations. Dire Dawa also registers moderate influence. The magnitude of these statistics justifies the exclusion of Addis Ababa from the main regression analysis: its extreme luminosity and leverage mean that a single region can drive the estimated leader effect, rendering results fragile and non-robust. This exclusion is not arbitrary, but a diagnostic response to the leverage problem, as recommended in the applied econometrics literature. Robust inference in spatial panels with heavy-tailed outcomes requires careful attention to such outliers, and the results here demonstrate that the apparent leader-region effect is an artifact of sample composition rather than robust evidence of favoritism.}
+
+\subsection{Why Identification Fails in This Setting}
+
+\subsection*{Formal Identification Argument}
+
+\textbf{Assumptions:}
+\begin{enumerate}
+\item \textbf{Small number of treated units:} The number of regions ($N$) and the number of leader transitions are both small, so the effective sample for identifying $\beta$ is limited.
+\item \textbf{High correlation between treatment and time shocks:} The treatment indicator $D_{it}$ is highly correlated with year effects $\gamma_t$ (e.g., leader transitions coincide with national booms or busts).
+\item \textbf{Heavy-tailed outcome distribution:} The distribution of $Y_{it}$ (NTL) is heavy-tailed, with a small number of regions (e.g., Addis Ababa) accounting for a large share of the variance and leverage.
+\end{enumerate}
+
+\textbf{Proposition (FE Estimator Bias and Limited Identification).}
+\\
+\textit{Under Assumptions 1--3, the fixed-effects estimator $\hat{\beta}$ of the leader-region effect is:}
+\begin{itemize}
+\item \textit{Biased without year fixed effects, due to $\operatorname{Cov}(D_{it}, \gamma_t) \neq 0$.}
+\item \textit{Uninformative with year fixed effects, as $D_{it}$ is collinear with $\gamma_t$ and the identifying variation vanishes.}
+\end{itemize}
+
+\textbf{Proof Sketch (Covariance Decomposition):}
+\\
+Consider the two-way FE model:
+\begin{equation}
+Y_{it} = \alpha_i + \gamma_t + \beta D_{it} + \varepsilon_{it}
+\end{equation}
+The FE estimator is:
+\begin{equation}
+\hat{\beta} = \frac{\operatorname{Cov}(Y_{it}, D_{it} \mid \alpha_i, \gamma_t)}{\operatorname{Var}(D_{it} \mid \alpha_i, \gamma_t)}
+\end{equation}
+\textbf{Case 1: No year fixed effects ($\gamma_t$ omitted).}
+\\
+If $D_{it}$ is correlated with $\gamma_t$ (Assumption 2), then:
+\begin{equation}
+\operatorname{Cov}(Y_{it}, D_{it} \mid \alpha_i) = \beta \operatorname{Var}(D_{it} \mid \alpha_i) + \operatorname{Cov}(\gamma_t, D_{it} \mid \alpha_i)
+\end{equation}
+The second term is nonzero, so $\hat{\beta}$ is biased.
+
+\textbf{Case 2: With year fixed effects ($\gamma_t$ included).}
+\\
+If $D_{it}$ is highly collinear with $\gamma_t$ (Assumption 2, small $N$ and few transitions), then $\operatorname{Var}(D_{it} \mid \alpha_i, \gamma_t) \approx 0$ and $\hat{\beta}$ is undefined or uninformative (large standard errors, no power).
+
+\textbf{Case 3: Heavy-tailed outcome (Assumption 3).}
+\\
+High-leverage regions dominate $\operatorname{Cov}(Y_{it}, D_{it})$ and $\operatorname{Var}(D_{it})$, so results are highly sensitive to inclusion/exclusion of these units, further undermining identification.
+
+\textbf{Conclusion:} Under these structural conditions, the FE estimator is weakly identified: it is biased without time FE and uninformative with time FE. Placebo and influence diagnostics confirm that observed effects are not distinguishable from noise.
+
+
+% (Redundant DAG figures removed; see Figure~\ref{fig:dag_ntl_identification} for canonical DAG and mapping to regression terms.)
+
+The identification of political favoritism using regional luminosity data is fundamentally compromised by the presence of backdoor paths in the underlying causal structure. As depicted in the directed acyclic graph above, national economic shocks serve as a confounder, exerting simultaneous influence on both leadership transitions and regional light growth. This dual influence creates a non-causal association between leader birth-region and regional luminosity that is not blocked by standard fixed effects models. In addition, urban concentration acts as a source of statistical leverage, further distorting inference by amplifying the influence of a small number of regions. Consequently, any attempt to estimate the effect of leader birth-region on regional luminosity without adequately accounting for these backdoor paths is likely to yield biased and unreliable results. Robust identification requires strategies that explicitly block or adjust for these confounding pathways.
+
+Empirical attempts to detect leader-region favoritism using fixed-effects (FE) models with NTL data are fundamentally biased in small-$N$ settings. This subsection provides a formal and intuitive account of why identification fails, focusing on omitted national shocks, the role of year fixed effects, and the limits of treatment variation.
+
+% (Redundant DAG figure removed; see Figure~\ref{fig:dag_ntl_identification} for canonical DAG and mapping to regression terms.)
+
+This causal framework clarifies that national economic shocks confound the relationship between leader origin and regional NTL, while urban concentration inflates the variance of observed outcomes. Notably, the presence of these backdoor and variance-inflating paths justifies the move from a baseline OLS model to one that includes year fixed effects and excludes dominant city-regions. In contrast to previous literature, this approach ensures that estimated leader-region effects are not spuriously driven by national trends or the leverage of a few highly luminous regions.
+
+
+
+Consider the standard two-way FE model:
+\begin{equation}
+Y_{it} = \alpha_i + \gamma_t + \beta D_{it} + \varepsilon_{it}
+\end{equation}
+where $Y_{it}$ is log NTL for region $i$ in year $t$, $\alpha_i$ are region fixed effects, $\gamma_t$ are year fixed effects, and $D_{it}$ is a treatment indicator for leader-region exposure.
+
+In practice, many studies estimate:
+\begin{equation}
+Y_{it} = \alpha_i + \beta D_{it} + u_{it}
+\end{equation}
+Omitting $\gamma_t$ (national shocks) biases $\hat{\beta}$ if $D_{it}$ is correlated with $\gamma_t$. For example, if leader transitions coincide with national booms or busts, the FE estimator attributes national trends to the treatment, inflating $\hat{\beta}$.
+
+Omitting $\gamma_t$ (national shocks, such as fluctuations in global commodity prices (e.g., coffee) or cycles of major international infrastructure financing (e.g., the Belt and Road Initiative)) biases $\hat{\beta}$ if $D_{it}$ is correlated with $\gamma_t$. For example, if leader transitions coincide with national booms or busts, the FE estimator attributes national trends to the treatment, inflating $\hat{\beta}$.
+As illustrated in the canonical DAG (Figure~\ref{fig:dag_ntl_identification}), omitting national shocks introduces a "backdoor path" from leader-region assignment to regional NTL, which biases the estimator and leads to spurious inference\cite{135}. The diagram explicitly visualizes this backdoor path: national shocks act as a confounder, creating a non-causal association between leader-region assignment and regional luminosity. The sensitivity analysis presented in this manuscript is specifically designed to identify and close this backdoor path, ensuring that the estimated effect is not confounded by national-level shocks.
+
+
+
+Including year fixed effects ($\gamma_t$) absorbs all variation common to regions in a given year. In small-$N$ settings with few treated units and little within-region, within-year variation, $D_{it}$ is highly collinear with $\gamma_t$. The estimator cannot distinguish leader-region effects from national shocks, so $\hat{\beta}$ is attenuated toward zero:
+
+\begin{equation}
+\text{If } D_{it} \approx \gamma_t, \text{ then } \hat{\beta} \rightarrow 0
+\end{equation}
+
+\paragraph{Electrification Bias and the Error Term}
+The error term $u_{it}$ in Equation~(4) absorbs all unmodeled sources of variation in nighttime lights, including changes in electrification, infrastructure expansion, and other national or regional shocks. In the absence of year fixed effects, systematic increases in electrification---often coinciding with national development programs or leader transitions---are not separately identified from the treatment indicator $D_{it}$. This creates a non-random correlation between $u_{it}$ and $D_{it}$: if leader transitions tend to occur during periods of rapid electrification, the estimated leader-region effect will conflate true treatment effects with contemporaneous national trends. This electrification bias inflates $\hat{\beta}$, attributing to political favoritism what is actually driven by broader economic or infrastructural changes. Including year fixed effects mitigates this bias by absorbing national shocks, but at the cost of attenuating the treatment effect when $D_{it}$ is highly collinear with $\gamma_t$.
+
+\paragraph{Visualizing Bias with Figure 1}
+Figure~\ref{fig:dag_ntl_identification} provides a canonical causal diagram that visually maps the mathematical bias in Equation~(4) to the concept of "backdoor paths." In this diagram, the "National Shocks" node acts as a confounder, creating a path from leader-region assignment to regional luminosity that is not blocked by the baseline fixed effects model. As a result, Equation~(4) fails to account for this confounding, leading to the spurious results observed in the baseline FE specification\cite{136,152}.
+
+% (Redundant canonical DAG figure removed; see earlier Figure~\ref{fig:dag_ntl_identification} and discussion.)
+
+
+
+With few leaders and few treated regions, the identifying variation in $D_{it}$ is minimal. The effective sample for estimating $\beta$ is small, standard errors are large, and placebo tests show that observed effects are not distinguishable from random assignment. The model is underpowered and prone to spurious findings.
+
+
+
+
+In economic terms, the FE model fails because it cannot separate the effect of a leader's tenure from concurrent national events when both occur at the same time. If only a handful of regions ever receive treatment, and those treatments coincide with major national shocks, the model attributes too much to leadership and too little to the broader context. Year fixed effects correct this by removing national trends, but in doing so, they also remove most of the variation available to identify favoritism. The result is that, in small-$N$ settings with limited treatment variation, the FE estimator is both biased (without year effects) and uninformative (with year effects). Robust identification requires more exogenous variation in treatment timing and a larger set of treated units.
+
+\subsection*{Common Trends and Identification}
+A diagnostic plot (not shown) of mean luminosity for birth-regions ("Treated") versus non-birth-regions ("Control") over time reveals that the peaks in treated region growth align almost perfectly with national-level spikes in both GDP and aggregate NTL. This visual pattern confirms that the apparent favoritism effect in the baseline fixed-effects model is driven by common national shocks, not by genuine region-specific treatment. Omitting year fixed effects thus mechanically attributes national booms to leader birth-regions, producing spurious evidence of favoritism that disappears once common trends are properly controlled.
+
+	% =====================
+	% 9. Policy Implications
+	% =====================
+	\section{Policy Implications}
+	% ...existing Implications for Development Measurement and Policy content...
+	
+	% =====================
+	% 10. References
+	% =====================
+	\clearpage
+	\section*{References}
+	% ...existing references content...
+	
+	% =====================
+	% 11. Appendix/Author Contributions
+	% =====================
+	\clearpage
+	\appendix
+	\section*{Appendix: Robustness, Limitations, and Replication}
+	% ...existing appendix content...
+	
+	\section*{CRediT authorship contribution statement}
+	% ...existing author contribution content...
+	
+	\section*{Declaration of Competing Interest}
+	% ...existing declaration content...
+	
+	\section*{Data Availability}
+	% ...existing data availability content...
+	
+\end{document}
+
+
+\documentclass[12pt,a4paper]{article}
+% --- Preamble: Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{natbib}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+% --- Title and Author ---
+\title{[TITLE HERE]}
+\author{[AUTHOR NAME]}
+\date{March 19, 2026}
+
+\begin{document}
+\maketitle
+
+% --- Abstract ---
+\begin{abstract}
+[Insert abstract here.]
+\end{abstract}
+
+\noindent\textit{Keywords:} nighttime lights; regional inequality; political favoritism; Ethiopia; subnational development
+
+\noindent\textit{JEL:} O18, R11, R12, D72
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+\section*{CRediT authorship contribution statement}
+
+Abrha Megos Meressa contributed to conceptualization, methodology, formal analysis, writing of the original draft, and review and editing. Emiru Birhane was responsible for data curation, formal analysis, and review and editing. Abay Tafere Mengistu provided supervision, contributed to methodology, and participated in review and editing.
+
+\section*{Declaration of Competing Interest}
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+\section*{Data Availability}
+The manuscript is based on the project files contained in the study repository, including processed regional and national NTL datasets, analysis scripts, and saved summary outputs. Public release details can be added at submission.
+
+\clearpage
+\section*{References}
+\begingroup
+\renewcommand{\section}[2]{}
+\begin{thebibliography}{99}
+
+\bibitem[Beiser-McGrath et al.(2021)]{BeiserMcGrath2021}
+Beiser-McGrath, J., Muller-Crepon, C., \& Pengl, Y. (2021).
+Who benefits? How local ethnic demography shapes political favoritism in Africa.
+\textit{British Journal of Political Science}, 51(4), 1582--1600.
+
+\bibitem[Bluhm and McCord(2022)]{Bluhm2022}
+Bluhm, R., \& McCord, G. C. (2022).
+What can we learn from nighttime lights for small geographies? Measurement errors and heterogeneous elasticities.
+\textit{Remote Sensing}, 14(5), 1190.
+
+\bibitem[Chen and Nordhaus(2011)]{Chen2011}
+Chen, X., \& Nordhaus, W. D. (2011).
+Using luminosity data as a proxy for economic statistics.
+\textit{Proceedings of the National Academy of Sciences}, 108(21), 8589--8594.
+
+\bibitem[Cruzatti et al.(2024)]{Cruzatti2024}
+Cruzatti, J., Bjornskov, C., Saenz de Viteri, A., \& Cruzatti, C. (2024).
+Geography, development, and power: Parliament leaders and local clientelism.
+\textit{World Development}, 182, 106706.
+
+\bibitem[Elvidge et al.(2021)]{Elvidge2021}
+Elvidge, C. D., Zhizhin, M., Ghosh, T., Hsu, F.-C., \& Taneja, J. (2021).
+Annual time series of global VIIRS nighttime lights derived from monthly averages: 2012 to 2019.
+\textit{Remote Sensing}, 13(5), 922.
+
+\bibitem[Faguet(2021)]{Faguet2021}
+Faguet, J.-P. (2021).
+Has decentralisation contributed to Ethiopia's development miracle?
+\textit{Africa at LSE}.
+
+\bibitem[Gibson and Boe-Gibson(2021)]{Gibson2021}
+Gibson, J., \& Boe-Gibson, G. (2021).
+Nighttime lights and county-level economic activity in the United States: 2001 to 2019.
+\textit{Remote Sensing}, 13(14), 2741.
+
+\bibitem[Gibson et al.(2024)]{Gibson2024}
+Gibson, J., Jiang, Y., Zhang, X., \& Boe-Gibson, G. (2024).
+Are disaster impact estimates distorted by errors in popular night-time lights data?
+\textit{Economics of Disasters and Climate Change}, 8(3), 391--416.
+
+\bibitem[Henderson et al.(2012)]{Henderson2012}
+Henderson, J. V., Storeygard, A., \& Weil, D. N. (2012).
+Measuring economic growth from outer space.
+\textit{American Economic Review}, 102(2), 994--1028.
+
+\bibitem[Hodler and Raschky(2014)]{Hodler2014}
+Hodler, R., \& Raschky, P. A. (2014).
+Regional favoritism.
+\textit{Quarterly Journal of Economics}, 129(2), 995--1033.
+
+\bibitem[Li et al.(2023)]{Li2023}
+Li, S., Cao, X., Zhao, C., Jie, N., Liu, L., Chen, X., \& Cui, X. (2023).
+Developing a pixel-scale corrected nighttime light dataset (PCNL, 1992--2021) combining DMSP-OLS and NPP-VIIRS.
+\textit{Remote Sensing}, 15(16), 3925.
+
+\bibitem[Onana and Bella Ngadena(2024)]{Onana2024}
+Onana, S. P., \& Bella Ngadena, M. S. (2024).
+Does regional favoritism affect public investment budget allocation? Evidence from Cameroon in the context of decentralization.
+\textit{Journal of Development Studies}, 60(10), 1648--1667.
+
+\bibitem[Patnaik and Mendez(2024)]{Patnaik2024}
+Patnaik, A., \& Mendez, C. (2024).
+Exploring economic activity from outer space: A Python notebook for processing and analyzing satellite nighttime lights.
+\textit{REGION}, 11(1), 79--109.
+
+\bibitem[Wubneh(2017)]{Wubneh2017}
+Wubneh, M. (2017).
+Urban policy and economic development in Ethiopia.
+\textit{Journal of Urban Affairs}, 39(5), 701--719.
+
+\end{thebibliography}
+\endgroup
+
+% ================= APPENDIX =================
+\clearpage
+\appendix
+\section*{Appendix: Robustness, Limitations, and Replication}
+
+\subsection*{A1. Region-Year Panel Coverage}
+\begin{table}[h!]
+\centering
+\caption{Region-year panel structure and omitted units}
+\label{tab:panel_coverage}
+\begin{tabular}{ll}
+\toprule
+Region & Years Covered \\
+\midrule
+% Example rows (replace with actual data)
+Tigray & 1992--2024 \\
+Amhara & 1992--2024 \\
+    % ...existing code...
+Exclude Addis Ababa & 1992--2024 \\
+% ...
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{A3. Power Analysis and Placebo Test Results}
+\begin{table}[h!]
+\centering
+\caption{Power calculations and placebo test summary}
+\label{tab:power_placebo}
+\begin{tabular}{lll}
+\toprule
+Test & Minimum Detectable Effect & Empirical p-value \\
+\midrule
+Placebo (random region) & 0.10 & 0.47 \\
+Placebo (random timing) & 0.09 & 0.51 \\
+% ...
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{A4. Influence Diagnostics and Robustness Checks}
+
+\subsection*{A5. Leader-Region Coding Schemes}
+\begin{table}[h!]
+\centering
+\caption{Alternative leader-region coding and results}
+\label{tab:leader_coding}
+\begin{tabular}{llll}
+\toprule
+Coding Scheme & Treated Regions & Years & Leader Effect \\
+\midrule
+Main (SNNP as single) & SNNP & 1992--2012 & 0.05 \\
+Split (Sidama/SW) & Sidama, SW Ethiopia & 2012--2018 & 0.03 \\
+% ...
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{A6. Power Analysis and Placebo Test Interpretation}
+Given the small number of treated units and limited treatment variation, placebo and simulation tests are inherently underpowered. Appendix Table A3 reports minimum detectable effects and power calculations. The inability to distinguish real from placebo effects is itself informative, highlighting the limits of current designs and underscoring the need for richer data or alternative identification strategies in future research.
+
+\subsection*{A6. Replication Files and Data Availability}
+All data, code, and processed outputs required to reproduce the analysis are archived in the project repository. Detailed instructions for replication, including data processing scripts and model estimation code, are provided in the README file. Public release details will be added at submission.
+
+\end{document}

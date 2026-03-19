@@ -1,0 +1,65 @@
+Full sample: entity+year FE (Driscoll–Kraay)
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:                  lnNTL   R-squared:                        0.0051
+Estimator:                   PanelOLS   R-squared (Between):              0.0111
+No. Observations:                 429   R-squared (Within):               0.0098
+Date:                Tue, Mar 17 2026   R-squared (Overall):              0.0111
+Time:                        17:42:41   Log-likelihood                   -743.97
+Cov. Estimator:        Driscoll-Kraay                                           
+                                        F-statistic:                      1.9471
+Entities:                          13   P-value                           0.1637
+Avg Obs:                       33.000   Distribution:                   F(1,383)
+Min Obs:                       33.000                                           
+Max Obs:                       33.000   F-statistic (robust):             7.1197
+                                        P-value                           0.0079
+Time periods:                      33   Distribution:                   F(1,383)
+Avg Obs:                       13.000                                           
+Min Obs:                       13.000                                           
+Max Obs:                       13.000                                           
+                                                                                
+                               Parameter Estimates                               
+=================================================================================
+               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------
+Leader_region     0.3869     0.1450     2.6683     0.0079      0.1018      0.6720
+=================================================================================
+
+F-test for Poolability: 13.488
+P-value: 0.0000
+Distribution: F(44,383)
+
+Included effects: Entity, Time
+
+Excluding Addis/Dire/Harari
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:                  lnNTL   R-squared:                        0.0022
+Estimator:                   PanelOLS   R-squared (Between):              0.0091
+No. Observations:                 330   R-squared (Within):               0.0068
+Date:                Tue, Mar 17 2026   R-squared (Overall):              0.0089
+Time:                        17:42:41   Log-likelihood                   -588.95
+Cov. Estimator:        Driscoll-Kraay                                           
+                                        F-statistic:                      0.6450
+Entities:                          10   P-value                           0.4226
+Avg Obs:                       33.000   Distribution:                   F(1,287)
+Min Obs:                       33.000                                           
+Max Obs:                       33.000   F-statistic (robust):             4.9594
+                                        P-value                           0.0267
+Time periods:                      33   Distribution:                   F(1,287)
+Avg Obs:                      10.0000                                           
+Min Obs:                      10.0000                                           
+Max Obs:                      10.0000                                           
+                                                                                
+                               Parameter Estimates                               
+=================================================================================
+               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------
+Leader_region     0.2404     0.1079     2.2270     0.0267      0.0279      0.4528
+=================================================================================
+
+F-test for Poolability: 12.196
+P-value: 0.0000
+Distribution: F(41,287)
+
+Included effects: Entity, Time

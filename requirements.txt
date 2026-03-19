@@ -1,0 +1,9 @@
+pandas
+geopandas
+rasterio
+matplotlib
+numpy
+statsmodels
+linearmodels
+openpyxl
+rasterstats

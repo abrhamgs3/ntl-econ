@@ -1,0 +1,69 @@
+Full sample with conflict controls (clustered)
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:                  lnNTL   R-squared:                        0.0127
+Estimator:                   PanelOLS   R-squared (Between):              0.0035
+No. Observations:                 429   R-squared (Within):              -0.0119
+Date:                Tue, Mar 17 2026   R-squared (Overall):              0.0028
+Time:                        17:42:45   Log-likelihood                   -742.31
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      1.6344
+Entities:                          13   P-value                           0.1809
+Avg Obs:                       33.000   Distribution:                   F(3,381)
+Min Obs:                       33.000                                           
+Max Obs:                       33.000   F-statistic (robust):             2.9177
+                                        P-value                           0.0341
+Time periods:                      33   Distribution:                   F(3,381)
+Avg Obs:                       13.000                                           
+Min Obs:                       13.000                                           
+Max Obs:                       13.000                                           
+                                                                                
+                               Parameter Estimates                               
+=================================================================================
+               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------
+Leader_region     0.4546     0.1955     2.3261     0.0205      0.0703      0.8389
+events           -0.0006     0.0002    -2.3272     0.0205     -0.0010  -8.643e-05
+fatalities    -4.334e-06  1.134e-05    -0.3823     0.7024  -2.662e-05   1.796e-05
+=================================================================================
+
+F-test for Poolability: 12.345
+P-value: 0.0000
+Distribution: F(44,381)
+
+Included effects: Entity, Time
+
+Excluding Addis/Dire/Harari with conflict controls
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:                  lnNTL   R-squared:                        0.0232
+Estimator:                   PanelOLS   R-squared (Between):             -0.0053
+No. Observations:                 330   R-squared (Within):              -0.0319
+Date:                Tue, Mar 17 2026   R-squared (Overall):             -0.0070
+Time:                        17:42:45   Log-likelihood                   -585.44
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      2.2607
+Entities:                          10   P-value                           0.0816
+Avg Obs:                       33.000   Distribution:                   F(3,285)
+Min Obs:                       33.000                                           
+Max Obs:                       33.000   F-statistic (robust):             3.1282
+                                        P-value                           0.0262
+Time periods:                      33   Distribution:                   F(3,285)
+Avg Obs:                      10.0000                                           
+Min Obs:                      10.0000                                           
+Max Obs:                      10.0000                                           
+                                                                                
+                               Parameter Estimates                               
+=================================================================================
+               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------
+Leader_region     0.3484     0.2208     1.5781     0.1157     -0.0861      0.7829
+events           -0.0009     0.0003    -2.8718     0.0044     -0.0015     -0.0003
+fatalities     1.299e-06  1.256e-05     0.1035     0.9177  -2.342e-05   2.602e-05
+=================================================================================
+
+F-test for Poolability: 11.353
+P-value: 0.0000
+Distribution: F(41,285)
+
+Included effects: Entity, Time

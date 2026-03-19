@@ -1,0 +1,34 @@
+Full sample with conflict controls, dropping high-conflict years
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:                  lnNTL   R-squared:                        0.0152
+Estimator:                   PanelOLS   R-squared (Between):              0.0032
+No. Observations:                 403   R-squared (Within):              -0.0102
+Date:                Tue, Mar 17 2026   R-squared (Overall):              0.0026
+Time:                        17:42:45   Log-likelihood                   -697.25
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      1.8429
+Entities:                          13   P-value                           0.1390
+Avg Obs:                       31.000   Distribution:                   F(3,357)
+Min Obs:                       31.000                                           
+Max Obs:                       31.000   F-statistic (robust):             3.8256
+                                        P-value                           0.0102
+Time periods:                      31   Distribution:                   F(3,357)
+Avg Obs:                       13.000                                           
+Min Obs:                       13.000                                           
+Max Obs:                       13.000                                           
+                                                                                
+                               Parameter Estimates                               
+=================================================================================
+               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------
+Leader_region     0.5020     0.2195     2.2868     0.0228      0.0703      0.9337
+events           -0.0010     0.0003    -3.0611     0.0024     -0.0016     -0.0004
+fatalities     -2.77e-06  1.183e-05    -0.2341     0.8150  -2.604e-05    2.05e-05
+=================================================================================
+
+F-test for Poolability: 12.029
+P-value: 0.0000
+Distribution: F(42,357)
+
+Included effects: Entity, Time

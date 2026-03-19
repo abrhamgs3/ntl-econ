@@ -1,0 +1,93 @@
+
+(1) Pooled
+----------
+                          PooledOLS Estimation Summary                          
+================================================================================
+Dep. Variable:                  lnNTL   R-squared:                        0.0252
+Estimator:                  PooledOLS   R-squared (Between):              0.0596
+No. Observations:                 429   R-squared (Within):               0.0127
+Date:                Tue, Mar 17 2026   R-squared (Overall):              0.0252
+Time:                        11:14:08   Log-likelihood                   -944.72
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      11.049
+Entities:                          13   P-value                           0.0010
+Avg Obs:                       33.000   Distribution:                   F(1,427)
+Min Obs:                       33.000                                           
+Max Obs:                       33.000   F-statistic (robust):             26.946
+                                        P-value                           0.0000
+Time periods:                      33   Distribution:                   F(1,427)
+Avg Obs:                       13.000                                           
+Min Obs:                       13.000                                           
+Max Obs:                       13.000                                           
+                                                                                
+                               Parameter Estimates                               
+=================================================================================
+               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------
+Intercept         8.0363     0.1173     68.487     0.0000      7.8057      8.2670
+Leader_region     1.1068     0.2132     5.1910     0.0000      0.6877      1.5258
+=================================================================================
+
+(2) Between
+-----------
+                         BetweenOLS Estimation Summary                          
+================================================================================
+Dep. Variable:                  lnNTL   R-squared:                        0.0670
+Estimator:                 BetweenOLS   R-squared (Between):              0.0670
+No. Observations:                  13   R-squared (Within):               0.0012
+Date:                Tue, Mar 17 2026   R-squared (Overall):              0.0189
+Time:                        11:14:08   Log-likelihood                   -19.784
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      0.7904
+Entities:                          13   P-value                           0.3930
+Avg Obs:                       33.000   Distribution:                    F(1,11)
+Min Obs:                       33.000                                           
+Max Obs:                       33.000   F-statistic (robust):             2.1866
+                                        P-value                           0.1673
+Time periods:                      33   Distribution:                    F(1,11)
+Avg Obs:                       13.000                                           
+Min Obs:                       13.000                                           
+Max Obs:                       13.000                                           
+                                                                                
+                               Parameter Estimates                               
+=================================================================================
+               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------
+Intercept         7.9729     0.3786     21.059     0.0000      7.1396      8.8062
+Leader_region     1.6622     1.1241     1.4787     0.1673     -0.8119      4.1363
+=================================================================================
+
+(3) Within
+----------
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:                  lnNTL   R-squared:                        0.0051
+Estimator:                   PanelOLS   R-squared (Between):              0.0276
+No. Observations:                 429   R-squared (Within):               0.0098
+Date:                Tue, Mar 17 2026   R-squared (Overall):              0.0146
+Time:                        11:14:08   Log-likelihood                   -743.97
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      1.9471
+Entities:                          13   P-value                           0.1637
+Avg Obs:                       33.000   Distribution:                   F(1,383)
+Min Obs:                       33.000                                           
+Max Obs:                       33.000   F-statistic (robust):             4.0071
+                                        P-value                           0.0460
+Time periods:                      33   Distribution:                   F(1,383)
+Avg Obs:                       13.000                                           
+Min Obs:                       13.000                                           
+Max Obs:                       13.000                                           
+                                                                                
+                               Parameter Estimates                               
+=================================================================================
+               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------
+Intercept         8.1186     0.0758     107.18     0.0000      7.9696      8.2675
+Leader_region     0.3869     0.1933     2.0018     0.0460      0.0069      0.7669
+=================================================================================
+
+F-test for Poolability: 13.488
+P-value: 0.0000
+Distribution: F(44,383)
+
+Included effects: Entity, Time

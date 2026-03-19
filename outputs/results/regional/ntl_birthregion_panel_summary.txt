@@ -1,0 +1,10 @@
+PanelOLS Estimation Summary
+Dep. Variable: Mean_NTL
+R-squared: 1.022e-07
+Entities: 13
+No. Observations: 424
+Parameter Estimates:
+const: 3.1359 (std err: 0.1678, t: 18.692, p: 0.000)
+Leader_Birth_Region: 0.0050 (std err: 0.7720, t: 0.0065, p: 0.9948)
+F-test for Poolability: 257.68 (p: 0.0000)
+Included effects: Entity

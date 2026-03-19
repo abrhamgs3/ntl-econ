@@ -1,0 +1,2 @@
+Elasticity (log-log regression slope): 1.887
+Interpretation: A 1% increase in GDP per capita is associated with a 1.89% change in NTL.

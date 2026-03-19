@@ -1,0 +1,2 @@
+Combined actual and fitted NTL plot for all regions saved as all_regions_ntl_actual_fitted.png in outputs/figures/combined/.
+See regional and national results folders for regression summaries.

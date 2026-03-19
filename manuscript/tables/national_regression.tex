@@ -1,0 +1,21 @@
+\begin{table}[ht]
+\centering
+\caption{National log--log regression of NTL on GDP per capita}
+\begin{tabular}{lrr}
+\toprule
+ & Coefficient & Std. error \\
+\midrule
+Intercept & -20.300$^{***}$ & 0.853 \\
+$\log(\mathrm{GDPpc})$ & 1.887$^{***}$ & 0.094 \\
+\midrule
+Observations & \multicolumn{2}{r}{31} \\
+$R^2$ & \multicolumn{2}{r}{0.933} \\
+Durbin--Watson & \multicolumn{2}{r}{0.713} \\
+Newey--West SE (lag 5) on $\log(\mathrm{GDPpc})$ & \multicolumn{2}{r}{0.118} \\
+Newey--West $p$-value on $\log(\mathrm{GDPpc})$ & \multicolumn{2}{r}{$7.1\times 10^{-16}$} \\
+\bottomrule
+\end{tabular}
+\vspace{4pt}
+{\footnotesize Notes: Dependent variable is $\log(\mathrm{NTL})$. Asterisks denote significance at * $p<0.10$, ** $p<0.05$, *** $p<0.01$. Newey--West standard error uses lag 5.}
+\label{tab:national_reg}
+\end{table}

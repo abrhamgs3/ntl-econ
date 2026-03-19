@@ -1,0 +1,14 @@
+# Ignore large data files
+*.csv
+*.xlsx
+*.zip
+# Ignore Python/R temporary files
+__pycache__/
+.Rhistory
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+.venv/
+.vscode/

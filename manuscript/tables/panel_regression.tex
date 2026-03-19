@@ -1,0 +1,21 @@
+\begin{table}[ht]
+\centering
+\caption{Panel regressions of regional $\ln(\mathrm{NTL})$ on leader birth-region indicator (exclusion sample: Addis Ababa, Dire Dawa, Harari removed)}
+\begin{tabular}{lcccc}
+\toprule
+ & Pooled OLS & Between & Within (FE) & Within (FE + year FE) \\
+\midrule
+Leader region coefficient & 1.173$^{***}$ & 1.970 & 0.850$^{***}$ & 0.240 \\
+Standard error & 0.234 & 1.060 & 0.253 & 0.220 \\
+$p$-value & $<0.001$ & 0.100 & 0.0009 & 0.275 \\
+Observations & 330 & 10 & 330 & 330 \\
+R-squared (within) & 0.030 & 0.113 & 0.014 & 0.007 \\
+Entity effects & No & No & Yes & Yes \\
+Year effects & No & No & No & Yes \\
+Covariance & Clustered & Clustered & Clustered & Clustered \\
+\bottomrule
+\end{tabular}
+\vspace{4pt}
+{\footnotesize Notes: Dependent variable is $\ln(\mathrm{NTL})$. Asterisks denote significance at * $p<0.10$, ** $p<0.05$, *** $p<0.01$. Clustered standard errors by region.}
+\label{tab:panel_reg}
+\end{table}

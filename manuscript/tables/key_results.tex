@@ -1,0 +1,33 @@
+\begin{table}[ht]
+\centering
+\caption{Key quantitative findings from the cleaned analysis pipeline}
+\begin{tabular}{p{0.6\textwidth}r}
+\toprule
+Statistic & Value \\
+\midrule
+Correlation between mean NTL and log GDP per capita & 0.914 \\
+Log-log elasticity of NTL with respect to GDP per capita & 1.887 \\
+National validation regression $R^2$ & 0.933 \\
+Durbin-Watson statistic & 0.713 \\
+Newey--West SE for elasticity (lag 5) & 0.118 \\
+Newey--West $p$-value for elasticity & $7.1\times 10^{-16}$ \\
+Regional Gini coefficient, 1992 & 0.715 \\
+Regional Gini coefficient, 2018 & 0.513 \\
+Regional Gini coefficient, 2024 & 0.526 \\
+Within FE (full sample, no year FE) & 0.850 \\
+$p$-value (full sample, no year FE) & 0.0009 \\
+Within FE + year FE (full sample) & 0.387 \\
+$p$-value (full sample, year FE) & 0.0460 \\
+Within FE (exclusion sample\footnotemark[1], no year FE) & 0.850 \\
+$p$-value (exclusion sample, no year FE) & 0.0009 \\
+Within FE + year FE (exclusion sample\footnotemark[1]) & 0.240 \\
+$p$-value (exclusion sample, year FE) & 0.275 \\
+Within FE + year FE + conflict controls (full sample) & 0.455 \\
+$p$-value (full sample, conflict-controlled) & 0.021 \\
+Within FE + year FE + conflict controls (exclusion sample\footnotemark[1]) & 0.348 \\
+$p$-value (exclusion sample, conflict-controlled) & 0.116 \\
+\bottomrule
+\end{tabular}
+\footnotetext[1]{Exclusion sample drops Addis Ababa, Dire Dawa, and Harari.}
+\label{tab:keyresults}
+\end{table}

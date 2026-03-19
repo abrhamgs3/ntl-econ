@@ -1,0 +1,3 @@
+Wild cluster bootstrap (20 reps, Rademacher, cluster=entity)
+FE+year FE beta=0.387, p=0.476
+FE+year FE + trends beta=0.357, p=0.381
