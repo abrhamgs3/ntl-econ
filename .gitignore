@@ -12,3 +12,10 @@ __pycache__/
 venv/
 .venv/
 .vscode/
+*.tif
+*.tiff
+*.img
+*.vrt
+data/
+outputs/
+data 
