@@ -87,7 +87,7 @@ def prepare_panel(df):
     return df_panel
 
 
-def compute_gini_by_year(df, value_column="NTL"):
+def compute_gini_by_year(df, value_column="Mean_NTL"):
     """
     Compute the yearly Gini series for a given numeric column.
     """

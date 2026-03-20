@@ -4,55 +4,56 @@ The top-level auxiliary file: Manuscript_NTL.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: plainnat.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'name_of_file' (item size: 1) to 22 items.
 Database file #1: references.bib
-Warning--I didn't find a database entry for "Alesina2016"
-Warning--I didn't find a database entry for "Baldwin2010"
-Warning--I didn't find a database entry for "Ezcurra2019"
-Warning--I didn't find a database entry for "Bickenbach2016"
-Warning--I didn't find a database entry for "Angrist2009"
-Warning--I didn't find a database entry for "Bertrand2004"
-Warning--I didn't find a database entry for "Abadie2010"
-Warning--I didn't find a database entry for "Imbens2015"
-Warning--I didn't find a database entry for "WorldBank2024"
-You've used 22 entries,
+Database file #2: references_additional.bib
+Name 1 in "Marianne Bertrand, Esther Duflo, and Sendhil Mullainathan" has a comma at the end for entry Bertrand2004
+while executing---line 1347 of file plainnat.bst
+Name 1 in "Marianne Bertrand, Esther Duflo, and Sendhil Mullainathan" has a comma at the end for entry Bertrand2004
+while executing---line 1347 of file plainnat.bst
+Name 1 in "Marianne Bertrand, Esther Duflo, and Sendhil Mullainathan" has a comma at the end for entry Bertrand2004
+while executing---line 1429 of file plainnat.bst
+Name 1 in "Marianne Bertrand, Esther Duflo, and Sendhil Mullainathan" has a comma at the end for entry Bertrand2004
+while executing---line 1429 of file plainnat.bst
+You've used 26 entries,
             2773 wiz_defined-function locations,
-            763 strings with 7972 characters,
-and the built_in function-call counts, 9263 in all, are:
-= -- 822
-> -- 442
-< -- 19
-+ -- 151
-- -- 129
-* -- 718
-:= -- 1431
-add.period$ -- 66
-call.type$ -- 22
-change.case$ -- 103
-chr.to.int$ -- 22
-cite$ -- 44
-duplicate$ -- 443
-empty$ -- 841
-format.name$ -- 178
-if$ -- 1967
+            780 strings with 9174 characters,
+and the built_in function-call counts, 12403 in all, are:
+= -- 1067
+> -- 794
+< -- 22
++ -- 269
+- -- 243
+* -- 1022
+:= -- 1957
+add.period$ -- 80
+call.type$ -- 26
+change.case$ -- 155
+chr.to.int$ -- 26
+cite$ -- 52
+duplicate$ -- 513
+empty$ -- 979
+format.name$ -- 300
+if$ -- 2583
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 25
-newline$ -- 118
-num.names$ -- 88
-pop$ -- 190
+missing$ -- 26
+newline$ -- 140
+num.names$ -- 104
+pop$ -- 283
 preamble$ -- 1
-purify$ -- 84
+purify$ -- 130
 quote$ -- 0
-skip$ -- 332
+skip$ -- 421
 stack$ -- 0
-substring$ -- 401
-swap$ -- 22
+substring$ -- 463
+swap$ -- 25
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 227
+type$ -- 276
 warning$ -- 0
-while$ -- 85
+while$ -- 99
 width$ -- 0
-write$ -- 290
-(There were 9 warnings)
+write$ -- 345
+(There were 4 error messages)

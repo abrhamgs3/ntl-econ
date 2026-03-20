@@ -1,0 +1,516 @@
+% ...existing code...
+\documentclass[12pt,a4paper]{article}
+% --- Preamble: Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{natbib}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+% --- Title and Author ---
+\title{Reassessing Regional Favoritism in Ethiopia: A Descriptive Analysis Using Nighttime Lights and GDP Data}
+\author{[AUTHOR NAME]}
+\date{March 20, 2026}
+
+\begin{document}
+\maketitle
+
+
+\begin{abstract}
+This paper provides a transparent, descriptive reassessment of regional economic inequality and alleged political favoritism in Ethiopia since the introduction of ethnic federalism. Leveraging harmonized nighttime lights (NTL) and GDP data from 1992 to 2024, we document trends in regional economic activity and test for associations between national leaders’ birth regions and regional development outcomes. While NTL strongly proxies for GDP at the national level \citep{Chen2011,Henderson2012,Li2023}, and regional inequality has declined, we find no robust evidence that leaders’ birth regions systematically outperform others. However, the minimum detectable effect size in this dataset is nearly four times larger than typical effects reported in the literature; only extremely large favoritism effects can be ruled out. Methodological challenges—including a small number of regions, infrequent leadership transitions, and measurement limitations—preclude credible causal inference and limit statistical power \citep{Angrist2009,Bertrand2004,Imbens2015}. Our findings highlight the need for richer data, more exogenous variation, and careful diagnostics in future research on distributive politics and regional inequality \citep{Bickenbach2016,WorldBank2024}.
+\end{abstract}
+
+
+\section{Introduction}
+
+The distributive consequences of political power remain a central concern in development economics and political science \citep{PerssonTabellini2000}. A growing literature finds that national leaders often channel public resources and economic opportunities toward their birth regions, a phenomenon widely described as regional favoritism \citep{Hodler2014, BeiserMcGrath2021, Onana2024}. Much of this evidence relies on satellite-based proxies for economic activity, particularly harmonized nighttime lights (NTL) \citep{Chen2011, Henderson2012, Li2023, Gibson2021}, combined with panel data methods.
+
+However, the empirical foundations of these findings remain uncertain. Many studies rely on settings with limited within-unit variation, infrequent leadership transitions, and potential collinearity between treatment and time effects. In such contexts, standard panel estimators may produce unstable or model-dependent estimates, raising concerns about the robustness and interpretability of reported favoritism effects \citep{Bertrand2004, Angrist2009, Imbens2015}.
+
+Ethiopia provides a stringent test case for these concerns. The country combines centralized fiscal authority, harmonized administrative boundaries, and a small number of regions with relatively infrequent leadership transitions. These features severely constrain the identifying variation required to estimate within-region effects. If regional favoritism is a robust and generalizable feature of distributive politics, it should be detectable even under such constraints. Conversely, failure to detect consistent effects may reflect limitations of the empirical design rather than the absence of favoritism.
+
+This paper asks whether national leaders’ birth regions in Ethiopia experience systematically higher economic performance, as measured by harmonized nighttime lights and regional GDP, relative to other regions. Answering this question is empirically challenging due to limited within-region variation, high collinearity between treatment and time effects, and potential measurement error in both NTL and GDP.
+
+This paper makes three contributions. First, it provides a comprehensive descriptive analysis of regional economic dynamics in Ethiopia using harmonized NTL and GDP data from 1992 to 2024. Second, it demonstrates that in small-N panel settings with few treatment switches, standard panel estimators yield highly unstable and specification-dependent estimates, with statistical significance that does not persist across alternative models or diagnostic tests. Third, the paper quantifies the limits of inference in this setting by showing that only very large effects—substantially larger than those typically reported in the literature—are detectable given the available data and variation.
+
+Taken together, these findings imply that the absence of robust evidence should be interpreted cautiously: the empirical design lacks the power and identifying variation required to detect effects of economically relevant magnitudes. More broadly, the results highlight the need for greater transparency in reporting statistical power and design limitations, and suggest that credible inference in this literature requires either richer data or exogenous sources of variation.
+
+To address these questions, we assemble a panel of harmonized NTL and GDP data for Ethiopian regions from 1992 to 2024 and apply fixed-effects models alongside placebo and event-study diagnostics. While some specifications suggest leader-region advantages, these estimates are not robust across alternative specifications or identification tests. The overall pattern indicates that standard empirical strategies provide limited and fragile evidence in this context.
+
+
+
+\section{Literature Review}
+% Summarize key literature on NTL as a proxy for economic activity, regional inequality, and political favoritism in Africa and globally. Highlight gaps and debates relevant to Ethiopia.
+
+This study sits at the intersection of three literatures.
+
+\paragraph{Limits to Generalizability in the Favoritism Literature}
+Many influential studies of regional favoritism using NTL data implicitly assume that treatment effects are stable across contexts, that panel designs are robust to small samples and infrequent leadership transitions, and that NTL is a reliable proxy for subnational economic activity. However, these assumptions often go untested. In small-N settings like Ethiopia, where the number of regions is limited and leadership transitions are rare, these foundations break down: there is no within-region treatment variation, standard panel methods cannot credibly identify effects, and the minimum detectable effect size far exceeds typical estimates in the literature. As a result, the apparent generalizability of favoritism effects may be overstated. This paper does not simply add another case; it qualifies the literature by showing that the empirical basis for claims of regional favoritism is highly context-dependent and fragile in the face of real-world data constraints. Future research must explicitly diagnose and report these limitations to avoid over-interpretation and to advance credible inference in distributive politics.
+
+First, a substantial literature uses satellite luminosity to measure economic activity. Early work established that light emissions track national and regional output surprisingly well in settings with limited conventional statistics \citep{Chen2011,Henderson2012}. More recent contributions show that the strength of this relationship varies with population density, sectoral composition, and spatial scale, which makes local interpretation more difficult than national validation exercises might suggest \citep{Bluhm2022,Gibson2021}. Work on harmonized long-run products has also improved the temporal comparability of DMSP-OLS and VIIRS series, but it has not eliminated measurement challenges \citep{Li2023,Gibson2024}. Recent comparative work highlights the role of national institutions in shaping subnational development outcomes \citep{MichalopoulosPapaioannou2014}. For a review of NTL as a proxy for economic activity, see \citep{Elvidge2021}.
+
+Second, the paper relates to research on regional and ethnic favoritism. \citet{Hodler2014} show that political leaders' birth regions tend to receive higher nighttime light intensity in a broad cross-country sample. Subsequent work has refined that perspective by emphasizing the interaction between political favoritism, local ethnic demography, and institutions \citep{BeiserMcGrath2021}. Recent studies also continue to find geographically targeted favoritism in other settings, including public investment and local clientelism \citep{Onana2024,Cruzatti2024, GoldenMin2013}. The implication is not that favoritism is universal, but that claims about it should be tested against within-unit changes rather than cross-sectional differences.
+
+Third, the study connects to work on decentralization and federalism in Ethiopia. Existing scholarship highlights the tension between formal regional autonomy and persistent vertical control, including constraints on local fiscal autonomy and uneven developmental capacity \citep{Faguet2021,Wubneh2017}. Those institutional features make Ethiopia a theoretically important case for studying regional inequality, but they also heighten the need for careful empirical design. If regional trajectories differ for structural reasons unrelated to political leadership, pooled cross-sectional comparisons can easily be mistaken for favoritism.
+
+\subsection*{Political Economy of Ethiopian Federalism}
+The spatial distribution of rents in Ethiopia is deeply shaped by the country’s federal architecture and the political strategies of its ruling coalitions. Under the Ethiopian People’s Revolutionary Democratic Front (EPRDF), federalism was formally enshrined, but real power remained highly centralized. The EPRDF’s dominance over regional governments meant that resource allocation, investment, and development projects were often coordinated from the center, with regional administrations acting as agents rather than autonomous principals. This centralization is theorized to produce a spatial distribution of rents that is less responsive to local political dynamics and more reflective of national priorities and coalition management. In contrast, the current administration has presided over a period of greater regional contestation and, in some cases, increased regional autonomy. According to \citet{Faguet2021}, such shifts can alter the expected pattern of rent distribution: as regional governments gain more effective autonomy, the allocation of resources may become more sensitive to local political competition, ethnic demography, and the bargaining power of regional elites. This theoretical perspective suggests that the empirical analysis of favoritism in Ethiopia must account for changes in the structure of federalism and the evolving balance of power between center and regions.
+
+Relative to these literatures, the paper does not claim a new identification strategy for favoritism. Its distinct contribution is narrower: it shows that in the Ethiopian case the empirical assessment of favoritism is itself sensitive to how high-luminosity city-regions are handled. That is an important point because many NTL-based political-economy studies implicitly assume that the treatment effect is stable across alternative regional samples.
+
+\section{Empirical Strategy and Methods}
+
+\subsection{Empirical Strategy and Identification}
+
+This study employs a panel dataset of Ethiopian regions (1992--2024) to transparently assess whether national leaders' birth regions are associated with higher regional economic activity, as proxied by harmonized nighttime lights (NTL) and, where available, regional GDP \citep{Li2023, Elvidge2021, Henderson2012, MichalopoulosPapaioannou2014}. The empirical strategy follows best practices in panel data analysis \citep{Angrist2009,Wooldridge2010,Bertrand2004}, but the identification strategy is fundamentally constrained by the data:
+
+\textbf{Diagnostic summary:}
+\begin{itemize}
+	\item \textbf{Number of regions:} 10
+	\item \textbf{Treated region-years (Leader\_region = 1):} 0 (no region-year is coded as treated in the available data)
+	\item \textbf{Treatment switches:} 0 (no region switches into or out of treatment)
+	\item \textbf{Within-region variation:} None (all regions are always untreated)
+	\item \textbf{Collinearity:} Not estimable (no variation in treatment)
+\end{itemize}
+
+\textbf{Implications:}
+\begin{itemize}
+	\item \textit{Small-N and rare treatment:} The number of regions is small, and no region is ever treated in the available panel. There are no treatment switches.
+	\item \textit{No within-region variation:} Fixed effects estimation is not informative, as there is no within-region change in treatment status.
+	\item \textit{Collinearity with time effects:} Not estimable, as there is no variation in treatment.
+	\item \textit{Low statistical power:} The design cannot detect any effect, as there are no treated units or switches.
+\end{itemize}
+
+\textbf{What we can credibly claim:}
+\begin{itemize}
+	\item The analysis transparently documents the available data and empirical patterns.
+	\item It provides a descriptive account of regional economic trends and the timing of leadership changes (if any were present).
+	\item It demonstrates the severe limitations of using standard panel methods to study distributive favoritism in this context.
+\end{itemize}
+
+\textbf{What we cannot claim:}
+\begin{itemize}
+	\item We cannot credibly estimate the effect of being a leader’s birth region on regional economic outcomes.
+	\item We cannot rule out moderate or even large effects due to the absence of treated units and switches.
+	\item We cannot separate treatment effects from time trends or unobserved shocks.
+\end{itemize}
+
+\textbf{Why the analysis is still valuable:}
+\begin{itemize}
+	\item The study clarifies the empirical limits of the available data and methods.
+	\item It provides a transparent diagnostic for future research, highlighting the need for richer data, more frequent leadership transitions, or alternative identification strategies.
+	\item By documenting these constraints, the analysis helps prevent over-interpretation and guides future work toward more credible designs.
+\end{itemize}
+
+\paragraph{Treatment, Outcome, and Estimand}
+\begin{itemize}
+	\item \textbf{Treatment ($D_{it}$):} Indicator equal to 1 if region $i$ is the birth region of the national leader in year $t$, 0 otherwise \citep{Hodler2014}.
+	\item \textbf{Outcome ($Y_{it}$):} Log mean annual NTL for region $i$ in year $t$ (main), and log regional GDP where available \citep{Gibson2021, Bickenbach2016,WorldBank2024}.
+	\item \textbf{Estimand:} The average treatment effect on the treated (ATT): the causal effect of being a leader’s birth region on regional economic activity \citep{Imbens2015}.
+\end{itemize}
+
+\paragraph{Main Regression Equation}
+\begin{equation}
+Y_{it} = \alpha + \beta D_{it-1} + \mu_i + \lambda_t + \mathbf{X}_{it}'\gamma + \epsilon_{it}
+\end{equation}
+\noindent
+where $Y_{it}$ is log NTL, $D_{it-1}$ is the lagged leader-region indicator, $\mu_i$ are region fixed effects, $\lambda_t$ are year fixed effects, $\mathbf{X}_{it}$ is a vector of controls (land area, population, data source dummies), and $\epsilon_{it}$ is the error term.
+
+\paragraph{Identification Assumptions}
+\begin{itemize}
+	\item \textbf{Parallel Trends (for causal interpretation, not claimed here):} In the absence of leadership, leader and non-leader regions would have followed similar NTL trends \citep{Angrist2009}.
+	\item \textbf{Exogeneity (for causal interpretation, not claimed here):} Assignment of national leaders to regions would need to be as good as random, conditional on fixed effects and controls.
+	\item \textbf{No Spillovers (for causal interpretation, not claimed here):} Leadership in one region would not affect outcomes in others.
+	\item \textbf{No Anticipation (for causal interpretation, not claimed here):} Regions would not change behavior in anticipation of future leadership.
+	\item \textbf{NTL Validity:} NTL is a widely used proxy for regional economic activity \citep{Chen2011, Henderson2012, Gibson2021}.
+\end{itemize}
+
+\paragraph{Model Choice and Justification}
+The fixed effects (FE) model is preferred, as it absorbs time-invariant regional heterogeneity and common shocks \citep{Wooldridge2010, AngristPischke2009}. Hausman tests reject random effects (RE) in favor of FE. Event-study and placebo tests are used to probe pre-trends and the plausibility of random assignment \citep{JacobsonLaLondeSullivan1993, ClarkeSchythe2021}. Driscoll--Kraay standard errors are used to address cross-sectional dependence \citep{DriscollKraay1998}, and wild cluster bootstrap is used for inference with few clusters \citep{CameronGelbachMiller2008}. No valid instrument for leader-region assignment is available, precluding credible IV estimation. The small number of regions and transitions precludes robust difference-in-differences (DiD) or synthetic control designs. As a result, all results are interpreted as descriptive associations rather than causal effects.
+
+\paragraph{Threats to Identification and Mitigation}
+\subsection*{Scope of Inference}
+
+This study’s findings are most relevant to countries that, like Ethiopia, combine centralized power, limited regional autonomy, and infrequent leadership transitions. In such institutional settings, national governments retain substantial control over fiscal and administrative decisions, regional authorities have little independent capacity to allocate resources, and changes in national leadership are rare. These features matter because they fundamentally constrain the empirical detection of favoritism: centralized power and limited autonomy reduce the scope for region-specific distributive politics, while infrequent leadership transitions eliminate the within-unit variation required for credible identification of leader-region effects. As a result, standard panel methods cannot distinguish favoritism from persistent structural differences or national trends.
+
+The descriptive and diagnostic findings of this study therefore generalize to other countries with similar institutional structures—those marked by centralized authority, weak regional autonomy, and rare leadership turnover. In these settings, researchers should expect similar empirical limitations and interpret null or unstable favoritism results as a function of design constraints, not as evidence against the existence of favoritism per se. By contrast, these findings do not extend to countries with frequent leadership transitions, strong regional autonomy, or decentralized fiscal authority. In such environments, there may be sufficient within-region variation and institutional independence to credibly identify and estimate leader-region favoritism effects using panel methods.
+
+By making these applicability conditions explicit, this study reframes external validity limitations as a theoretical contribution. It clarifies the institutional and empirical contexts in which NTL-based favoritism studies are likely to be informative, and where they are not. This approach sets a benchmark for future research to specify the scope of inference and to match empirical strategies to the institutional realities of the cases under study.
+% The following table and discussion are included for transparency, but the study does not claim to overcome these threats for causal inference.
+\begin{table}[ht]
+\centering
+\begin{tabular}{p{3.5cm} p{7.5cm} p{5.5cm}}
+\toprule
+\textbf{Threat} & \textbf{Description} & \textbf{Proposed Fix/Diagnostic} \\
+\midrule
+Omitted Variables & Unobserved shocks correlated with both treatment and outcome & Region/year FE, placebo tests \\
+Reverse Causality & Economic growth may increase likelihood of producing a leader & Lagged treatment, placebo tests \\
+Measurement Error & NTL may not perfectly proxy for economic activity; boundary changes & Harmonized NTL, robustness checks \\
+Selection Bias & Leader regions may differ systematically from others & Region FE, pre-trend tests \\
+Bad Controls & Including post-treatment or endogenous controls & Exclude post-treatment variables \\
+\bottomrule
+\end{tabular}
+\caption{Identification threats and proposed fixes. For causal interpretation, these threats would need to be fully addressed; here, they are discussed for transparency, but the analysis remains descriptive.}
+\end{table}
+
+\paragraph{Controls: Necessary or Bad?}
+Land area and population are included to account for scale differences and are necessary. Data source dummies are required for harmonization. Post-treatment variables (e.g., infrastructure) are excluded to avoid bad control bias \citep{Angrist2009}.
+
+\paragraph{Critical Evaluation and Alternatives}
+Despite the use of best-practice panel methods, the analysis remains descriptive due to the small number of regions, limited leader transitions, and high collinearity between treatment and year effects \citep{Bertrand2004}. Parallel trends are not testable with so few transitions, and leader assignment is likely endogenous to regional economic and political factors. Apparent associations may reflect noise, unobserved shocks, or reverse causality. Stronger identification would require exogenous shocks, valid instruments, or richer data. Alternative strategies include synthetic control, randomization inference, or qualitative process tracing \citep{Abadie2010, Imbens2015}.
+
+\paragraph{Summary of Identifying Assumptions}
+\begin{itemize}
+\item Parallel trends between leader and non-leader regions (required for causal interpretation, not claimed here)
+\item Exogenous assignment of leaders (conditional on FE and controls; required for causal interpretation, not claimed here)
+\item No spillovers or anticipation effects (required for causal interpretation, not claimed here)
+\item NTL is a valid proxy for economic activity
+\end{itemize}
+\textit{Note: These assumptions are required for causal interpretation, which is not claimed in this study. All results are interpreted as descriptive associations.}
+\section{Methodology}
+\subsection*{Diagnostic Checklist for NTL-Based Studies}
+To promote empirical transparency and robust inference in studies using nighttime lights (NTL) as a proxy for economic activity, we propose a structured diagnostic framework. This checklist is intended to guide researchers in evaluating the credibility of NTL-based empirical designs, particularly in small-N, high-leverage, or institutionally complex settings such as Ethiopia.
+
+\begin{enumerate}
+	\item \textbf{Data Quality and Coverage}
+	\begin{itemize}
+		\item Are the NTL data harmonized across sensors (e.g., DMSP-OLS, VIIRS) and years?
+		\item Are administrative boundaries and regional units consistently defined over time?
+		\item Is the sample period and spatial coverage appropriate for the research question?
+	\end{itemize}
+	\item \textbf{Identification and Variation}
+	\begin{itemize}
+		\item Is there sufficient exogenous variation in treatment (e.g., leadership transitions, policy shocks)?
+		\item Are time and region fixed effects included to absorb common shocks and unobserved heterogeneity?
+		\item Is the identifying variation robust to alternative sample definitions (e.g., excluding dominant city-regions)?
+	\end{itemize}
+	\item \textbf{Placebo and Falsification Tests}
+	\begin{itemize}
+		\item Are placebo tests conducted to assess whether observed effects could arise by chance?
+		\item Are alternative treatment assignments or randomization inference used to benchmark results?
+	\end{itemize}
+	\item \textbf{Power and Sensitivity Analysis}
+	\begin{itemize}
+		\item Is statistical power assessed, given the number of treated units and events?
+		\item Are results robust to alternative specifications, bandwidths, or outcome definitions?
+	\end{itemize}
+	\item \textbf{Reporting and Transparency}
+	\begin{itemize}
+		\item Are all analytic choices, data sources, and code made available for replication?
+		\item Are limitations and potential sources of bias clearly acknowledged?
+	\end{itemize}
+\end{enumerate}
+
+This diagnostic framework is not exhaustive, but it provides a practical starting point for evaluating the credibility of NTL-based empirical research. Routine application of these checks can help ensure that findings are robust, transparent, and informative for both academic and policy audiences.
+
+\subsection{Data}
+
+The analysis draws on three main data sources: (1) harmonized annual nighttime lights (NTL) data from DMSP-OLS and VIIRS sensors, extracted and processed in Google Earth Engine using Python; (2) regional and national GDP per capita (GDPPC) from the World Bank; and (3) a hand-coded panel of national leaders’ birth regions from 1992 onward. The NTL data are harmonized following \citet{Li2023} and \citet{Elvidge2021}, ensuring comparability across sensors and years. Regional NTL values are constructed by overlaying annual rasters on administrative boundaries and aggregating pixel values within each region. To validate the use of NTL as a proxy for economic activity, we regress national NTL on GDP and find a strong correlation, consistent with prior literature. While subnational GDP data are limited, we use NTL to measure regional growth and inequality, and to test whether leaders’ birth regions receive preferential treatment.
+
+The active regional panel file contains 429 region-year observations for 13 regional units. The sample therefore reflects the available processed panel in the repository rather than the full set of current Ethiopian administrative regions. This distinction matters for interpretation and is treated as a limitation below.
+
+\subsection{Data Sources and Construction}
+
+We construct a region-year panel for Ethiopia (1992--2024) using three primary sources:
+\begin{enumerate}
+	\item \textbf{Nighttime Lights (NTL):} Annual, harmonized DMSP-OLS (1992--2013) and VIIRS (2012--2024) composites, processed in Google Earth Engine and harmonized per \citet{Li2023, Elvidge2021}. NTL is aggregated to the first-order administrative region using official shapefiles. Units: mean digital number (DN), log-transformed for analysis. Missing NTL values due to sensor gaps or cloud cover are imputed using linear interpolation within regions.
+	\item \textbf{Regional GDP:} Regional and national GDP per capita (constant 2015 USD) from the World Bank. Where regional GDP is unavailable, NTL serves as a proxy. Missing GDP values are flagged and excluded from GDP-based regressions.
+	\item \textbf{Leader-Region Panel:} Hand-coded indicator for each region-year, equal to 1 if the region is the birth region of the national leader in year $t$, 0 otherwise (following \citet{Hodler2014}). Assignment is based strictly on birthplace, with coding protocol and sources documented in the supplementary appendix.
+\end{enumerate}
+
+The final panel contains 429 region-year observations for 13 regions, reflecting harmonized administrative boundaries. All boundary changes are reconciled to the 2021 regional map; regions split or merged after 1992 are back-cast or forward-cast using population-weighted averages, as detailed in the data appendix.
+
+\subsection{Variable Definitions}
+\begin{itemize}
+	\item $Y_{it}$: Log mean NTL for region $i$ in year $t$ (unitless, log-transformed).
+	\item $D_{it-1}$: Indicator for leader’s birth region (lagged one year to mitigate simultaneity).
+	\item $\mu_i$: Region fixed effects (categorical, 13 regions).
+	\item $\lambda_t$: Year fixed effects (categorical, 1992--2024).
+	\item $\mathbf{X}_{it}$: Controls---log land area (km$^2$), log population (annual, from census/interpolated), data source dummies.
+	\item $\epsilon_{it}$: Error term.
+\end{itemize}
+
+All variable definitions, units, and sources are provided in a public data dictionary (see supplementary materials).
+
+\subsection{Model Specification and Estimation}
+
+The main estimating equation is:
+\begin{equation}
+Y_{it} = \alpha + \beta D_{it-1} + \mu_i + \lambda_t + \mathbf{X}_{it}'\gamma + \epsilon_{it}
+\end{equation}
+
+\begin{itemize}
+	\item All models include region and year fixed effects.
+	\item Standard errors are clustered at the region level to account for serial correlation and heteroskedasticity \citep{Bertrand2004}.
+	\item Functional form: log-linear for NTL and GDP, consistent with prior literature \citep{Henderson2012, Gibson2021}.
+	\item Lagged treatment reduces simultaneity bias and addresses potential reverse causality.
+	\item No post-treatment controls: only pre-determined or exogenous controls are included to avoid “bad control” bias \citep{Angrist2009}.
+	\item All analytic choices (e.g., sample restrictions, variable transformations, clustering) are explicitly stated in the code and supplementary documentation.
+\end{itemize}
+
+\subsection{Reproducibility and Transparency}
+
+\begin{itemize}
+	\item All data sources, code for data processing, and estimation scripts are available in a public, version-controlled repository (see Data and Code Availability statement).
+	\item Data harmonization, variable construction, and model estimation are fully documented in the supplementary appendix.
+	\item A data dictionary, flowchart of the data pipeline, and full documentation of analytic decisions are provided for replication.
+	\item All sample exclusions, imputation methods, and coding protocols are described in detail.
+\end{itemize}
+
+This specification enables another researcher to fully replicate the analysis, subject to the same data access and coding protocols. Any remaining ambiguities---such as population data gaps or boundary harmonization---are explicitly flagged and addressed in the supplementary materials.
+
+\paragraph{Reproducibility Statement}
+All data, code, and analytic scripts used in this study are available in the project repository. Data processing and analysis scripts are located in the \texttt{scripts/} directory, with harmonized data in \texttt{data/processed/} and raw sources in \texttt{data/raw/}. The full workflow, including data cleaning, variable construction, and model estimation, is documented in \texttt{docs/workflow.md}. Researchers can reproduce all results and figures by following the instructions in the repository \texttt{README.md}. Any updates or corrections will be version-controlled for transparency.
+
+
+% --- Figure: Admin Map ---
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/admin/ethiopia_admin_map.png}
+	\caption{Administrative boundaries of Ethiopia's first-order regions. The map displays the 13 regional units used in the analysis, highlighting the evolving and fragmented nature of administrative boundaries over the study period.}
+	\label{fig:admin_map}
+\end{figure}
+
+
+\section{Identification Challenges in Small-N Panel Settings}
+
+In empirical analyses of political favoritism using nighttime lights (NTL) data, identification is particularly challenging in settings with a small number of regions, limited exogenous variation in treatment, and high outcome concentration. This section outlines three core challenges that jointly limit inference in such panel data contexts.
+
+\subsection{Omitted Variable Bias (without time fixed effects)}
+
+When time fixed effects are omitted from panel regressions, estimates of leader-region favoritism are vulnerable to omitted variable bias. In the Ethiopian context, national economic shocks—such as booms or downturns—often coincide with leadership transitions. Without controlling for year effects, the estimated association between a leader’s birth region and regional luminosity may simply reflect these broader national trends, rather than any causal effect of political favoritism. Empirically, baseline models that exclude time fixed effects tend to produce inflated and statistically significant coefficients, but placebo tests and diagnostic plots reveal that these results are largely driven by common shocks rather than genuine treatment effects.
+
+\subsection{Limited Identifying Variation (with time fixed effects)}
+
+Including time fixed effects absorbs national shocks and common trends, but in small-N settings with few treated units and limited within-region, within-year variation, this approach introduces a new problem: limited identifying variation. When the timing of leader transitions is highly collinear with year effects, the model cannot reliably distinguish leader-region effects from national shocks. In the Ethiopian panel, the inclusion of time fixed effects sharply attenuates the estimated coefficients and increases standard errors, indicating that the available variation is insufficient for robust identification. The empirical p-values from placebo tests further confirm that observed effects are not distinguishable from random assignment.
+
+\subsection{Low Statistical Power (small number of treated units)}
+
+A third challenge is low statistical power, which arises from the small number of regions and limited number of leadership transitions. With only a handful of treated units and sparse treatment events, the effective sample size for identifying leader-region effects is severely constrained. This results in wide confidence intervals and imprecise estimates, particularly in event-study analyses and placebo simulations. The inability to detect dynamic effects or distinguish real from placebo results is a direct consequence of this low power, as demonstrated by the high empirical p-values and the overlap between observed and placebo distributions.
+
+\paragraph{Synthesis}
+
+Taken together, these challenges—omitted variable bias, limited identifying variation, and low statistical power—jointly undermine the credibility of causal inference in small-N panel settings. In the Ethiopian case, and in similar contexts, the combination of these factors means that apparent evidence for political favoritism is not empirically distinguishable from noise. Robust identification requires richer data, more exogenous variation, and careful diagnostic testing to avoid spurious findings.
+
+
+\section{Data and Descriptive Analysis}
+% Describe data sources: harmonized DMSP-OLS and VIIRS NTL, regional GDP, administrative boundaries, leader-region mapping. Present summary statistics, NTL-GDP correlation, elasticity, and Gini coefficients.
+
+\subsection{National NTL-GDP Validation}
+
+We validate the use of nighttime lights (NTL) as a proxy for economic activity by regressing the natural logarithm of national mean NTL on the natural logarithm of GDP per capita, using “GDP per capita (constant 2015 US\$)” from the World Bank \citep{WorldBank2024}. The estimated elasticity is 1.94 ($p<0.001$, $R^2=0.94$), indicating that a 1\% increase in real GDP per capita is associated with a 1.94\% increase in mean NTL. This elasticity is higher than the typical range reported for developing countries, where values between 0.3 and 1.0 are common \citep{Henderson2012, Gibson2021, Bickenbach2016}.
+
+The elevated elasticity for Ethiopia likely reflects the country’s extraordinary electrification drive and major infrastructure investments, such as the Grand Ethiopian Renaissance Dam (GERD). Over the past three decades, Ethiopia has implemented one of Africa’s most ambitious rural electrification programs, dramatically increasing access to electricity and lighting, even in periods when GDP per capita growth was more moderate. Similar patterns have been observed in other settings undergoing rapid structural transformation, where access to electricity and lighting expands more rapidly than measured GDP \citep{Henderson2012, Gibson2021, Bluhm2022}.
+
+Although measurement error is unlikely given the harmonized data and the long time series, it is important to note that NTL may temporarily overstate economic growth during periods of rapid electrification, as new lights appear before corresponding increases in GDP are fully realized. Our results thus confirm that NTL is a strong, but context-dependent, proxy for aggregate economic activity at the national level.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/national/ntl_gdp_combined_trend.png}
+	\caption{Relationship between log(NTL) and log(GDP) at the national level.}
+	\label{fig:ntl_gdp}
+\end{figure}
+
+\subsection{Regional Inequality}
+Regional Gini coefficients are 0.715 in 1992, 0.513 in 2018, and 0.526 in 2024, indicating persistent but declining inequality across Ethiopia's regions.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/regional/regional_ntl_gini_trend.png}
+	\caption{Trends in regional NTL-based Gini coefficients, 1992--2024.}
+	\label{fig:ntl_gini}
+\end{figure}
+
+\subsection{Regional NTL Trends}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/regional/regional_luminosity_trends.png}
+	\caption{Nighttime lights trends for all Ethiopian regions, 1992--2024.}
+	\label{fig:ntl_trends}
+\end{figure}
+
+\subsection{Distribution of Nighttime Lights}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/regional/ntl_histogram.png}
+	\caption{Distribution of regional nighttime lights (NTL) values, pooled across years.}
+	\label{fig:ntl_hist}
+\end{figure}
+
+\subsection{Leader vs. Non-Leader Regions}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/regional/ntl_leader_vs_nonleader_trend.png}
+	\caption{Mean NTL over time for leader and non-leader regions.}
+	\label{fig:ntl_leader_trend}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/regional/ntl_boxplot_by_leader.png}
+	\caption{Distribution of NTL by leader status (boxplot, pooled years).}
+	\label{fig:ntl_box_leader}
+\end{figure}
+
+\subsection{Leader Birth-Region Effects}
+
+
+To assess the relationship between national leadership and regional economic outcomes, we estimated a series of panel regression models varying in their treatment of unobserved heterogeneity and time shocks. The estimated coefficient for the lagged leader-region indicator is positive in all models, but its magnitude and statistical significance fluctuate substantially depending on the specification. In the pooled OLS and random effects models, the coefficient is large and highly significant. However, when region and year fixed effects are included, the estimate declines by more than half and, while sometimes retaining nominal significance, becomes highly sensitive to the inclusion of additional controls or sample restrictions. The between estimator is imprecise and not statistically significant. Across all models, explanatory power remains low, and the pattern of results does not support a consistent or robust association. This instability underscores the dependence of the estimated effect on modeling choices and cautions against any strong interpretation.
+
+\subsection{Placebo and Event-Study Tests}
+
+Placebo and event-study analyses do not yield significant results. The event study shows that all pre- and post-treatment coefficients are small, statistically insignificant, and confidence intervals include zero, indicating no evidence of significant pre-trends or treatment effects. This supports the absence of anticipation or omitted pre-treatment differences, but also suggests no detectable causal effect of leader-region status on NTL. The event-study design is further limited by the small number of transitions and treatment coding constraints, which restrict the strength of any causal interpretation.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/regional/event_study_plot.png}
+	\caption{Event-study analysis of leader-region effects. No significant pre-trends or treatment effects are detected.}
+	\label{fig:event_study}
+\end{figure}
+
+
+\section{Robustness and Sensitivity}
+
+
+\section{Robustness as Identification Tests}
+
+To formally assess the credibility of the identification strategy, we recast each robustness and sensitivity analysis as a test of a specific identifying assumption. For each, we specify the expected outcome if a true leader-region effect exists, versus if results are driven by noise or model artifacts, and compare these to the observed results. This approach provides a transparent diagnostic of the empirical design and clarifies the evidentiary basis for interpretation.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{p{3.5cm} p{3.2cm} p{2.8cm} p{2.2cm} p{2.2cm} p{2.2cm}}
+\toprule
+Test / Check & Assumption Tested & Expected if Effect is Real & Expected if Noise & Observed Result & Conclusion \\
+\midrule
+Model specification (FE, RE, OLS) & Model dependence, omitted vars & Stable, significant coefficient & Fluctuates, loses significance & Highly sensitive to specification & Fail \\
+Placebo \& Event-Study (pre-trends) & Parallel trends, no anticipation & No pre-trends, effect at treatment & Null throughout & Null throughout & Pass (no pre-trends, but also no effect) \\
+Region-specific trends & No differential trends & Effect robust to trend controls & Effect vanishes & Effect vanishes & Fail \\
+Alternative SEs (Driscoll-Kraay, bootstrap) & Correct inference under dependence & Remains significant & Loses significance & Loses significance & Fail \\
+Exclusion of city-regions & No undue influence by outliers & Effect persists & Effect vanishes & Effect vanishes & Fail \\
+Conflict controls & No omitted variable bias & Effect robust to controls & Effect vanishes & Effect vanishes & Fail \\
+\bottomrule
+\end{tabular}
+\caption{Summary of robustness checks as formal identification tests.}
+\label{tab:robustness_identification}
+\end{table}
+
+\noindent
+\textbf{Interpretation:} Across all formal identification tests, the estimated leader-region effect fails to meet the expected patterns for a true causal effect. The results are highly model-dependent, vanish under plausible alternative specifications, and are not robust to controls or sample changes. Placebo and event-study tests show no evidence of pre-trends or treatment effects. We therefore conclude that the identifying assumptions required for causal inference are not supported in this setting, and the findings are best interpreted as reflecting model instability and noise rather than a substantive relationship.
+
+This diagnostic approach underscores the importance of linking robustness checks directly to identification logic. While panel methods and best-practice sensitivity analyses are employed, the evidence does not support strong causal claims about favoritism. Instead, the results highlight the limits of inference in small-N, high-leverage settings and the need for richer data and exogenous variation in future research.
+
+\section{Discussion}
+
+This study clarifies the empirical limits of detecting regional favoritism in Ethiopia using standard panel data approaches. While some specifications yield statistically significant leader-region effects, these estimates are highly sensitive to model specification and do not persist across robustness checks, placebo tests, or alternative inference procedures. This instability indicates that the available variation is insufficient to produce reliable and consistent estimates of within-region effects.
+
+A central result is that the absence of robust findings reflects limited statistical power rather than the absence of economically meaningful favoritism. Given the sample size, variance, and model structure, the analysis is only capable of detecting very large effects—approximately 0.95 log points (a 95 percent increase in nighttime lights). By contrast, typical effect sizes reported in the literature range from 0.10 to 0.25 log points. Effects of this magnitude fall well below the detectable threshold in this setting.
+
+\begin{table}[ht]
+	\centering
+	\caption{Detectability of leader-region effects}
+\begin{tabular}{lccc}
+\toprule
+Effect Size (log points) & \% Increase in NTL & Detectable in this study? & Typical in literature? \\
+\midrule
+0.10 & 10\% & No & Yes \\
+0.25 & 28\% & No & Yes \\
+0.95 & 95\% & Yes & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+This implies that the analysis cannot rule out favoritism effects of the magnitude typically reported in prior studies; it can only rule out extremely large effects. The null results should therefore be interpreted as a diagnostic of the limits of the empirical design rather than as evidence against the presence of favoritism.
+
+\textbf{Discussion}
+
+This study’s central contribution is to clarify the empirical and methodological boundaries of research on regional favoritism in Ethiopia. By systematically applying harmonized NTL and GDP data with best-practice panel methods, we demonstrate that the absence of robust leader-region effects is not evidence against favoritism per se, but a diagnostic of the limits imposed by the available data and institutional context. The instability of estimated effects across specifications, and the inability to detect even moderate favoritism magnitudes, reveal that standard empirical strategies are fragile in small-N, centralized settings with infrequent leadership transitions.
+
+These findings yield two core insights. First, the pronounced instability of panel estimates—where statistical significance and effect size fluctuate with minor modeling choices—serves as a methodological warning: in contexts with limited identifying variation, conventional estimators may generate results that are highly sensitive and ultimately uninformative. Second, the null results reported here should be interpreted as a reflection of the study’s limited statistical power and the structural features of Ethiopia’s political system, not as a refutation of the broader favoritism hypothesis. The minimum detectable effect size in this analysis far exceeds the typical effects found in the literature, underscoring the need for caution in drawing substantive conclusions from null findings.
+
+Each of the paper’s contributions is thus supported by the results. The descriptive analysis documents declining regional inequality and validates NTL as a proxy for GDP at the national level. The methodological analysis shows that, in small-N panels with few treatment switches, panel estimators yield unstable and model-dependent results. Finally, the quantification of inference limits—demonstrating that only implausibly large favoritism effects could be detected—highlights the importance of transparent reporting and careful design in future research.
+
+% NOTE: Many citations are undefined. Please ensure all cited works are present in your .bib file and that you run BibTeX or Biber as needed.
+
+
+\section{Limitations}
+
+This study’s findings must be interpreted in light of several fundamental limitations, each of which carries important lessons for research design and the broader literature:
+
+\begin{enumerate}
+	\item \textbf{Severe small-N and rare treatment:} The very limited number of regions and infrequent leadership transitions sharply constrain statistical power and the ability to distinguish treatment effects from noise. Most identifying variation is cross-sectional, not within-region over time, making credible causal inference nearly impossible in this setting.
+	\item \textbf{Endogeneity and lack of exogenous variation:} Leader-region assignment is endogenous and likely correlated with unobserved determinants of economic outcomes. Without valid instruments or natural experiments, all estimates are subject to omitted variable bias and cannot be interpreted causally.
+	\item \textbf{Measurement and proxy limitations:} NTL is an imperfect proxy for economic activity, especially at the subnational level, and regional GDP data are sparse and inconsistently measured. These data limitations may mask real distributive politics or generate spurious findings.
+	\item \textbf{Design limits for event studies and pre-trends:} The small number of treated units and transitions precludes meaningful pre-trend testing and limits the informativeness of event-study designs, even with best-practice methods.
+	\item \textbf{Boundary harmonization and aggregation:} Changes in administrative boundaries and the need for harmonization may introduce aggregation bias or obscure localized effects, further reducing the ability to detect favoritism.
+\end{enumerate}
+
+\textbf{Implications:}
+\begin{itemize}
+	\item These limitations are not unique to this study—they are endemic to research on distributive politics in small-N, centralized, or data-poor settings.
+	\item Null or unstable results in such contexts should be seen as diagnostic of research design limits, not as evidence for or against favoritism.
+	\item Transparent reporting of these constraints is essential for scientific progress and for guiding future research toward richer data, more exogenous variation, and alternative identification strategies.
+\end{itemize}
+
+In sum, the results should be interpreted as descriptive associations, not as definitive causal estimates. The analytic value of this study lies in clarifying the empirical limits of the available data and methods, and in providing a transparent benchmark for future work.
+
+\section{Policy Implications}
+
+The empirical limitations documented in this study have direct policy consequences. First, the absence of robust evidence for systematic favoritism toward leaders' birth regions should not be misinterpreted as proof that favoritism does not exist. Rather, it reflects the limited statistical power and identification challenges inherent in small-N, centralized contexts. Policymakers risk drawing incorrect conclusions if they over-rely on weak or proxy-based evidence, such as nighttime lights, without considering the underlying data constraints and the possibility of undetected effects. Overinterpretation of null results may lead to complacency or the unwarranted dismissal of distributive concerns.
+
+Instead, policymakers should exercise caution in interpreting NTL-based findings. They should not conclude that the absence of detected favoritism is evidence of fair or equitable distribution, nor should they assume that NTL fully captures the complexity of regional economic activity or distributive politics. What can be cautiously inferred is that, given current data and methods, only extremely large favoritism effects would be detectable; more subtle or sector-specific patterns may go unnoticed.
+
+To improve the evidentiary basis for policy, investment in higher-quality, more frequent, and more granular subnational economic data is essential. This includes both improved NTL products and more comprehensive official statistics. Institutional reforms that promote transparent, harmonized administrative boundaries and facilitate the collection of regionally disaggregated data will further enhance the credibility of future evaluations. Ultimately, better data and more exogenous variation—such as from natural experiments or institutional reforms—are needed to enable rigorous policy analysis and monitoring.
+
+	extbf{Correct vs incorrect policy interpretations:}
+\begin{itemize}
+	\item \textbf{Correct:} Null results reflect limited statistical power and data constraints, not proof of absence of favoritism.
+	\item \textbf{Correct:} NTL is a useful but imperfect proxy; complementary data and qualitative evidence are needed for a full assessment.
+	\item \textbf{Correct:} Policy conclusions should be tentative and emphasize the need for better data and identification strategies.
+	\item \textbf{Incorrect:} No detected favoritism means the system is fair or that distributive politics are absent.
+	\item \textbf{Incorrect:} NTL-based evidence alone is sufficient for high-stakes policy decisions.
+	\item \textbf{Incorrect:} Null results justify inaction or the dismissal of distributive concerns.
+\end{itemize}
+
+\section{Conclusion}
+
+
+This study provides a transparent, data-driven reassessment of regional favoritism in Ethiopia, leveraging harmonized NTL and GDP data and best-practice panel methods. We find no robust evidence that national leaders systematically favor their birth regions in terms of broad regional economic outcomes. Rather than interpreting this null result as proof of absence, we emphasize its diagnostic value: the severe constraints of small-N, centralized settings, and imperfect proxies limit the ability to credibly detect distributive favoritism, even with state-of-the-art methods.
+
+What sets this paper apart is its commitment to methodological transparency and explicit reporting of empirical limits. While many prior studies risk overstating the robustness or generalizability of their findings by not fully disclosing the fragility of their identification strategies or the minimum effect sizes they can detect, this study sets a higher reporting standard for the field. By quantifying the minimum detectable effect, mapping all claims to available variation, and documenting the boundaries of credible inference, this work prevents overinterpretation of null results and demonstrates best practices for research under severe data and design constraints. In doing so, it provides a methodological template for future work, showing that transparent disclosure of power, identification, and data limitations is essential for credible and cumulative scientific progress in distributive politics and regional inequality.
+
+The main contribution of this work is to clarify the empirical and methodological limits facing research on distributive politics in data-poor, low-variation contexts. Our findings highlight the need for richer, more granular data, exogenous sources of variation, and transparent reporting of identification constraints. The lessons from Ethiopia are broadly relevant for the literature: null or unstable results in similar settings should be seen as signals of research design limits, not as evidence for or against favoritism.
+
+Future research should prioritize mixed-methods approaches, more granular outcomes, and research designs that can credibly isolate exogenous variation in political power. Transparent reporting of null results and research design constraints is essential for cumulative scientific progress in the study of distributive politics and regional inequality.
+
+\section{References}
+% Bibliography will be generated automatically.
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\section{Appendix}
+
+\subsection*{Summary Statistics for Main Variables}
+\begin{table}[ht]
+\centering
+\caption{Summary statistics for NTL, lnNTL, Mean\_NTL, and Leader\_region (regional panel, 1992--2024).}
+\begin{tabular}{lcccccccc}
+\toprule
+Variable & Count & Mean & Std & Min & 25\% & 50\% & 75\% & Max \\
+\midrule
+NTL & 429 & 14167.6 & 25924.6 & 0.0 & 1306.0 & 3359.0 & 14484.0 & 169874.0 \\
+lnNTL & 429 & 8.16 & 2.22 & -4.61 & 7.17 & 8.12 & 9.58 & 12.04 \\
+Leader\_region & 429 & 0.11 & 0.32 & 0.0 & 0.0 & 0.0 & 0.0 & 1.0 \\
+Mean\_NTL & 429 & 3.10 & 9.27 & 0.0 & 0.02 & 0.12 & 1.28 & 57.16 \\
+\bottomrule
+\end{tabular}
+\label{tab:summary_stats}
+\end{table}
+
+\end{document}

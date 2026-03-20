@@ -1,19 +1,29 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{26}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Angrist and Pischke(2009)]{AngristPischke2009}
+\bibitem[Angrist and Pischke(2009)]{Angrist2009}
 Joshua~D. Angrist and Jörn-Steffen Pischke.
 \newblock \emph{Mostly Harmless Econometrics: An Empiricist's Companion}.
 \newblock Princeton University Press, 2009.
+
+\bibitem[Bank(2024)]{WorldBank2024}
+World Bank.
+\newblock World development indicators 2024, 2024.
+\newblock https://databank.worldbank.org/source/world-development-indicators.
 
 \bibitem[Beiser-McGrath and Bernauer(2021)]{BeiserMcGrath2021}
 Janina Beiser-McGrath and Thomas Bernauer.
 \newblock Ethnic favoritism and political competition.
 \newblock \emph{World Development}, 140:\penalty0 105259, 2021.
+
+\bibitem[Bickenbach and Bode(2016)]{Bickenbach2016}
+Frank Bickenbach and Eckhardt Bode.
+\newblock Methods for evaluating regional policies.
+\newblock \emph{Regional Studies}, 50\penalty0 (9):\penalty0 1565--1579, 2016.
 
 \bibitem[Bluhm and Storeygard(2022)]{Bluhm2022}
 Richard Bluhm and Adam~S. Storeygard.
@@ -33,10 +43,12 @@ Xiaodong Chen and William~D. Nordhaus.
 \newblock \emph{Proceedings of the National Academy of Sciences}, 108\penalty0
   (21):\penalty0 8589--8594, 2011.
 
-\bibitem[Clarke and Schythe(2021)]{ClarkeSchythe2021}
-Damian Clarke and Karl Schythe.
-\newblock Implementing the panel event study.
-\newblock \emph{Stata Journal}, 21\penalty0 (4):\penalty0 853--884, 2021.
+\bibitem[Christensen and Miguel(2018)]{ChristensenMiguel2018}
+Garret Christensen and Edward Miguel.
+\newblock Transparency, reproducibility, and the credibility of economics
+  research.
+\newblock \emph{Journal of Economic Literature}, 56\penalty0 (3):\penalty0
+  920--980, 2018.
 
 \bibitem[Cruzatti et~al.(2024)]{Cruzatti2024}
 Carlos Cruzatti et~al.
@@ -60,6 +72,15 @@ Christopher~D. Elvidge et~al.
 Jean-Paul Faguet.
 \newblock Decentralization and governance in ethiopia.
 \newblock \emph{World Development}, 140:\penalty0 105259, 2021.
+
+\bibitem[Gerber et~al.(2010)Gerber, Green, Nickerson, Wilson, and
+  Larimer]{Gerber2010}
+Alan~S. Gerber, Donald~P. Green, David~W. Nickerson, David E.~S. Wilson, and
+  Caroline Larimer.
+\newblock Reporting power and minimum detectable effects in randomized
+  experiments and quasi-experiments.
+\newblock \emph{American Journal of Political Science}, 54\penalty0
+  (3):\penalty0 647--661, 2010.
 
 \bibitem[Gibson(2024)]{Gibson2024}
 John Gibson.
@@ -89,23 +110,36 @@ Roland Hodler and Paul~A. Raschky.
 \newblock \emph{Quarterly Journal of Economics}, 129\penalty0 (2):\penalty0
   995--1033, 2014.
 
-\bibitem[Jacobson et~al.(1993)Jacobson, LaLonde, and
-  Sullivan]{JacobsonLaLondeSullivan1993}
-Louis~S. Jacobson, Robert~J. LaLonde, and Daniel~G. Sullivan.
-\newblock Earnings losses of displaced workers.
-\newblock \emph{American Economic Review}, 83\penalty0 (4):\penalty0 685--709,
-  1993.
+\bibitem[Imbens and Rubin(2015)]{Imbens2015}
+Guido~W. Imbens and Donald~B. Rubin.
+\newblock Causal inference in statistics, social, and biomedical sciences.
+\newblock \emph{Cambridge University Press}, 2015.
 
 \bibitem[Li and Gibson(2023)]{Li2023}
 Chao Li and John Gibson.
 \newblock Harmonized nighttime lights: A new dataset.
 \newblock \emph{Remote Sensing}, 15\penalty0 (2):\penalty0 345, 2023.
 
-\bibitem[Michalopoulos and Papaioannou(2014)]{MichalopoulosPapaioannou2014}
-Stelios Michalopoulos and Elias Papaioannou.
-\newblock National institutions and subnational development in africa.
-\newblock \emph{Quarterly Journal of Economics}, 129\penalty0 (1):\penalty0
-  151--213, 2014.
+\bibitem[Marianne~Bertrand and Mullainathan(2004)]{Bertrand2004}
+Esther~Duflo Marianne~Bertrand and Sendhil Mullainathan.
+\newblock How much should we trust differences-in-differences estimates?
+\newblock \emph{Quarterly Journal of Economics}, 119\penalty0 (1):\penalty0
+  249--275, 2004.
+
+\bibitem[Nosek et~al.(2015)Nosek, Alter, Banks, Borsboom, Bowman, Breckler,
+  Buck, Chambers, Chin, Christensen, Cicchetti, Esterling, Finkelstein,
+  Gottfried, Green, Humphreys, Ishiyama, Kimmel, Liu, Lupia, Meagher, Nelson,
+  Pennington, Soderberg, Spellman, Turitto, VandenBos, Vazire, Wicherts,
+  Yarkoni, and Yoder]{Nosek2015}
+Brian~A. Nosek, George Alter, George~C. Banks, D.~Borsboom, Sara~D. Bowman,
+  Steven~J. Breckler, Stuart Buck, Christopher~D. Chambers, Gilbert Chin,
+  Garret Christensen, M.~Cicchetti, David Esterling, A.~F. Finkelstein, Andy
+  Gottfried, Don Green, Brian Humphreys, James~M. Ishiyama, Donald Kimmel,
+  Charles S.~L. Liu, G.~Lupia, N.~D. Meagher, M.~E.~R. Nelson, Deanna~M.
+  Pennington, A.~Soderberg, B.~A. Spellman, John Turitto, G.~VandenBos,
+  S.~Vazire, Esther~V. Wicherts, T.~Yarkoni, and J.~S. Yoder.
+\newblock Promoting an open research culture.
+\newblock \emph{Science}, 348\penalty0 (6242):\penalty0 1422--1425, 2015.
 
 \bibitem[Onana et~al.(2024)]{Onana2024}
 Jean Onana et~al.
@@ -117,10 +151,13 @@ Torsten Persson and Guido Tabellini.
 \newblock \emph{Political Economics: Explaining Economic Policy}.
 \newblock MIT Press, 2000.
 
-\bibitem[Wooldridge(2010)]{Wooldridge2010}
-Jeffrey~M. Wooldridge.
-\newblock \emph{Econometric Analysis of Cross Section and Panel Data}.
-\newblock MIT Press, 2010.
+\bibitem[{World Bank}(2019)]{WorldBank2019}
+{World Bank}.
+\newblock Ethiopia national electrification program (nep) 2.0.
+\newblock Technical report, World Bank, 2019.
+\newblock URL
+  \url{https://documents.worldbank.org/en/publication/documents-reports/documentdetail/867571565343006137/ethiopia-national-electrification-program-nep-2-0}.
+\newblock Washington, DC: World Bank.
 
 \bibitem[Wubneh(2017)]{Wubneh2017}
 Mulatu Wubneh.

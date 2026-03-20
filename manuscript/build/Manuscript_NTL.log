@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.17)  20 MAR 2026 17:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.17)  20 MAR 2026 16:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -516,23 +516,24 @@ ftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count302
 \l__pdf_internal_box=\box64
-) (Manuscript_NTL.aux)
+)
+No file Manuscript_NTL.aux.
 \openout1 = `Manuscript_NTL.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
 kii
@@ -593,156 +594,705 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
 
 (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
 
 
 (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (228.20833pt too wide) in paragraph at lines 32--32
- [][] 
- []
+
+Package natbib Warning: Citation `Chen2011' on page 1 undefined on input line 2
+6.
+
+
+Package natbib Warning: Citation `Henderson2012' on page 1 undefined on input l
+ine 26.
+
+
+Package natbib Warning: Citation `Li2023' on page 1 undefined on input line 26.
+
+
+
+Package natbib Warning: Citation `Angrist2009' on page 1 undefined on input lin
+e 26.
+
+
+Package natbib Warning: Citation `Bertrand2004' on page 1 undefined on input li
+ne 26.
+
+
+Package natbib Warning: Citation `Imbens2015' on page 1 undefined on input line
+ 26.
+
+
+Package natbib Warning: Citation `Bickenbach2016' on page 1 undefined on input 
+line 26.
+
+
+Package natbib Warning: Citation `WorldBank2024' on page 1 undefined on input l
+ine 26.
+
+
+Package natbib Warning: Citation `PerssonTabellini2000' on page 1 undefined on 
+input line 32.
+
+
+Package natbib Warning: Citation `Hodler2014' on page 1 undefined on input line
+ 32.
+
+
+Package natbib Warning: Citation `BeiserMcGrath2021' on page 1 undefined on inp
+ut line 32.
+
+
+Package natbib Warning: Citation `Onana2024' on page 1 undefined on input line 
+32.
+
+
+Package natbib Warning: Citation `Chen2011' on page 1 undefined on input line 3
+2.
+
+
+Package natbib Warning: Citation `Henderson2012' on page 1 undefined on input l
+ine 32.
+
+
+Package natbib Warning: Citation `Li2023' on page 1 undefined on input line 32.
+
+
+
+Package natbib Warning: Citation `Gibson2021' on page 1 undefined on input line
+ 32.
+
+
+Package natbib Warning: Citation `Bertrand2004' on page 1 undefined on input li
+ne 34.
+
+
+Package natbib Warning: Citation `Angrist2009' on page 1 undefined on input lin
+e 34.
+
+
+Package natbib Warning: Citation `Imbens2015' on page 1 undefined on input line
+ 34.
 
 [1
 
-{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-Overfull \hbox (3.83444pt too wide) in paragraph at lines 67--68
-[]\T1/cmr/m/n/12 Third, the pa-per builds on re-search on fed-er-al-ism and re-
-gional de-vel-op-ment in Ethiopia.
- []
+{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+
+Package natbib Warning: Citation `Chen2011' on page 2 undefined on input line 5
+6.
+
+
+Package natbib Warning: Citation `Henderson2012' on page 2 undefined on input l
+ine 56.
+
+
+Package natbib Warning: Citation `Bluhm2022' on page 2 undefined on input line 
+56.
+
+
+Package natbib Warning: Citation `Gibson2021' on page 2 undefined on input line
+ 56.
+
+
+Package natbib Warning: Citation `Li2023' on page 2 undefined on input line 56.
+
+
+
+Package natbib Warning: Citation `Gibson2024' on page 2 undefined on input line
+ 56.
+
+
+Package natbib Warning: Citation `MichalopoulosPapaioannou2014' on page 2 undef
+ined on input line 56.
+
+
+Package natbib Warning: Citation `Elvidge2021' on page 2 undefined on input lin
+e 56.
+
+[2]
+
+Package natbib Warning: Citation `Hodler2014' on page 3 undefined on input line
+ 58.
+
+
+Package natbib Warning: Citation `BeiserMcGrath2021' on page 3 undefined on inp
+ut line 58.
+
+
+Package natbib Warning: Citation `Onana2024' on page 3 undefined on input line 
+58.
+
+
+Package natbib Warning: Citation `Cruzatti2024' on page 3 undefined on input li
+ne 58.
+
+
+Package natbib Warning: Citation `GoldenMin2013' on page 3 undefined on input l
+ine 58.
+
+
+Package natbib Warning: Citation `Faguet2021' on page 3 undefined on input line
+ 60.
+
+
+Package natbib Warning: Citation `Wubneh2017' on page 3 undefined on input line
+ 60.
+
+
+Package natbib Warning: Citation `Faguet2021' on page 3 undefined on input line
+ 63.
 
 [3]
-Overfull \hbox (1.65717pt too wide) in paragraph at lines 95--96
- \T1/cmr/bx/n/12 Iden-ti-fi-ca-tion and Lim-i-ta-tions[] \T1/cmr/m/n/12 Iden-ti
--fi-ca-tion re-lies on within-region changes in leader
- []
 
-[4] [5]
-
-LaTeX Warning: Reference `fig:ntl_trends' on page 6 undefined on input line 127
-.
+Package natbib Warning: Citation `Li2023' on page 4 undefined on input line 71.
 
 
-LaTeX Warning: Reference `fig:ntl_hist' on page 6 undefined on input line 129.
+
+Package natbib Warning: Citation `Elvidge2021' on page 4 undefined on input lin
+e 71.
 
 
-LaTeX Warning: Reference `fig:ntl_leader_trend' on page 6 undefined on input li
-ne 133.
+Package natbib Warning: Citation `Henderson2012' on page 4 undefined on input l
+ine 71.
 
 
-LaTeX Warning: Reference `fig:ntl_box_leader' on page 6 undefined on input line
- 133.
-
-[6]
-
-LaTeX Warning: Reference `tab:robustness_identification' on page 7 undefined on
- input line 153.
-
-[7] (Manuscript_NTL.bbl [8]
-Underfull \hbox (badness 10000) in paragraph at lines 14--17
-[]\T1/cmr/m/n/12 World Bank.  World de-vel-op-ment in-di-ca-tors 2024, 2024.
- []
-
-[9]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-59.
- (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-Underfull \hbox (badness 10000) in paragraph at lines 155--161
-[]\T1/cmr/m/n/12 World Bank.  Ethiopia na-tional elec-tri-fi-ca-tion pro-gram
- []
+Package natbib Warning: Citation `MichalopoulosPapaioannou2014' on page 4 undef
+ined on input line 71.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--161
-\T1/cmr/m/n/12 (nep) 2.0.  Tech-ni-cal re-port, World Bank, 2019.  URL
- []
+Package natbib Warning: Citation `Angrist2009' on page 4 undefined on input lin
+e 71.
 
 
-Overfull \hbox (475.7192pt too wide) in paragraph at lines 155--161
-\T1/cmtt/m/n/12 https://documents.worldbank.org/en/publication/documents-report
-s/documentdetail/867571565343006137/ethiopia-national-electrification-program-n
-ep-2-0\T1/cmr/m/n/12 .
- []
-
-)
-Overfull \hbox (11.84918pt too wide) in paragraph at lines 204--215
- [][] 
- []
-
-[10] [11]
-Underfull \hbox (badness 6741) in paragraph at lines 288--288
-[]\T1/cmr/m/n/12 Economic con-di-tions in-flu-ence leader
- []
+Package natbib Warning: Citation `Wooldridge2010' on page 4 undefined on input 
+line 71.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
+Package natbib Warning: Citation `Bertrand2004' on page 4 undefined on input li
+ne 71.
+
+[4]
+
+Package natbib Warning: Citation `Hodler2014' on page 5 undefined on input line
+ 113.
+
+
+Package natbib Warning: Citation `Gibson2021' on page 5 undefined on input line
+ 114.
+
+
+Package natbib Warning: Citation `Bickenbach2016' on page 5 undefined on input 
+line 114.
+
+
+Package natbib Warning: Citation `WorldBank2024' on page 5 undefined on input l
+ine 114.
+
+
+Package natbib Warning: Citation `Imbens2015' on page 5 undefined on input line
+ 115.
+
+
+Package natbib Warning: Citation `Angrist2009' on page 5 undefined on input lin
+e 127.
+
+
+Package natbib Warning: Citation `Chen2011' on page 5 undefined on input line 1
+31.
+
+
+Package natbib Warning: Citation `Henderson2012' on page 5 undefined on input l
+ine 131.
+
+
+Package natbib Warning: Citation `Gibson2021' on page 5 undefined on input line
+ 131.
+
+
+Package natbib Warning: Citation `Wooldridge2010' on page 5 undefined on input 
+line 135.
+
+
+Package natbib Warning: Citation `AngristPischke2009' on page 5 undefined on in
+put line 135.
+
+
+Package natbib Warning: Citation `JacobsonLaLondeSullivan1993' on page 5 undefi
+ned on input line 135.
+
+
+Package natbib Warning: Citation `ClarkeSchythe2021' on page 5 undefined on inp
+ut line 135.
+
+
+Package natbib Warning: Citation `DriscollKraay1998' on page 5 undefined on inp
+ut line 135.
+
+
+Package natbib Warning: Citation `CameronGelbachMiller2008' on page 5 undefined
+ on input line 135.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
 []\T1/cmr/m/n/12 Lagged treat-ment, placebo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
-[]\T1/cmr/m/n/12 Restrict to pre-determined
- []
-
-
-Overfull \hbox (52.50255pt too wide) in paragraph at lines 283--294
+Overfull \hbox (52.50255pt too wide) in paragraph at lines 148--159
  [][] 
  []
 
-[12]
-Overfull \hbox (2.3012pt too wide) in paragraph at lines 328--329
-[]\T1/cmr/m/n/12 All sam-ple re-stric-tions, trans-for-ma-tions, and as-sump-ti
-ons are ex-plic-itly doc-u-mented. 
+
+Package natbib Warning: Citation `Angrist2009' on page 6 undefined on input lin
+e 163.
+
+
+Package natbib Warning: Citation `Bertrand2004' on page 6 undefined on input li
+ne 166.
+
+
+Package natbib Warning: Citation `Abadie2010' on page 6 undefined on input line
+ 166.
+
+
+Package natbib Warning: Citation `Imbens2015' on page 6 undefined on input line
+ 166.
+
+[6] [7]
+
+Package natbib Warning: Citation `Li2023' on page 8 undefined on input line 214
+.
+
+
+Package natbib Warning: Citation `Elvidge2021' on page 8 undefined on input lin
+e 214.
+
+[8]
+
+Package natbib Warning: Citation `Li2023' on page 9 undefined on input line 222
+.
+
+
+Package natbib Warning: Citation `Elvidge2021' on page 9 undefined on input lin
+e 222.
+
+
+Package natbib Warning: Citation `Hodler2014' on page 9 undefined on input line
+ 224.
+
+
+Overfull \hbox (13.92412pt too wide) in paragraph at lines 235--236
+[]$\OT1/cmr/bx/n/12 X[]$\T1/cmr/m/n/12 : Controls---log land area (km$[]$), log
+ pop-u-la-tion (an-nual, from cen-sus/interpolated),
  []
 
-[13] (Manuscript_NTL.aux)
+[9]
+
+Package natbib Warning: Citation `Bertrand2004' on page 10 undefined on input l
+ine 250.
+
+
+Package natbib Warning: Citation `Henderson2012' on page 10 undefined on input 
+line 251.
+
+
+Package natbib Warning: Citation `Gibson2021' on page 10 undefined on input lin
+e 251.
+
+
+Package natbib Warning: Citation `Angrist2009' on page 10 undefined on input li
+ne 253.
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
+69.
+(C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+
+LaTeX Warning: File `../outputs/figures/admin/ethiopia_admin_map.png' not found
+ on input line 275.
+
+
+! Package pdftex.def Error: File `../outputs/figures/admin/ethiopia_admin_map.p
+ng' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.275 ...uts/figures/admin/ethiopia_admin_map.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[10] [11]
+
+Package natbib Warning: Citation `WorldBank2024' on page 12 undefined on input 
+line 307.
+
+
+Package natbib Warning: Citation `Henderson2012' on page 12 undefined on input 
+line 307.
+
+
+Package natbib Warning: Citation `Gibson2021' on page 12 undefined on input lin
+e 307.
+
+
+Package natbib Warning: Citation `Bickenbach2016' on page 12 undefined on input
+ line 307.
+
+
+Package natbib Warning: Citation `Henderson2012' on page 12 undefined on input 
+line 309.
+
+
+Package natbib Warning: Citation `Gibson2021' on page 12 undefined on input lin
+e 309.
+
+
+Package natbib Warning: Citation `Bluhm2022' on page 12 undefined on input line
+ 309.
+
+[12]
+
+LaTeX Warning: File `../outputs/figures/national/ntl_gdp_combined_trend.png' no
+t found on input line 315.
+
+
+! Package pdftex.def Error: File `../outputs/figures/national/ntl_gdp_combined_
+trend.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.315 ...ures/national/ntl_gdp_combined_trend.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `../outputs/figures/regional/regional_ntl_gini_trend.png' n
+ot found on input line 325.
+
+
+! Package pdftex.def Error: File `../outputs/figures/regional/regional_ntl_gini
+_trend.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.325 ...res/regional/regional_ntl_gini_trend.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `../outputs/figures/regional/regional_luminosity_trends.png
+' not found on input line 333.
+
+
+! Package pdftex.def Error: File `../outputs/figures/regional/regional_luminosi
+ty_trends.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.333 .../regional/regional_luminosity_trends.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `../outputs/figures/regional/ntl_histogram.png' not found o
+n input line 341.
+
+
+! Package pdftex.def Error: File `../outputs/figures/regional/ntl_histogram.png
+' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.341 ...tputs/figures/regional/ntl_histogram.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `../outputs/figures/regional/ntl_leader_vs_nonleader_trend.
+png' not found on input line 349.
+
+
+! Package pdftex.def Error: File `../outputs/figures/regional/ntl_leader_vs_non
+leader_trend.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.349 ...gional/ntl_leader_vs_nonleader_trend.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `../outputs/figures/regional/ntl_boxplot_by_leader.png' not
+ found on input line 356.
+
+
+! Package pdftex.def Error: File `../outputs/figures/regional/ntl_boxplot_by_le
+ader.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.356 ...gures/regional/ntl_boxplot_by_leader.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[13]
+
+LaTeX Warning: File `../outputs/figures/regional/event_study_plot.png' not foun
+d on input line 372.
+
+
+! Package pdftex.def Error: File `../outputs/figures/regional/event_study_plot.
+png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.372 ...ts/figures/regional/event_study_plot.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
+[]\T1/cmr/m/n/12 Assumption
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
+[]\T1/cmr/m/n/12 Observed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+[]\T1/cmr/m/n/12 Model de-pen-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\T1/cmr/m/n/12 dence, omit-ted
+ []
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 391--391
+[]\T1/cmr/m/n/12 Stable, sig-nif-i-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+[]\T1/cmr/m/n/12 Fluctuates,
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 391--391
+[]\T1/cmr/m/n/12 Highly sen-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\T1/cmr/m/n/12 si-tive to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\T1/cmr/m/n/12 spec-i-fi-ca-
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 392--392
+[]\T1/cmr/m/n/12 Placebo & Event-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--392
+[]\T1/cmr/m/n/12 Parallel trends,
+ []
+
+
+Underfull \hbox (badness 2253) in paragraph at lines 392--392
+[]\T1/cmr/m/n/12 No pre-trends,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--392
+[]\T1/cmr/m/n/12 Null
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--392
+\T1/cmr/m/n/12 through-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--392
+[]\T1/cmr/m/n/12 Null
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--392
+\T1/cmr/m/n/12 through-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
+[]\T1/cmr/m/n/12 Pass (no
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
+\T1/cmr/m/n/12 pre-trends,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--393
+[]\T1/cmr/m/n/12 Region-specific
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--393
+[]\T1/cmr/m/n/12 No dif-fer-en-tial
+ []
+
+
+Underfull \hbox (badness 4492) in paragraph at lines 393--393
+[]\T1/cmr/m/n/12 Effect van-
+ []
+
+
+Underfull \hbox (badness 4492) in paragraph at lines 393--393
+[]\T1/cmr/m/n/12 Effect van-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+[]\T1/cmr/m/n/12 Alternative SEs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+\T1/cmr/m/n/12 (Driscoll-Kraay,
+ []
+
+
+Underfull \hbox (badness 1635) in paragraph at lines 395--395
+[]\T1/cmr/m/n/12 Exclusion of city-
+ []
+
+
+Underfull \hbox (badness 1895) in paragraph at lines 395--395
+[]\T1/cmr/m/n/12 No un-due in-flu-
+ []
+
+
+Underfull \hbox (badness 4492) in paragraph at lines 395--395
+[]\T1/cmr/m/n/12 Effect van-
+ []
+
+
+Underfull \hbox (badness 4492) in paragraph at lines 395--395
+[]\T1/cmr/m/n/12 Effect van-
+ []
+
+
+Underfull \hbox (badness 4492) in paragraph at lines 396--396
+[]\T1/cmr/m/n/12 Effect van-
+ []
+
+
+Underfull \hbox (badness 4492) in paragraph at lines 396--396
+[]\T1/cmr/m/n/12 Effect van-
+ []
+
+
+Overfull \hbox (77.12115pt too wide) in paragraph at lines 387--399
+ [][] 
+ []
+
+[15]
+Overfull \hbox (48.35872pt too wide) in paragraph at lines 417--426
+ [][] 
+ []
+
+[16] [17] [18] [19] [20]
+No file Manuscript_NTL.bbl.
+
+Overfull \hbox (11.84918pt too wide) in paragraph at lines 503--514
+ [][] 
+ []
+
+[21]
+
+Package natbib Warning: There were undefined citations.
+
+[22] (Manuscript_NTL.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 14364 strings out of 474486
- 284963 string characters out of 5743282
- 1937542 words of memory out of 5000000
- 36396 multiletter control sequences out of 15000+600000
- 576075 words of font info for 86 fonts, out of 8000000 for 9000
+ 14514 strings out of 474486
+ 298111 string characters out of 5743282
+ 1942542 words of memory out of 5000000
+ 36551 multiletter control sequences out of 15000+600000
+ 574527 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,93p,1547b,360s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcr
-m1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
-600\ectt1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen
-/ec/dpi600\ecti1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/j
-knappen/ec/dpi600\ecbx1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/l
-jfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fon
+ 84i,11n,93p,1457b,264s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ect
+t1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
+600\ecti1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen
+/ec/dpi600\tcrm1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/j
+knappen/ec/dpi600\ecbx1440.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/l
+jfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fon
 ts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Lenovo\AppData\Local\MiK
 TeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Lenovo\AppData\Lo
-cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\Lenovo\App
-Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\Len
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\Lenovo\App
+Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\Len
 ovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Us
 ers\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk>
 <C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmmi12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lenovo/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lenovo/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lenovo/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Len
-ovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Manuscript_NTL.pdf (13 pages, 269160 bytes).
+fonts/cm/cmmi12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lenovo/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lenovo/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Manuscript_NTL.pdf (22 pages, 262649 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
+ 554 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
