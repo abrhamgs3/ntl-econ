@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Manuscript_NTL.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+Warning--I didn't find a database entry for "Alesina2016"
+Warning--I didn't find a database entry for "Baldwin2010"
+Warning--I didn't find a database entry for "Ezcurra2019"
+Warning--I didn't find a database entry for "Bickenbach2016"
+Warning--I didn't find a database entry for "Angrist2009"
+Warning--I didn't find a database entry for "Bertrand2004"
+Warning--I didn't find a database entry for "Abadie2010"
+Warning--I didn't find a database entry for "Imbens2015"
+Warning--I didn't find a database entry for "WorldBank2024"
+You've used 22 entries,
+            2773 wiz_defined-function locations,
+            763 strings with 7972 characters,
+and the built_in function-call counts, 9263 in all, are:
+= -- 822
+> -- 442
+< -- 19
++ -- 151
+- -- 129
+* -- 718
+:= -- 1431
+add.period$ -- 66
+call.type$ -- 22
+change.case$ -- 103
+chr.to.int$ -- 22
+cite$ -- 44
+duplicate$ -- 443
+empty$ -- 841
+format.name$ -- 178
+if$ -- 1967
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 25
+newline$ -- 118
+num.names$ -- 88
+pop$ -- 190
+preamble$ -- 1
+purify$ -- 84
+quote$ -- 0
+skip$ -- 332
+stack$ -- 0
+substring$ -- 401
+swap$ -- 22
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 227
+warning$ -- 0
+while$ -- 85
+width$ -- 0
+write$ -- 290
+(There were 9 warnings)

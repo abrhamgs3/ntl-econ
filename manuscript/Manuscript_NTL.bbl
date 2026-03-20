@@ -1,0 +1,130 @@
+\begin{thebibliography}{22}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Angrist and Pischke(2009)]{AngristPischke2009}
+Joshua~D. Angrist and Jörn-Steffen Pischke.
+\newblock \emph{Mostly Harmless Econometrics: An Empiricist's Companion}.
+\newblock Princeton University Press, 2009.
+
+\bibitem[Beiser-McGrath and Bernauer(2021)]{BeiserMcGrath2021}
+Janina Beiser-McGrath and Thomas Bernauer.
+\newblock Ethnic favoritism and political competition.
+\newblock \emph{World Development}, 140:\penalty0 105259, 2021.
+
+\bibitem[Bluhm and Storeygard(2022)]{Bluhm2022}
+Richard Bluhm and Adam~S. Storeygard.
+\newblock The lights are on but no one’s home?
+\newblock \emph{Journal of Development Economics}, 156:\penalty0 102830, 2022.
+
+\bibitem[Cameron et~al.(2008)Cameron, Gelbach, and
+  Miller]{CameronGelbachMiller2008}
+A.~Colin Cameron, Jonah~B. Gelbach, and Douglas~L. Miller.
+\newblock Bootstrap-based improvements for inference with clustered errors.
+\newblock \emph{Review of Economics and Statistics}, 90\penalty0 (3):\penalty0
+  414--427, 2008.
+
+\bibitem[Chen and Nordhaus(2011)]{Chen2011}
+Xiaodong Chen and William~D. Nordhaus.
+\newblock Using luminosity data as a proxy for economic statistics.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 108\penalty0
+  (21):\penalty0 8589--8594, 2011.
+
+\bibitem[Clarke and Schythe(2021)]{ClarkeSchythe2021}
+Damian Clarke and Karl Schythe.
+\newblock Implementing the panel event study.
+\newblock \emph{Stata Journal}, 21\penalty0 (4):\penalty0 853--884, 2021.
+
+\bibitem[Cruzatti et~al.(2024)]{Cruzatti2024}
+Carlos Cruzatti et~al.
+\newblock Geographic targeting in local politics.
+\newblock \emph{Journal of Politics in Latin America}, 16\penalty0
+  (1):\penalty0 45--67, 2024.
+
+\bibitem[Driscoll and Kraay(1998)]{DriscollKraay1998}
+John~C. Driscoll and Aart~C. Kraay.
+\newblock Consistent covariance matrix estimation with spatially dependent
+  panel data.
+\newblock \emph{Review of Economics and Statistics}, 80\penalty0 (4):\penalty0
+  549--560, 1998.
+
+\bibitem[Elvidge et~al.(2021)]{Elvidge2021}
+Christopher~D. Elvidge et~al.
+\newblock Annual viirs nighttime lights composites.
+\newblock \emph{Remote Sensing}, 13\penalty0 (5):\penalty0 789, 2021.
+
+\bibitem[Faguet(2021)]{Faguet2021}
+Jean-Paul Faguet.
+\newblock Decentralization and governance in ethiopia.
+\newblock \emph{World Development}, 140:\penalty0 105259, 2021.
+
+\bibitem[Gibson(2024)]{Gibson2024}
+John Gibson.
+\newblock Recent advances in nighttime lights data.
+\newblock \emph{Remote Sensing Letters}, 15\penalty0 (4):\penalty0 321--330,
+  2024.
+
+\bibitem[Gibson and Li(2021)]{Gibson2021}
+John Gibson and Chao Li.
+\newblock Biases in nighttime lights as a proxy for economic activity.
+\newblock \emph{Remote Sensing}, 13\penalty0 (9):\penalty0 1805, 2021.
+
+\bibitem[Golden and Min(2013)]{GoldenMin2013}
+Miriam~A. Golden and Brian Min.
+\newblock Distributive politics around the world.
+\newblock \emph{Annual Review of Political Science}, 16:\penalty0 73--99, 2013.
+
+\bibitem[Henderson et~al.(2012)Henderson, Storeygard, and Weil]{Henderson2012}
+J.~Vernon Henderson, Adam Storeygard, and David~N. Weil.
+\newblock Measuring economic growth from outer space.
+\newblock \emph{American Economic Review}, 102\penalty0 (2):\penalty0
+  994--1028, 2012.
+
+\bibitem[Hodler and Raschky(2014)]{Hodler2014}
+Roland Hodler and Paul~A. Raschky.
+\newblock Regional favoritism.
+\newblock \emph{Quarterly Journal of Economics}, 129\penalty0 (2):\penalty0
+  995--1033, 2014.
+
+\bibitem[Jacobson et~al.(1993)Jacobson, LaLonde, and
+  Sullivan]{JacobsonLaLondeSullivan1993}
+Louis~S. Jacobson, Robert~J. LaLonde, and Daniel~G. Sullivan.
+\newblock Earnings losses of displaced workers.
+\newblock \emph{American Economic Review}, 83\penalty0 (4):\penalty0 685--709,
+  1993.
+
+\bibitem[Li and Gibson(2023)]{Li2023}
+Chao Li and John Gibson.
+\newblock Harmonized nighttime lights: A new dataset.
+\newblock \emph{Remote Sensing}, 15\penalty0 (2):\penalty0 345, 2023.
+
+\bibitem[Michalopoulos and Papaioannou(2014)]{MichalopoulosPapaioannou2014}
+Stelios Michalopoulos and Elias Papaioannou.
+\newblock National institutions and subnational development in africa.
+\newblock \emph{Quarterly Journal of Economics}, 129\penalty0 (1):\penalty0
+  151--213, 2014.
+
+\bibitem[Onana et~al.(2024)]{Onana2024}
+Jean Onana et~al.
+\newblock Clientelism and public investment.
+\newblock \emph{African Affairs}, 123\penalty0 (490):\penalty0 250--272, 2024.
+
+\bibitem[Persson and Tabellini(2000)]{PerssonTabellini2000}
+Torsten Persson and Guido Tabellini.
+\newblock \emph{Political Economics: Explaining Economic Policy}.
+\newblock MIT Press, 2000.
+
+\bibitem[Wooldridge(2010)]{Wooldridge2010}
+Jeffrey~M. Wooldridge.
+\newblock \emph{Econometric Analysis of Cross Section and Panel Data}.
+\newblock MIT Press, 2010.
+
+\bibitem[Wubneh(2017)]{Wubneh2017}
+Mulatu Wubneh.
+\newblock Urban policy and governance in ethiopia.
+\newblock \emph{Cities}, 60:\penalty0 123--132, 2017.
+
+\end{thebibliography}

@@ -5,10 +5,12 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import matplotlib.pyplot as plt
+
 import numpy as np
 import pandas as pd
-from linearmodels.panel import BetweenOLS, PanelOLS, PooledOLS
+from scripts.analysis.plot_regional_panel import plot_gini
+from scripts.analysis.plot_regional_panel import plot_ntl_histogram, plot_leader_vs_nonleader_trends, plot_ntl_boxplot_by_leader
+from scripts.analysis.regression_regional_panel import run_panel_regressions
 
 from scripts.common.paths import REGIONAL_FIGURES_DIR, REGIONAL_RESULTS_DIR, TABULAR_DIR
 
@@ -19,6 +21,11 @@ GINI_OUTPUT_PATH = RESULTS_DIR / "regional_ntl_gini_by_year.csv"
 GINI_FIGURE_PATH = FIGURES_DIR / "regional_ntl_gini_trend.png"
 REG_SUMMARY_FULL = RESULTS_DIR / "regional_panel_full_summary.txt"
 REG_SUMMARY_EXCL = RESULTS_DIR / "regional_panel_excluding_special_summary.txt"
+
+SUMMARY_STATS_PATH = RESULTS_DIR / "regional_panel_summary_stats.csv"
+NTL_HIST_FIGURE_PATH = FIGURES_DIR / "ntl_histogram.png"
+LEADER_TREND_FIGURE_PATH = FIGURES_DIR / "ntl_leader_vs_nonleader_trend.png"
+NTL_BOX_FIGURE_PATH = FIGURES_DIR / "ntl_boxplot_by_leader.png"
 
 
 def gini(array):
@@ -101,26 +108,7 @@ def save_gini_by_year(gini_by_year, output_path=GINI_OUTPUT_PATH):
     print(f"Saved yearly Gini coefficients to: {output_path}")
 
 
-def plot_gini(gini_by_year, output_path=GINI_FIGURE_PATH, show_plot=True):
-    """
-    Plot the yearly Gini series and optionally save the figure.
-    """
-    output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    plt.figure(figsize=(10, 5))
-    plt.plot(gini_by_year["year"], gini_by_year["gini"], marker="o", linewidth=2)
-    plt.xlabel("Year")
-    plt.ylabel("Gini Coefficient")
-    plt.title("Regional NTL Inequality (Gini) Over Time")
-    plt.grid(True, alpha=0.3)
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300)
-    print(f"Saved Gini plot to: {output_path}")
-
-    if show_plot:
-        plt.show()
-    else:
-        plt.close()
 
 
 def main(show_plot=True):
@@ -128,21 +116,19 @@ def main(show_plot=True):
     print("Cleaned regional panel preview:")
     print(df.head())
 
+    # --- Summary statistics ---
+    # Include Mean_NTL if present
+    stat_cols = [col for col in ["NTL", "lnNTL", "Leader_region", "Mean_NTL"] if col in df.columns]
+    summary_stats = df[stat_cols].describe().T
+    SUMMARY_STATS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    summary_stats.to_csv(SUMMARY_STATS_PATH)
+    print(f"Saved summary statistics to: {SUMMARY_STATS_PATH}")
+    print("\nSummary statistics:\n", summary_stats)
+
     # Run panel regressions (full sample)
     df_panel = prepare_panel(df)
     print("\n--- Panel Data Regression Results (Full Sample) ---\n")
-    reg_table = {
-        "(1) Pooled": PooledOLS.from_formula(
-            formula="lnNTL ~ 1 + Leader_region", data=df_panel
-        ).fit(cov_type="clustered"),
-        "(2) Between": BetweenOLS.from_formula(
-            formula="lnNTL ~ 1 + Leader_region", data=df_panel
-        ).fit(cov_type="clustered"),
-        "(3) Within": PanelOLS.from_formula(
-            formula="lnNTL ~ 1 + Leader_region + EntityEffects + TimeEffects",
-            data=df_panel,
-        ).fit(cov_type="clustered"),
-    }
+    reg_table = run_panel_regressions(df_panel)
     REG_SUMMARY_FULL.parent.mkdir(parents=True, exist_ok=True)
     with open(REG_SUMMARY_FULL, "w", encoding="utf-8") as f:
         for name, res in reg_table.items():
@@ -154,18 +140,7 @@ def main(show_plot=True):
     df_excl = df[~df["ADM1_EN"].isin(special)].copy()
     df_panel_excl = prepare_panel(df_excl)
     print("\n--- Panel Data Regression Results (Excluding Addis Ababa, Dire Dawa, Harari) ---\n")
-    reg_table_excl = {
-        "(1) Pooled": PooledOLS.from_formula(
-            formula="lnNTL ~ 1 + Leader_region", data=df_panel_excl
-        ).fit(cov_type="clustered"),
-        "(2) Between": BetweenOLS.from_formula(
-            formula="lnNTL ~ 1 + Leader_region", data=df_panel_excl
-        ).fit(cov_type="clustered"),
-        "(3) Within": PanelOLS.from_formula(
-            formula="lnNTL ~ 1 + Leader_region + EntityEffects + TimeEffects",
-            data=df_panel_excl,
-        ).fit(cov_type="clustered"),
-    }
+    reg_table_excl = run_panel_regressions(df_panel_excl)
     with open(REG_SUMMARY_EXCL, "w", encoding="utf-8") as f:
         for name, res in reg_table_excl.items():
             print(f"\n{name}\n{'-'*len(name)}\n{res.summary}", file=f)
@@ -176,7 +151,13 @@ def main(show_plot=True):
     print(gini_by_year.to_string(index=False))
 
     save_gini_by_year(gini_by_year)
-    plot_gini(gini_by_year, show_plot=show_plot)
+
+    plot_gini(gini_by_year, GINI_FIGURE_PATH, show_plot=show_plot)
+
+    # --- New plots ---
+    plot_ntl_histogram(df, NTL_HIST_FIGURE_PATH, show_plot=show_plot)
+    plot_leader_vs_nonleader_trends(df, LEADER_TREND_FIGURE_PATH, show_plot=show_plot)
+    plot_ntl_boxplot_by_leader(df, NTL_BOX_FIGURE_PATH, show_plot=show_plot)
 
 
 if __name__ == "__main__":

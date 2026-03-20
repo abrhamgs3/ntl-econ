@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.17)  19 MAR 2026 15:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.17)  20 MAR 2026 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./Manuscript_NTL_revised.tex
-(Manuscript_NTL_revised.tex
+**./Manuscript_NTL.tex
+(Manuscript_NTL.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -516,23 +516,23 @@ ftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count302
 \l__pdf_internal_box=\box64
-) (Manuscript_NTL_revised.aux)
-\openout1 = `Manuscript_NTL_revised.aux'.
+) (Manuscript_NTL.aux)
+\openout1 = `Manuscript_NTL.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
 kii
@@ -593,118 +593,210 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
 
 (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
 
 
 (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+
+Package natbib Warning: Citation `Alesina2016' on page 1 undefined on input lin
+e 44.
+
+
+Package natbib Warning: Citation `Baldwin2010' on page 1 undefined on input lin
+e 44.
+
+
+Package natbib Warning: Citation `Ezcurra2019' on page 1 undefined on input lin
+e 44.
+
+
+Package natbib Warning: Citation `Bickenbach2016' on page 1 undefined on input 
+line 46.
+
 [1
 
-{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-<outputs/figures/regional/regional_ntl_gini_trend.png, id=13, 505.89pt x 361.35
-pt>
-File: outputs/figures/regional/regional_ntl_gini_trend.png Graphic file (type p
-ng)
-<use outputs/figures/regional/regional_ntl_gini_trend.png>
-Package pdftex.def Info: outputs/figures/regional/regional_ntl_gini_trend.png  
-used on input line 67.
-(pdftex.def)             Requested size: 362.37569pt x 258.84299pt.
-<outputs/figures/national/ntl_gdp_combined_trend.png, id=15, 650.43pt x 361.35p
-t>
-File: outputs/figures/national/ntl_gdp_combined_trend.png Graphic file (type pn
-g)
-<use outputs/figures/national/ntl_gdp_combined_trend.png>
-Package pdftex.def Info: outputs/figures/national/ntl_gdp_combined_trend.png  u
-sed on input line 76.
-(pdftex.def)             Requested size: 317.07614pt x 176.1588pt.
- [2]
+{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+[3]
 
-Package natbib Warning: Citation `Chen2011' on page 3 undefined on input line 8
-9.
+Package natbib Warning: Citation `Bickenbach2016' on page 4 undefined on input 
+line 79.
 
 
-Package natbib Warning: Citation `Henderson2012' on page 3 undefined on input l
-ine 89.
+Package natbib Warning: Citation `Angrist2009' on page 4 undefined on input lin
+e 92.
 
 
-Package natbib Warning: Citation `Bluhm2022' on page 3 undefined on input line 
-89.
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+[]\T1/cmr/m/n/12 Lagged treat-ment, placebo
+ []
 
 
-Package natbib Warning: Citation `Gibson2021' on page 3 undefined on input line
- 89.
+Overfull \hbox (52.50255pt too wide) in paragraph at lines 105--116
+ [][] 
+ []
 
 
-Package natbib Warning: Citation `Li2023' on page 3 undefined on input line 89.
+Package natbib Warning: Citation `Angrist2009' on page 4 undefined on input lin
+e 120.
 
 
-
-Package natbib Warning: Citation `Gibson2024' on page 3 undefined on input line
- 89.
-
-
-Package natbib Warning: Citation `Hodler2014' on page 3 undefined on input line
- 91.
+Package natbib Warning: Citation `Bertrand2004' on page 4 undefined on input li
+ne 123.
 
 
-Package natbib Warning: Citation `BeiserMcGrath2021' on page 3 undefined on inp
-ut line 91.
+Package natbib Warning: Citation `Abadie2010' on page 4 undefined on input line
+ 123.
 
 
-Package natbib Warning: Citation `Onana2024' on page 3 undefined on input line 
-91.
+Package natbib Warning: Citation `Imbens2015' on page 4 undefined on input line
+ 123.
+
+[4] [5] [6]
+Overfull \hbox (13.92412pt too wide) in paragraph at lines 191--192
+[]$\OT1/cmr/bx/n/12 X[]$\T1/cmr/m/n/12 : Controls---log land area (km$[]$), log
+ pop-u-la-tion (an-nual, from cen-sus/interpolated),
+ []
 
 
-Package natbib Warning: Citation `Cruzatti2024' on page 3 undefined on input li
-ne 91.
+Package natbib Warning: Citation `Bertrand2004' on page 7 undefined on input li
+ne 206.
 
+[7]
 
-Package natbib Warning: Citation `Faguet2021' on page 3 undefined on input line
- 96.
+Package natbib Warning: Citation `Angrist2009' on page 8 undefined on input lin
+e 209.
 
-
-Package natbib Warning: Citation `Wubneh2017' on page 3 undefined on input line
- 96.
-
-[3 <./outputs/figures/regional/regional_ntl_gini_trend.png>]
-
-Package natbib Warning: Citation `Faguet2021' on page 4 undefined on input line
- 99.
-
-[4 <./outputs/figures/national/ntl_gdp_combined_trend.png>]
-
-Package natbib Warning: Citation `Li2023' on page 5 undefined on input line 106
-.
-
-
-Package natbib Warning: Citation `Elvidge2021' on page 5 undefined on input lin
-e 106.
-
-<outputs/figures/admin/ethiopia_admin_map.png, id=30, 578.16pt x 578.16pt>
-File: outputs/figures/admin/ethiopia_admin_map.png Graphic file (type png)
-<use outputs/figures/admin/ethiopia_admin_map.png>
-Package pdftex.def Info: outputs/figures/admin/ethiopia_admin_map.png  used on 
-input line 113.
-(pdftex.def)             Requested size: 317.07614pt x 317.07149pt.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
+25.
+(C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-! Emergency stop.
-<*> ./Manuscript_NTL_revised.tex
-                                
-*** (job aborted, no legal \end found)
+<../outputs/figures/admin/ethiopia_admin_map.png, id=42, 578.16pt x 578.16pt>
+File: ../outputs/figures/admin/ethiopia_admin_map.png Graphic file (type png)
+<use ../outputs/figures/admin/ethiopia_admin_map.png>
+Package pdftex.def Info: ../outputs/figures/admin/ethiopia_admin_map.png  used 
+on input line 231.
+(pdftex.def)             Requested size: 317.07614pt x 317.07149pt.
 
- 
+[8] [9 <../outputs/figures/admin/ethiopia_admin_map.png>]
+
+Package natbib Warning: Citation `WorldBank2024' on page 10 undefined on input 
+line 263.
+
+
+Package natbib Warning: Citation `Bickenbach2016' on page 10 undefined on input
+ line 263.
+
+[10]
+<../outputs/figures/national/ntl_gdp_combined_trend.png, id=55, 650.43pt x 361.
+35pt>
+File: ../outputs/figures/national/ntl_gdp_combined_trend.png Graphic file (type
+ png)
+<use ../outputs/figures/national/ntl_gdp_combined_trend.png>
+Package pdftex.def Info: ../outputs/figures/national/ntl_gdp_combined_trend.png
+  used on input line 271.
+(pdftex.def)             Requested size: 317.07614pt x 176.1588pt.
+<../outputs/figures/regional/regional_ntl_gini_trend.png, id=56, 722.7pt x 361.
+35pt>
+File: ../outputs/figures/regional/regional_ntl_gini_trend.png Graphic file (typ
+e png)
+<use ../outputs/figures/regional/regional_ntl_gini_trend.png>
+Package pdftex.def Info: ../outputs/figures/regional/regional_ntl_gini_trend.pn
+g  used on input line 281.
+(pdftex.def)             Requested size: 317.07614pt x 158.53685pt.
+<../outputs/figures/regional/regional_luminosity_trends.png, id=57, 578.16pt x 
+361.35pt>
+File: ../outputs/figures/regional/regional_luminosity_trends.png Graphic file (
+type png)
+<use ../outputs/figures/regional/regional_luminosity_trends.png>
+Package pdftex.def Info: ../outputs/figures/regional/regional_luminosity_trends
+.png  used on input line 289.
+(pdftex.def)             Requested size: 317.07614pt x 198.16968pt.
+<../outputs/figures/regional/ntl_histogram.png, id=58, 578.16pt x 361.35pt>
+File: ../outputs/figures/regional/ntl_histogram.png Graphic file (type png)
+<use ../outputs/figures/regional/ntl_histogram.png>
+Package pdftex.def Info: ../outputs/figures/regional/ntl_histogram.png  used on
+ input line 297.
+(pdftex.def)             Requested size: 317.07614pt x 198.16968pt.
+<../outputs/figures/regional/ntl_leader_vs_nonleader_trend.png, id=59, 722.7pt 
+x 361.35pt>
+File: ../outputs/figures/regional/ntl_leader_vs_nonleader_trend.png Graphic fil
+e (type png)
+<use ../outputs/figures/regional/ntl_leader_vs_nonleader_trend.png>
+Package pdftex.def Info: ../outputs/figures/regional/ntl_leader_vs_nonleader_tr
+end.png  used on input line 305.
+(pdftex.def)             Requested size: 317.07614pt x 158.53685pt.
+<../outputs/figures/regional/ntl_boxplot_by_leader.png, id=60, 462.528pt x 346.
+896pt>
+File: ../outputs/figures/regional/ntl_boxplot_by_leader.png Graphic file (type 
+png)
+<use ../outputs/figures/regional/ntl_boxplot_by_leader.png>
+Package pdftex.def Info: ../outputs/figures/regional/ntl_boxplot_by_leader.png 
+ used on input line 312.
+(pdftex.def)             Requested size: 317.07614pt x 237.81816pt.
+ [11 <../outputs/figures/national/ntl_gdp_combined_trend.png> <../outputs/figur
+es/regional/regional_ntl_gini_trend.png>] [12 <../outputs/figures/regional/regi
+onal_luminosity_trends.png> <../outputs/figures/regional/ntl_histogram.png>] [1
+3 <../outputs/figures/regional/ntl_leader_vs_nonleader_trend.png> <../outputs/f
+igures/regional/ntl_boxplot_by_leader.png>]
+<../outputs/figures/regional/event_study_plot.png, id=78, 650.43pt x 361.35pt>
+File: ../outputs/figures/regional/event_study_plot.png Graphic file (type png)
+<use ../outputs/figures/regional/event_study_plot.png>
+Package pdftex.def Info: ../outputs/figures/regional/event_study_plot.png  used
+ on input line 352.
+(pdftex.def)             Requested size: 317.07614pt x 176.1588pt.
+ [14 <../outputs/figures/regional/event_study_plot.png>] [15] [16] (Manuscript_
+NTL.bbl [17])
+Overfull \hbox (11.84918pt too wide) in paragraph at lines 420--431
+ [][] 
+ []
+
+
+Package natbib Warning: There were undefined citations.
+
+[18] (Manuscript_NTL.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+ ) 
 Here is how much of TeX's memory you used:
- 14240 strings out of 474486
- 282943 string characters out of 5743282
- 1936542 words of memory out of 5000000
- 36287 multiletter control sequences out of 15000+600000
- 571397 words of font info for 73 fonts, out of 8000000 for 9000
+ 14408 strings out of 474486
+ 288186 string characters out of 5743282
+ 1937542 words of memory out of 5000000
+ 36440 multiletter control sequences out of 15000+600000
+ 574527 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,8n,93p,1465b,240s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 84i,10n,93p,1448b,264s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ect
+i1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
+600\ectt1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen
+/ec/dpi600\tcrm1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/j
+knappen/ec/dpi600\ecbx1440.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/l
+jfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Lenovo\AppData\Local\MiK
+TeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Lenovo\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\Lenovo\App
+Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\Len
+ovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Us
+ers\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk>
+<C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mbx12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lenovo/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lenovo/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Manuscript_NTL.pdf (18 pages, 1824504 bytes).
+PDF statistics:
+ 577 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+

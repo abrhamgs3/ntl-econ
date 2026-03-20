@@ -23,14 +23,14 @@ def load_data(input_path=INPUT_PATH):
     """
     df = pd.read_excel(input_path)
 
-    required_columns = ["Year", "Mean_NTL", "GDPPC_con"]
+    required_columns = ["Year", "Mean_NTL", "GDPPC"]
     missing_columns = [column for column in required_columns if column not in df.columns]
     if missing_columns:
         raise KeyError(f"Missing required columns: {missing_columns}")
 
     df["Year"] = pd.to_numeric(df["Year"], errors="coerce")
     df["Mean_NTL"] = pd.to_numeric(df["Mean_NTL"], errors="coerce")
-    df["GDPPC_con"] = pd.to_numeric(df["GDPPC_con"], errors="coerce")
+    df["GDPPC_con"] = pd.to_numeric(df["GDPPC"], errors="coerce")
     df = df.dropna(subset=required_columns).copy()
     return df.sort_values("Year").reset_index(drop=True)
 
