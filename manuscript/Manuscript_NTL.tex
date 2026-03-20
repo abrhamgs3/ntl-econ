@@ -1,4 +1,10 @@
 % ...existing code...
+% PATCH: Replace natbib citation commands with biblatex equivalents
+% Find-and-replace performed:
+% \citep{...}      -> \parencite{...}
+% \citet{...}      -> \textcite{...}
+% \citealt{...}    -> \cite{...}
+% \citeyearpar{...}-> \citeyear{...}
 \documentclass[12pt,a4paper]{article}
 % --- Preamble: Packages ---
 \usepackage[utf8]{inputenc}
@@ -8,8 +14,9 @@
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{tikz}
 \usepackage{natbib}
+\usepackage{tikz}
+
 \usepackage{geometry}
 \geometry{margin=1in}
 
@@ -114,6 +121,7 @@ Findings are most relevant for settings with centralized political authority, li
 
 We begin by validating the use of nighttime lights (NTL) as a proxy for economic activity in the Ethiopian context. Specifically, we regress the natural logarithm of national mean NTL on the natural logarithm of GDP per capita, using ``GDP per capita (constant 2015 US\$)'' from the World Bank~\citep{WorldBank2024}. The estimated elasticity is $1.94$ ($p<0.001$, $R^2=0.94$), indicating that a $1\%$ increase in real GDP per capita is associated with a $1.94\%$ increase in mean NTL.
 
+\input{tables/national_regression}
 This elasticity is substantially higher than most estimates in the literature. While reported elasticities for developing countries often fall in the range of 0.3 to 1.0 (see, e.g., \citealt{Henderson2012} for cross-country evidence and \citealt{Bickenbach2016} for context-specific results), these ranges are sensitive to country context, time period, and measurement approach. Gibson \citeyearpar{Gibson2021} highlights that elasticity estimates can vary widely depending on data quality and spatial scale. One plausible explanation for Ethiopia’s high elasticity is rapid electrification and infrastructure expansion over the sample period, including large-scale projects such as the Grand Ethiopian Renaissance Dam~\citep{WorldBank2019}. In such contexts, the expansion of lighting infrastructure may outpace measured increases in output, leading to a stronger elasticity between NTL and GDP.
 
 These results confirm that NTL is a strong proxy for aggregate economic activity at the national level, while also highlighting that its interpretation is context-dependent.
@@ -122,15 +130,50 @@ These results confirm that NTL is a strong proxy for aggregate economic activity
 
 We next examine regional disparities using NTL-based Gini coefficients. The coefficient declines from 0.715 in 1992 to 0.513 in 2018, before stabilizing at 0.526 in 2024. This pattern indicates a reduction in regional inequality over time, although substantial disparities persist.
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/regional/regional_ntl_gini_trend.png}
+	\caption{Trends in regional NTL-based Gini coefficients, 1992--2024.}
+	\label{fig:ntl_gini}
+\end{figure}
+
 \subsubsection{Regional Trends and Distribution}
 
 Figure \ref{fig:ntl_trends} presents NTL trajectories for all regions over the sample period. The data show substantial heterogeneity in both levels and growth rates, with a small number of regions accounting for a large share of overall luminosity.
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/regional/regional_luminosity_trends.png}
+	\caption{NTL trajectories for all Ethiopian regions, 1992--2024.}
+	\label{fig:ntl_trends}
+\end{figure}
+
 The distribution of NTL values (Figure \ref{fig:ntl_hist}) is highly skewed, reflecting concentration of economic activity in a limited number of regions. This skewness has implications for estimation, as results may be sensitive to high-luminosity regions.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/regional/ntl_histogram.png}
+	\caption{Distribution of regional nighttime lights (NTL) values, pooled across years.}
+	\label{fig:ntl_hist}
+\end{figure}
 
 \subsubsection{Leader vs. Non-Leader Regions}
 
 Descriptive comparisons between leader and non-leader regions are presented in Figures \ref{fig:ntl_leader_trend} and \ref{fig:ntl_box_leader}. While leader regions tend to exhibit higher average NTL levels, these differences are not stable over time and may reflect persistent structural differences rather than changes associated with leadership.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/regional/ntl_leader_vs_nonleader_trend.png}
+	\caption{Mean NTL over time for leader and non-leader regions.}
+	\label{fig:ntl_leader_trend}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/regional/ntl_boxplot_by_leader.png}
+	\caption{Distribution of NTL by leader status (boxplot, pooled years).}
+	\label{fig:ntl_box_leader}
+\end{figure}
 
 \subsection{Regression Results: Leader Birth-Region Effects}
 
@@ -142,15 +185,26 @@ The between estimator yields imprecise estimates with large standard errors. Acr
 
 Taken together, these results indicate that the estimated relationship between leader-region status and economic outcomes is not stable across specifications.
 
+% Main panel regression results table
+\input{tables/panel_regression}
 \subsection{Placebo and Event-Study Evidence}
 
 To further assess the empirical patterns, we implement placebo and event-study analyses. The event-study estimates show that both pre-treatment and post-treatment coefficients are small and statistically indistinguishable from zero. Confidence intervals are wide and consistently include zero across all periods.
 
 These findings indicate the absence of detectable pre-trends or dynamic treatment effects. However, the limited number of treatment events and the structure of the data constrain the informativeness of these tests.
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../outputs/figures/regional/event_study_plot.png}
+	\caption{Event-study analysis of leader-region effects. No significant pre-trends or treatment effects are detected.}
+	\label{fig:event_study}
+\end{figure}
+
 \section{Robustness and Sensitivity Analysis}
 
 To evaluate the stability of the results, we implement a series of robustness checks that correspond to key identifying assumptions. Table \ref{tab:robustness_identification} summarizes these tests.
+
+\input{tables/robustness_identification}
 
 Across specifications, the estimated leader-region effect is highly sensitive to modeling choices. The coefficient varies substantially across estimators, loses statistical significance under alternative inference procedures, and is not robust to the inclusion of region-specific trends, conflict controls, or sample restrictions such as excluding high-luminosity regions.
 
@@ -190,14 +244,16 @@ The primary contribution of the paper is to clarify the empirical limits of stan
 
 Future research should prioritize richer data, more granular outcomes, and research designs that provide credible exogenous variation. Transparent reporting of identification constraints and statistical power is essential for advancing empirical work on distributive politics.
 
-\section{References}
+
 % Bibliography will be generated automatically.
-\bibliographystyle{plainnat}
+\bibliographystyle{apa}
 \bibliography{references,references_additional}
+
 
 \section{Appendix}
 
-\subsection*{Summary Statistics for Main Variables}
+% Former Table 2: Key results summary (now in appendix)
+\input{tables/key_results}
 \begin{table}[ht]
 \centering
 \caption{Summary statistics for NTL, lnNTL, Mean\_NTL, and Leader\_region (regional panel, 1992--2024).}
@@ -228,7 +284,6 @@ To promote transparency and improve empirical credibility, this study provides a
 		\item Is spatial and temporal coverage appropriate for the research question?
 	\end{itemize}
 	
-	```
 	\item \textbf{Identification and Variation}
 	\begin{itemize}
 		\item Is there sufficient variation in treatment (e.g., leadership transitions)?
@@ -253,7 +308,7 @@ To promote transparency and improve empirical credibility, this study provides a
 		\item Are data and code available for replication?
 		\item Are limitations explicitly acknowledged?
 	\end{itemize}
-	```
+
 	
 \end{enumerate}
 
@@ -264,11 +319,10 @@ The dataset combines three primary sources:
 \begin{enumerate}
 	\item \textbf{Nighttime Lights (NTL):} Annual composites from DMSP-OLS (1992–2013) and VIIRS (2012–2024), harmonized following \citet{Li2023, Elvidge2021}. Raster data are aggregated to first-order administrative regions using official shapefiles. Values are log-transformed for analysis.
 	
-	```
 	\item \textbf{Regional GDP:} Regional and national GDP per capita from the World Bank. Where regional GDP is unavailable, NTL is used as a proxy.
 	
 	\item \textbf{Leader-Region Indicator:} Hand-coded variable equal to one if a region corresponds to the national leader’s birthplace in a given year, following \citet{Hodler2014}. Coding protocols are documented in the supplementary materials.
-	```
+
 	
 \end{enumerate}
 

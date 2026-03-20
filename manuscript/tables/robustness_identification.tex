@@ -1,0 +1,20 @@
+\begin{table}[ht]
+\centering
+\caption{Summary of robustness and identification checks}
+\begin{tabular}{p{0.38\textwidth}p{0.52\textwidth}}
+\toprule
+Check & Purpose \\
+\midrule
+Region-specific linear trends & Controls for unobserved region-level time trends that could confound leader-region effects \\
+Driscoll--Kraay standard errors & Accounts for cross-sectional dependence in panel errors \\
+Wild cluster bootstrap & Provides robust inference with few clusters (regions) \\
+Placebo/permutation tests & Assesses whether observed effects could arise by chance (random assignment of treatment) \\
+Alternative leader coding & Tests sensitivity to different definitions of leader-region status (e.g., SNNP/Sidama/SW variants) \\
+Exclusion of special regions & Checks robustness to excluding Addis Ababa, Dire Dawa, Harari \\
+Event-study analysis & Examines dynamic effects and pre-trends around leadership transitions \\
+Conflict controls & Assesses robustness to inclusion of conflict event and fatality controls \\
+Exclusion of high-conflict years & Tests sensitivity to sample restrictions based on conflict intensity \\
+\bottomrule
+\end{tabular}
+\label{tab:robustness_identification}
+\end{table}
